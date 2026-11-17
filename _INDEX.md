@@ -12,9 +12,10 @@ estamos y el siguiente paso con quién. Lo demás vive en ese `estado.md`, no
 aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 `estado.md` que existe.
 
-- **Portfolio Otrorumbo** — online; passi 1-3 fatti, ora le migliorie
-  della lista (24 punti); prossimo: Rachele sceglie da dove partire
-  (proposta: 18, 17, 16, 24) →
+- **Portfolio Otrorumbo** — online; passo 4 (24 migliorie) partito dal
+  punto 22, punti leggeri e articolo Glovo con video online e
+  controllati; prossimo: punti 12, 16, 23.3; Pillowtalk quando Rachele
+  manda i contenuti →
   [stato](proyectos/portfolio-otrorumbo/estado.md)
 - **Propuesta de ejemplo** (ejemplo: bórralo cuando tengas el tuyo) — una
   propuesta para un cliente inventado; el resumen del encargo está hecho,
@@ -32,5 +33,5 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 | `proyectos/` | Una carpeta por tema con su `estado.md` (un tema = un `estado.md` = una cola); `ejemplo-propuesta/` es el de práctica | portfolio-otrorumbo + el ejemplo |
 | `plantillas/` | El molde del `estado.md` de cada tema | listo |
 | `GLOSARIO.md` | Palabras de la casa, en llano | 2 ejemplos |
-| `memoria/` | La memoria del agente (`MEMORY.md` + una ficha por hecho) | 1 ficha |
+| `memoria/` | La memoria del agente (`MEMORY.md` + una ficha por hecho) | 4 fichas |
 | `.claude/` | Ajustes y `/repaso` (el agente no puede editarlo) | listo |

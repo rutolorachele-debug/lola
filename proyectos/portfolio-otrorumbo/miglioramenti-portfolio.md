@@ -122,12 +122,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ---
 
-## 9. Chips dei progetti a forma di pill
-
-- Le chips che descrivono i progetti devono avere la forma di pill.
-
----
-
 ## 10. Cambio di progetto nella sidebar
 
 - Quando si cambia progetto con le pills nella sidebar, devono sparire solo la copertina e l'articolo.
@@ -163,13 +157,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ---
 
-## 15. Contorno rosa sulla barra di testo
-
-- Quando si seleziona la barra di testo per scrivere, compare un contorno rosa.
-- Rachele non lo ha deciso e non lo vuole. Va rimosso o rivisto, da allineare alle indicazioni di Figma.
-
----
-
 ## 16. Grassetto non renderizzato
 
 - A volte il grassetto non viene letto e compare il doppio asterisco, per esempio `**parola**`, invece della parola in grassetto. Da verificare il perché.
@@ -194,20 +181,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ---
 
-## 19. Barra di scorrimento visibile nella chat
-
-- Nella chat si vede la barra per scorrere. Rachele non vuole che si veda.
-- Lo scorrimento deve restare possibile, ma la barra deve essere nascosta.
-
----
-
-## 20. Prototipi e storytelling dei progetti
-
-1. Glovo Duo e Pillowtalk: pulire i prototipi e decidere lo storytelling, cioè cosa raccontare e cosa lasciare fuori. Prima Glovo Duo, che ne ha più bisogno.
-2. Video: girarli solo quando i prototipi sono definitivi.
-
----
-
 ## 21. Ottimizzare il system prompt (è molto lungo)
 
 - Il system prompt è molto lungo. Da valutare se e come ridurlo, senza perdere le regole che la chat deve rispettare.
@@ -216,31 +189,12 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ---
 
-## 22. Cambio di logo e font
-
-- Cambiare il logo con "Redaction".
-- Cambiare il font dei testi con IBM Plex Sans.
-- Dettagli nella mail di Rachele, da riportare qui quando serve. Da questa chat non posso leggere la mail.
-- Sostituisce quanto scritto nel brief §5: Figtree per i testi e Funnel Display per il logo.
-
----
-
 ## 23. Correzioni di layout e stato
 
-1. Chat: togliere la scrollbar visibile. Lo scroll resta, ma non si deve vedere nessuna scrollbar. Vedi anche punto 19.
 2. Sidebar: rivedere lo spacing, c'è qualcosa di strano.
 3. Chat: rivedere lo spazio tra la barra per scrivere e la caption sotto, che è troppo ampio. Vedi anche punto 11.
-4. Stroke viola: compare ogni volta che si seleziona qualcosa, anche con il mouse. Va capito cos'è. Vedi anche punto 15, dove il contorno è rosa.
-5. Chat: aggiungere nella parte alta una sfumatura che fa sparire la chat all'altezza del logo. Il disegno del logo arriverà quando lo modificherà Rachele. Vedi anche punto 11, dove la sfumatura parte dal margine della sidebar.
-
----
-
-## 24. Link aggiornati dei prototipi
-
-- Pillow Talk: https://otrorumbo-pillowtalk.vercel.app
-- Glovo Duo: https://otrorumbo-glovoduo.vercel.app
-- Da fare, nella sessione di build o nel PRD: sostituire i vecchi URL con questi due nuovi nel PRD §3.4, dove sono elencati i prototipi, e in ogni altro punto che li cita.
-- I vecchi URL sono: https://glovo-duo.vercel.app/ e https://astounding-cajeta-04da12.netlify.app/#springboard.
+4. Contorno viola: sulla barra di testo è tolto. Resta, voluto, sugli elementi raggiunti con la tastiera. Da verificare se compare ancora cliccando con il mouse su altri elementi.
+5. Chat: aggiungere nella parte alta una sfumatura che fa sparire la chat all'altezza del logo. Vedi anche punto 11, dove la sfumatura parte dal margine della sidebar.
 
 ---
 
@@ -253,21 +207,14 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 - [ ] Pulsante "fammi un riassunto": decidere dove appare il riassunto, secondo il punto 5.
 - [ ] Sfondo: applicare la sfocatura, secondo il punto 7.
 - [ ] Microinterazioni: rivedere, secondo il punto 8.
-- [ ] Chips dei progetti: forma a pill, secondo il punto 9.
 - [ ] Cambio di progetto nella sidebar: far sparire solo copertina e articolo, secondo il punto 10.
 - [ ] Spaziature e sfumatura della chat: rivedere, secondo il punto 11.
 - [ ] Pills della chat: applicare l'effetto glass, secondo il punto 12.
 - [ ] La chat apre un progetto su richiesta: marcatore nascosto, regola nel system prompt e risposta mentre apre, secondo il punto 13.
 - [ ] Messaggi lunghi: verificare perché non vengono spezzati, secondo il punto 14.
-- [ ] Contorno rosa sulla barra di testo: rimuovere o rivedere, secondo il punto 15.
 - [ ] Grassetto non renderizzato: verificare perché compare il doppio asterisco, secondo il punto 16.
 - [ ] Domande fuori contesto con ricerca sul web: gestire nel system prompt §9 e testare, secondo il punto 17.
 - [ ] Tono di voce troppo brusco: rivedere il system prompt e testare, secondo il punto 18.
-- [ ] Barra di scorrimento nella chat: nasconderla mantenendo lo scorrimento, secondo il punto 19.
-- [ ] Prototipi e storytelling: pulire i prototipi di Glovo Duo, poi Pillowtalk, e decidere lo storytelling, secondo il punto 20.
-- [ ] Video: girarli solo dopo che i prototipi sono definitivi, secondo il punto 20.
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
-- [ ] Logo in Redaction e font IBM Plex Sans: riportare i dettagli dalla mail, secondo il punto 22.
-- [ ] Correzioni di layout e stato: scrollbar, spacing sidebar, spazio sotto la barra, stroke viola, sfumatura sotto il logo, secondo il punto 23.
-- [ ] Link dei prototipi: sostituire con i nuovi URL, secondo il punto 24.
+- [ ] Correzioni di layout e stato: spacing sidebar, spazio sotto la barra, contorno viola col mouse, sfumatura sotto il logo, secondo il punto 23.
 - [ ] Formattazione degli articoli: dire quale progetto e quale paragrafo, poi confrontare con Figma, secondo il punto 6.
