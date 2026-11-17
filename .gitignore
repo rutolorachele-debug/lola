@@ -1,0 +1,19 @@
+# Ajustes de ESTA máquina (rutas absolutas, como la de la memoria): no se comparten.
+.claude/settings.local.json
+# Subida manual del tope de contexto, de esta máquina y de este rato.
+.claude/tope-contexto.local.json
+# Las claves del servidor: viven SOLO en el servidor, nunca en el repo.
+infra/servidor/.env
+# Dependencias que se reinstalan con npm; pesan y no son tuyas.
+node_modules/
+# Material en bruto (audios, transcripciones sin limpiar): pesa y puede llevar datos privados.
+crudo/
+# Basura que deja el Finder del Mac.
+.DS_Store
+
+# Datos: Excel, listas de datos y su carpeta nunca entran en el historial.
+*.xls*
+*.csv
+datos/
+# Lo que solo es de este ordenador.
+*.local

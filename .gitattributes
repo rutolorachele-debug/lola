@@ -1,0 +1,5 @@
+# Todo texto con saltos de línea LF, en cualquier máquina: las sondas comparan
+# huellas de ficheros y un CRLF de Windows las rompería en silencio.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
