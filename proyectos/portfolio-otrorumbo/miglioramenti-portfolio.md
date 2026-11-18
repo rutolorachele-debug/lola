@@ -175,6 +175,56 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 3. Chat: rivedere lo spazio tra la barra per scrivere e la caption sotto, che è troppo ampio. Vedi anche punto 11.
 5. Chat: aggiungere nella parte alta una sfumatura che fa sparire la chat all'altezza del logo. Vedi anche punto 11, dove la sfumatura parte dal margine della sidebar.
 
+### Misure fuori token nel codice (per 23.2 e 23.3)
+
+Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non Figma). File: `Portfolio/claude/app/globals.css`, la riga è dopo i due punti.
+
+- **Scala che esiste:** spazi 2, 4, 6, 8, 10, 12, 16, 20, 24, 28, 32. Raggi 6, 8, 10, 12, 14, 16, 20, pill.
+- **Proposta** = il token più vicino (criterio di Lola). Decide Rachele, valore per valore.
+
+**23.2 · Sidebar e logo**
+
+| Componente | Dove si vede | Codice | Ora | Proposta |
+|---|---|---|---|---|
+| Logo "otrorumbo" | home desktop, in alto a sinistra | :149 | sinistra 28, alto 30 | sinistra 24 (come la sidebar), alto 28 o 32 |
+| Sidebar (riquadro progetti) | home desktop, distanza dall'alto | :156 | alto 80 | resta 80, ma con un nome unico ("inizio sotto il logo") |
+| Sidebar, altezza massima | home desktop, margine in basso | :158 | schermo − 104 | 80 + 24: si calcola dal valore sopra |
+| Logo mobile | home mobile, in alto | :190 | alto 56 | allineato al menu (52) |
+| Lista progetti mobile | home mobile, spazio sopra le card | :196 | 108 | calcolato da logo + 24 |
+| Lista progetti mobile | home mobile, spazio sotto l'ultima card | :201 | 180 | calcolato da altezza chat (152) + 28 |
+
+- **La cosa strana più probabile:** il logo sta a 28 dal bordo, la sidebar a 24. Non sono allineati per 4 px.
+- **Dentro la sidebar** (card, chips, titoli) le misure sono tutte già sui token.
+
+**23.3 · Barra per scrivere e caption sotto**
+
+| Componente | Dove si vede | Codice | Ora | Proposta |
+|---|---|---|---|---|
+| Gruppo barra + caption | chat, desktop e mobile | :458 | spazio 6 | sul token, ok |
+| Caption privacy ("aviso") | chat desktop | :591 | sopra e sotto 8, lati 12 | sopra 0: la distanza dalla barra diventa 6 invece di 14 |
+| Caption privacy | chat mobile | :607 | sopra e sotto 7, lati 10 | sopra 0, sotto 8 |
+| Barra per scrivere | chat mobile | :606 | interno 7 | 8 |
+| Card della chat | chat mobile, margine in basso | :217 | 24 | sul token, ok |
+
+- **Su desktop tutto è già sui token:** lo spazio largo (6 + 8 = 14 px) è una somma di due token, non un errore di token. Va deciso quanto deve essere.
+
+**Altre misure fuori scala (non legate a 23.2 e 23.3)**
+
+| Componente | Dove si vede | Codice | Ora | Proposta |
+|---|---|---|---|---|
+| Bolle della chat (IA, tua, "sta scrivendo") e bolla della 404 | chat desktop, 404 | :463, :475, :507, :828 | interno 14 (`--s-14` usato ma non esiste) | aggiungere il token 14 (zero cambi visivi) oppure 12 o 16 |
+| Chips delle domande | chat mobile | :605 | lati 14 | 16, come su desktop |
+| Tab (pills di navigazione) | articolo | :344 | sopra e sotto 9 | 8 o 10 |
+| Testo della slide | articolo desktop | :400 | sotto 22 | 24 o 20 |
+| Testo della slide | articolo mobile | :414 | lati e sotto 18 | 16 o 20 |
+| Logo su 404 e privacy | 404, privacy | :820, :857 | alto 29 | 28 |
+| Card della chat, angoli | chat mobile | :214-215 | usa lo *spazio* 24 come raggio | raggio 20 (`--r-3xl`) o nuovo raggio 24 |
+| Maniglia della chat, angoli | chat mobile | :242 | raggio 2 | pill |
+| Barra di scorrimento, angoli | dove c'è scorrimento | :785 | raggio 2 | pill |
+| Menu a tendina | home | :635 | alto 48 | 40 (pulsante) + 8 |
+
+**Misure di layout, non da token (restano):** larghezza e posizione della chat (540, 450), pulsanti 40, pulsante invio 38 (unico diverso dagli altri 40), puntini 6, maniglia 120×24 e 36×4, larghezze massime (302, 540, 720), dialogo 355, menu 232, logo di caricamento 88 e 104, altezza card chat 152, sfumatura 80, margini grandi di 404 e privacy (80, 40).
+
 ---
 
 ## 12. Effetto glass sulle pills della chat (per il futuro)

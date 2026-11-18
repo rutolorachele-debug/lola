@@ -113,11 +113,17 @@ collezione Figma "Misure" (raggio/xs…pill, spazio/2…32) e nel codice
 schermate finali sono collegati ai token. Valori fuori scala usati: 7, 9,
 14, 18, 22, 40, 48, 64 (14 usato 215 volte; nel codice `--s-14` è usato
 ma non esiste). Dopo: 23.5.
+Elenco delle misure fuori token nel codice scritto (2026-11-18) in
+`miglioramenti-portfolio.md`, sotto il punto 23: componente, dove si vede,
+riga di `globals.css`, misura e proposta. Prossimo passo: Rachele sceglie i
+valori, Lola allinea il codice, lo mostra e pubblica solo con il suo ok.
+Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
+design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
 Lista salvata in `miglioramenti-portfolio.md`: punti aperti in alto,
-"Punti fatti" in fondo con il come (7, 9, 15, 16, 19, 20, 22, 23.1, 24).
+"Punti fatti" in fondo con il come (7, 9, 15, 16, 19, 20, 22, 23.1, 23.4, 24).
 Proposta di Lola in attesa: gli "imbarazzi" 18 e 17 (prompt, li scrive
 Rachele).
 
