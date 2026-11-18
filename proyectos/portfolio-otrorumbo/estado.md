@@ -119,17 +119,18 @@ riga di `globals.css`, misura e proposta. Prossimo passo: Rachele sceglie i
 valori, Lola allinea il codice, lo mostra e pubblica solo con il suo ok.
 In pausa (Rachele, 2026-11-18): l'analisi è fatta, la decisione la
 prende quando ha tempo di leggere. Intanto si passa al 23.5.
-**Punto 23.5 in locale, in attesa di ok (2026-11-18):** sfumatura in alto
-nella chat desktop, piena a 80 px (sidebar), sparita a 30 px (logo).
-Maschera su `.chat-area` in `globals.css`, non salvata nel git del
-Portfolio né pubblicata. Rachele la guarda quando ha tempo.
+**Punto 23.5 fatto (2026-11-18, commit a6e33d2 del Portfolio):**
+sfumatura in alto nella chat desktop, piena a 80 px (sidebar), sparita a
+30 px (logo). Maschera su `.chat-area` in `globals.css`. Pubblicata su
+richiesta di Rachele senza vederla prima; controllata online da Lola.
+Prossimo: decisione di Rachele su 23.2 e 23.3 (elenco già pronto).
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
 Lista salvata in `miglioramenti-portfolio.md`: punti aperti in alto,
-"Punti fatti" in fondo con il come (7, 9, 15, 16, 19, 20, 22, 23.1, 23.4, 24).
+"Punti fatti" in fondo con il come (7, 9, 15, 16, 19, 20, 22, 23.1, 23.4, 23.5, 24).
 Proposta di Lola in attesa: gli "imbarazzi" 18 e 17 (prompt, li scrive
 Rachele).
 

@@ -14,7 +14,7 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 
 - **Portfolio Otrorumbo** — online; passo 4 (24 migliorie) in corso,
   punto 7 fatto (sfondo unico e sfocato); 12 (vetro) rimandato;
-  prossimo: punto 23 (Lola); Pillowtalk quando Rachele manda i contenuti →
+  23.5 fatto; prossimo: 23.2 e 23.3 (decide Rachele sull'elenco dei token); Pillowtalk quando Rachele manda i contenuti →
   [stato](proyectos/portfolio-otrorumbo/estado.md)
 - **Propuesta de ejemplo** (ejemplo: bórralo cuando tengas el tuyo) — una
   propuesta para un cliente inventado; el resumen del encargo está hecho,

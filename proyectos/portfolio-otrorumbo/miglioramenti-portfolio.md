@@ -124,7 +124,7 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 ## 11. Spaziature e sfumatura della chat
 
 - La chat non rispetta gli spazi: in basso è molto alta e separata dalla frase sulla privacy. Da rivedere.
-- In alto i messaggi devono uscire sfumando. La sfumatura parte dal margine della sidebar al 100% e finisce al margine dell'header al 0%.
+- In alto i messaggi devono uscire sfumando. La sfumatura parte dal margine della sidebar al 100% e finisce al margine dell'header al 0%. **Fatto con il 23.5** (vedi Punti fatti). Resta aperta solo la prima riga, che è il 23.3.
 
 ---
 
@@ -173,8 +173,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 2. Sidebar: rivedere lo spacing, c'è qualcosa di strano.
 3. Chat: rivedere lo spazio tra la barra per scrivere e la caption sotto, che è troppo ampio. Vedi anche punto 11.
-5. Chat: aggiungere nella parte alta una sfumatura che fa sparire la chat all'altezza del logo. Vedi anche punto 11, dove la sfumatura parte dal margine della sidebar.
-   - **In locale, in attesa di ok (2026-11-18):** solo desktop. I messaggi sono pieni fino a 80 px dall'alto (inizio della sidebar) e spariscono a 30 px (inizio del logo). Fatto con una maschera sulla chat in `globals.css` (`.chat-area`, blocco desktop). Copre anche la seconda riga del punto 11. Su mobile la sfumatura c'era già (`.chat-fade`). Provato con 14 messaggi finti: funziona, la sfumatura è corta (50 px) e discreta.
 
 ### Misure fuori token nel codice (per 23.2 e 23.3)
 
@@ -339,6 +337,14 @@ Testo originale del punto, poi **Fatto:** come si è risolto.
 4. Contorno viola: sulla barra di testo è tolto. Resta, voluto, sugli elementi raggiunti con la tastiera. Da verificare se compare ancora cliccando con il mouse su altri elementi.
 
 **Fatto (2026-11-18):** sistemato da Rachele in un'altra chat. Nel codice il contorno viola compare solo quando si arriva a un elemento con la tastiera (`:focus-visible`), non con il clic del mouse; sulla barra di testo non compare mai. Verificato nel codice, non provato a mano.
+
+---
+
+### 23.5. Sfumatura in alto nella chat
+
+5. Chat: aggiungere nella parte alta una sfumatura che fa sparire la chat all'altezza del logo. Vedi anche punto 11, dove la sfumatura parte dal margine della sidebar.
+
+**Fatto (2026-11-18):** solo desktop, su mobile c'era già (`.chat-fade`). I messaggi sono pieni fino a 80 px dall'alto (inizio della sidebar) e spariscono a 30 px (inizio del logo): una maschera sulla chat in `globals.css` (`.chat-area`, blocco desktop), che vale qualunque sia l'altezza della chat. Copre anche la seconda riga del punto 11. Commit a6e33d2 del Portfolio; online e controllato con messaggi finti.
 
 ---
 
