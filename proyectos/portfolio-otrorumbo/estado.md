@@ -117,6 +117,12 @@ Elenco delle misure fuori token nel codice scritto (2026-11-18) in
 `miglioramenti-portfolio.md`, sotto il punto 23: componente, dove si vede,
 riga di `globals.css`, misura e proposta. Prossimo passo: Rachele sceglie i
 valori, Lola allinea il codice, lo mostra e pubblica solo con il suo ok.
+In pausa (Rachele, 2026-11-18): l'analisi è fatta, la decisione la
+prende quando ha tempo di leggere. Intanto si passa al 23.5.
+**Punto 23.5 in locale, in attesa di ok (2026-11-18):** sfumatura in alto
+nella chat desktop, piena a 80 px (sidebar), sparita a 30 px (logo).
+Maschera su `.chat-area` in `globals.css`, non salvata nel git del
+Portfolio né pubblicata. Rachele la guarda quando ha tempo.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).

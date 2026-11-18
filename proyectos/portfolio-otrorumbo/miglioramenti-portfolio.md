@@ -174,6 +174,7 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 2. Sidebar: rivedere lo spacing, c'è qualcosa di strano.
 3. Chat: rivedere lo spazio tra la barra per scrivere e la caption sotto, che è troppo ampio. Vedi anche punto 11.
 5. Chat: aggiungere nella parte alta una sfumatura che fa sparire la chat all'altezza del logo. Vedi anche punto 11, dove la sfumatura parte dal margine della sidebar.
+   - **In locale, in attesa di ok (2026-11-18):** solo desktop. I messaggi sono pieni fino a 80 px dall'alto (inizio della sidebar) e spariscono a 30 px (inizio del logo). Fatto con una maschera sulla chat in `globals.css` (`.chat-area`, blocco desktop). Copre anche la seconda riga del punto 11. Su mobile la sfumatura c'era già (`.chat-fade`). Provato con 14 messaggi finti: funziona, la sfumatura è corta (50 px) e discreta.
 
 ### Misure fuori token nel codice (per 23.2 e 23.3)
 
