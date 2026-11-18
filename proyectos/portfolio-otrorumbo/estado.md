@@ -126,10 +126,10 @@ Rachele in locale e pubblicata su sua richiesta; controllata online.
 23.2 e 23.3: li vede Rachele più avanti (elenco già pronto).
 **Punto 10 in locale, in attesa di ok (2026-11-18):** cambiando progetto
 con le pills si muove solo l'articolo; freccia e pills restano ferme.
-L'articolo scorre di lato verso la pill scelta, con dissolvenza corta
-(0,2 s + 0,3 s, valori in `MOTION.tab`). Rachele ha approvato la prima
-versione (solo l'articolo) e ha chiesto lo scorrimento laterale e più
-veloce.
+L'articolo scorre di lato verso la pill scelta, 32 px con dissolvenza
+(0,3 s + 0,45 s, valori in `MOTION.tab`). Rachele ha approvato la prima
+versione (solo l'articolo), ha chiesto lo scorrimento laterale e più
+veloce; a 0,2 + 0,3 s "faceva scatto", quindi ora è un po' più lungo.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
