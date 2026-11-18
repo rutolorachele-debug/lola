@@ -12,10 +12,9 @@ estamos y el siguiente paso con quién. Lo demás vive en ese `estado.md`, no
 aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 `estado.md` que existe.
 
-- **Portfolio Otrorumbo** — online; passo 4 (24 migliorie) partito dal
-  punto 22, punti leggeri e articolo Glovo con video online e
-  controllati; prossimo: punti 12, 16, 23.3; Pillowtalk quando Rachele
-  manda i contenuti →
+- **Portfolio Otrorumbo** — online; passo 4 (24 migliorie) in corso,
+  punto 16 (grassetto in chat) online e controllato; prossimo: punti 12
+  e 23.3 (Lola); Pillowtalk quando Rachele manda i contenuti →
   [stato](proyectos/portfolio-otrorumbo/estado.md)
 - **Propuesta de ejemplo** (ejemplo: bórralo cuando tengas el tuyo) — una
   propuesta para un cliente inventado; el resumen del encargo está hecho,

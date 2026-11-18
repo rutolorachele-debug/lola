@@ -2,7 +2,7 @@
 titulo: Portfolio Otrorumbo · stato
 tipo: estado
 creado: 2026-11-17
-actualizado: 2026-11-17
+actualizado: 2026-11-18
 estado: ABIERTO
 ---
 
@@ -85,14 +85,22 @@ il titolo e i chips, Regular 18; il video 01 sta sopra il brief, e il
 contatore parte da lì (01/06); la foto finale non ha testo e quindi non ha
 numero. Il video 01 in loop "faceva un salto": ora va a metà velocità (approvato
 da Rachele); in futuro forse lo cambia con altro. Tutto controllato online.
-Prossimo: controllo online; dopo, altri punti
-fattibili: 12 (vetro sulle pills), 16 (grassetto), 23.3 (spazio sotto la
-barra).
+Controllo online di Rachele (2026-11-18): tutto ok.
+**Punto 16 fatto e online (2026-11-18, commit c0904de del Portfolio):**
+il `**parola**` scritto dalla IA si vede in grassetto, senza asterischi:
+`renderMessage` in `Chat.tsx`, classe `.msg-bold` (SemiBold 600, scelto
+da Lola); le email restano link. Scelta di Rachele: mostrarlo, non vietarlo nel prompt. Provato in
+locale e online con una risposta finta (senza chiamare la IA).
+Per provare la chat nel browser di Lola: l'animazione di apertura lì resta
+ferma, e il primo clic o Invio la salta invece di spedire. Non è un bug
+del sito.
+Prossimo: punti 12 (vetro sulle pills) e 23.3 (spazio sotto la barra).
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
 Lista salvata in `miglioramenti-portfolio.md` (solo i punti aperti).
-Proposta di Lola in attesa: gli "imbarazzi" 18, 17, 16.
+Proposta di Lola in attesa: gli "imbarazzi" 18 e 17 (prompt, li scrive
+Rachele).
 
 ## Decisioni di questo progetto
 

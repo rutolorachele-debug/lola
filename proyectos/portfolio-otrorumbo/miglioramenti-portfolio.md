@@ -157,12 +157,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ---
 
-## 16. Grassetto non renderizzato
-
-- A volte il grassetto non viene letto e compare il doppio asterisco, per esempio `**parola**`, invece della parola in grassetto. Da verificare il perché.
-
----
-
 ## 17. Domande fuori contesto con ricerca sul web (edge case)
 
 - Un amico ha chiesto alla chat che cos'è un "flusso" e che cos'è una "pantaglia". La chat ha risposto cercando su internet.
@@ -212,7 +206,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 - [ ] Pills della chat: applicare l'effetto glass, secondo il punto 12.
 - [ ] La chat apre un progetto su richiesta: marcatore nascosto, regola nel system prompt e risposta mentre apre, secondo il punto 13.
 - [ ] Messaggi lunghi: verificare perché non vengono spezzati, secondo il punto 14.
-- [ ] Grassetto non renderizzato: verificare perché compare il doppio asterisco, secondo il punto 16.
 - [ ] Domande fuori contesto con ricerca sul web: gestire nel system prompt §9 e testare, secondo il punto 17.
 - [ ] Tono di voce troppo brusco: rivedere il system prompt e testare, secondo il punto 18.
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
