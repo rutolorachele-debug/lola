@@ -124,6 +124,8 @@ sfumatura in alto nella chat desktop, piena a 80 px (sidebar), sparita a
 30 px (logo). Maschera su `.chat-area` in `globals.css`. Vista da
 Rachele in locale e pubblicata su sua richiesta; controllata online.
 23.2 e 23.3: li vede Rachele più avanti (elenco già pronto).
+**Punto 10 in locale, in attesa di ok (2026-11-18):** cambiando progetto
+con le pills sfuma solo l'articolo; freccia e pills restano ferme.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).

@@ -118,6 +118,7 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 - Quando si cambia progetto con le pills nella sidebar, devono sparire solo la copertina e l'articolo.
 - La freccia di ritorno e le pills restano visibili.
+- **In locale, in attesa di ok (2026-11-18):** al cambio con le pills sfuma ed entra solo l'articolo (copertina compresa); freccia, pills e "Abrir prototipo" restano ferme. Alla prima apertura entra tutto il pannello, come prima. Codice: `handleChipSwitch` in `page.tsx` e l'entrata in `Projects.tsx`. Provato su desktop e mobile.
 
 ---
 
