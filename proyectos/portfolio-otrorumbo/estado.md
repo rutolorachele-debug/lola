@@ -94,7 +94,17 @@ chiamare la IA).
 Per provare la chat nel browser di Lola: l'animazione di apertura lì resta
 ferma, e il primo clic o Invio la salta invece di spedire. Non è un bug
 del sito.
-Prossimo: punti 12 (vetro sulle pills) e 23.3 (spazio sotto la barra).
+**Sfondo sfocato ovunque (2026-11-18, in locale, non pubblicato):**
+richiesta di Rachele, lo sfondo pesava troppo. Un solo componente
+`Background.tsx` per home, privacy e 404, con `public/background-blur.mp4`:
+il video della home già sfocato e schiarito nel file con ffmpeg (1280×720,
+sfocatura sigma 10, 74% sul colore caldo, come la 404 in Figma; 0,3 MB
+contro 8). L'animazione di apertura resta uguale. Controllato in locale:
+home desktop, 404, privacy; su mobile il video parte. Manca: ok di
+Rachele e pubblicazione.
+Punto 12 (vetro) in pausa: si riscrive dopo lo sfondo, con il riferimento
+Figma del vetro e l'elenco dei componenti.
+Prossimo: dopo lo sfondo, punti 12 e 23.3 (spazio sotto la barra).
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
