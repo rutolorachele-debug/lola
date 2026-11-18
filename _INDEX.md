@@ -13,7 +13,7 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 `estado.md` que existe.
 
 - **Portfolio Otrorumbo** — online; passo 4 (24 migliorie) in corso,
-  punto 16 (grassetto in chat) online e controllato; prossimo: punti 12
+  punto 16 fatto (niente grassetto in chat); prossimo: punti 12
   e 23.3 (Lola); Pillowtalk quando Rachele manda i contenuti →
   [stato](proyectos/portfolio-otrorumbo/estado.md)
 - **Propuesta de ejemplo** (ejemplo: bórralo cuando tengas el tuyo) — una

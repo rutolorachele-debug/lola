@@ -15,5 +15,5 @@ log di Rachele.
 
 **Come applicarlo:** nel browser di Lola l'animazione di apertura resta
 ferma finché non si fa uno screenshot, e il primo clic o Invio la salta
-invece di spedire. Prima fare uno screenshot, poi scrivere e inviare con il
-pulsante. Non è un bug del sito. Vedi [[push-github-senza-gh]] per pubblicare.
+invece di spedire. Prima un clic fuori dalla barra per saltare l'apertura,
+poi scrivere e inviare. Non è un bug del sito. Vedi [[push-github-senza-gh]] per pubblicare.

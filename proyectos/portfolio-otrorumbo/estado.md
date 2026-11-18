@@ -86,11 +86,11 @@ contatore parte da lì (01/06); la foto finale non ha testo e quindi non ha
 numero. Il video 01 in loop "faceva un salto": ora va a metà velocità (approvato
 da Rachele); in futuro forse lo cambia con altro. Tutto controllato online.
 Controllo online di Rachele (2026-11-18): tutto ok.
-**Punto 16 fatto e online (2026-11-18, commit c0904de del Portfolio):**
-il `**parola**` scritto dalla IA si vede in grassetto, senza asterischi:
-`renderMessage` in `Chat.tsx`, classe `.msg-bold` (SemiBold 600, scelto
-da Lola); le email restano link. Scelta di Rachele: mostrarlo, non vietarlo nel prompt. Provato in
-locale e online con una risposta finta (senza chiamare la IA).
+**Punto 16 fatto (2026-11-18, commit 09b4e86 del Portfolio):** nella
+chat niente grassetto. Se la IA scrive `**parola**`, `renderMessage` in
+`Chat.tsx` toglie il doppio asterisco e la parola resta normale; le email
+restano link. Provato in locale e online con una risposta finta (senza
+chiamare la IA).
 Per provare la chat nel browser di Lola: l'animazione di apertura lì resta
 ferma, e il primo clic o Invio la salta invece di spedire. Non è un bug
 del sito.
@@ -117,6 +117,12 @@ Rachele).
   Perché: Figtree troppo rotondo, IBM Plex Sans troppo serio · Intenzione:
   un sito leggero e caldo, con i titoli dei progetti come unico punto
   forte. Scartato: IBM Plex Sans (prevista dalla mail, provata in Figma).
+- **2026-11-18 · Niente grassetto nella chat** · Il codice toglie sempre
+  il doppio asterisco; una regola nel prompt è facoltativa e la scrive
+  Rachele · Perché: Rachele non vuole che sia la IA a decidere quando
+  usarlo · Intenzione: messaggi tutti uguali, controllati da lei.
+  Scartato: mostrare il grassetto in SemiBold (pubblicato e tolto lo
+  stesso giorno).
 
 ## Coda
 
