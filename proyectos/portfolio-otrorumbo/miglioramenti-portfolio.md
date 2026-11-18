@@ -114,14 +114,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ---
 
-## 10. Cambio di progetto nella sidebar
-
-- Quando si cambia progetto con le pills nella sidebar, devono sparire solo la copertina e l'articolo.
-- La freccia di ritorno e le pills restano visibili.
-- **In locale, in attesa di ok (2026-11-18):** al cambio con le pills si muove solo l'articolo (copertina compresa); freccia, pills e "Abrir prototipo" restano ferme. L'articolo scorre di lato nella direzione della pill scelta (pill a destra: esce a sinistra ed entra da destra; e viceversa), di 32 px, con dissolvenza: esce in 0,3 s (accelera piano) ed entra in 0,45 s (frena morbida). Richiesta di Rachele: verticale e lento (0,6 + 0,6) non aveva senso per le tab; la prova a 0,2 + 0,3 s "faceva scatto". Alla prima apertura entra tutto il pannello, come prima. Codice: `handleChipSwitch` in `page.tsx`, l'entrata in `Projects.tsx`, i valori in `lib/motion.ts` (`MOTION.tab`). Provato su desktop e mobile.
-
----
-
 ## 11. Spaziature e sfumatura della chat
 
 - La chat non rispetta gli spazi: in basso è molto alta e separata dalla frase sulla privacy. Da rivedere.
@@ -276,6 +268,15 @@ Testo originale del punto, poi **Fatto:** come si è risolto.
 - Le chips che descrivono i progetti devono avere la forma di pill.
 
 **Fatto (2026-11-17):** le chips dei progetti hanno gli angoli completamente arrotondati, a pill. Online e controllato.
+
+---
+
+### 10. Cambio di progetto nella sidebar
+
+- Quando si cambia progetto con le pills nella sidebar, devono sparire solo la copertina e l'articolo.
+- La freccia di ritorno e le pills restano visibili.
+
+**Fatto (2026-11-18, commit 4a859e5 del Portfolio):** al cambio con le pills si muove solo l'articolo (copertina compresa); freccia, pills e "Abrir prototipo" restano ferme. L'articolo scorre di lato nella direzione della pill scelta (pill a destra: esce a sinistra ed entra da destra; e viceversa), di 32 px, con dissolvenza: esce in 0,3 s (accelera piano) ed entra in 0,45 s (frena morbida). Richiesta di Rachele: verticale e lento (0,6 + 0,6) non aveva senso per le tab; la prova a 0,2 + 0,3 s "faceva scatto". Alla prima apertura entra tutto il pannello, come prima. Codice: `handleChipSwitch` in `page.tsx`, l'entrata in `Projects.tsx`, i valori in `lib/motion.ts` (`MOTION.tab`). Provato su desktop e mobile; approvato da Rachele, online.
 
 ---
 

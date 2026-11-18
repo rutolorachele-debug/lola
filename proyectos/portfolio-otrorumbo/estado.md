@@ -124,19 +124,19 @@ sfumatura in alto nella chat desktop, piena a 80 px (sidebar), sparita a
 30 px (logo). Maschera su `.chat-area` in `globals.css`. Vista da
 Rachele in locale e pubblicata su sua richiesta; controllata online.
 23.2 e 23.3: li vede Rachele più avanti (elenco già pronto).
-**Punto 10 in locale, in attesa di ok (2026-11-18):** cambiando progetto
-con le pills si muove solo l'articolo; freccia e pills restano ferme.
-L'articolo scorre di lato verso la pill scelta, 32 px con dissolvenza
-(0,3 s + 0,45 s, valori in `MOTION.tab`). Rachele ha approvato la prima
-versione (solo l'articolo), ha chiesto lo scorrimento laterale e più
-veloce; a 0,2 + 0,3 s "faceva scatto", quindi ora è un po' più lungo.
+**Punto 10 fatto (2026-11-18, commit 4a859e5 del Portfolio):** cambiando
+progetto con le pills si muove solo l'articolo; freccia e pills restano
+ferme. L'articolo scorre di lato verso la pill scelta, 32 px con
+dissolvenza (0,3 s + 0,45 s, valori in `MOTION.tab`). A 0,2 + 0,3 s
+"faceva scatto". Approvato da Rachele; online (nuovi valori verificati nel
+codice del sito).
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
 Lista salvata in `miglioramenti-portfolio.md`: punti aperti in alto,
-"Punti fatti" in fondo con il come (7, 9, 15, 16, 19, 20, 22, 23.1, 23.4, 23.5, 24).
+"Punti fatti" in fondo con il come (7, 9, 10, 15, 16, 19, 20, 22, 23.1, 23.4, 23.5, 24).
 Proposta di Lola in attesa: gli "imbarazzi" 18 e 17 (prompt, li scrive
 Rachele).
 
