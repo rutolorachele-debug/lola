@@ -211,3 +211,82 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
 - [ ] Correzioni di layout e stato: spacing sidebar, spazio sotto la barra, contorno viola col mouse, sfumatura sotto il logo, secondo il punto 23.
 - [ ] Formattazione degli articoli: dire quale progetto e quale paragrafo, poi confrontare con Figma, secondo il punto 6.
+
+---
+
+## Punti fatti
+
+Testo originale del punto, poi **Fatto:** come si è risolto.
+
+---
+
+### 9. Chips dei progetti a forma di pill
+
+- Le chips che descrivono i progetti devono avere la forma di pill.
+
+**Fatto (2026-11-17):** le chips dei progetti hanno gli angoli completamente arrotondati, a pill. Online e controllato.
+
+---
+
+### 15. Contorno rosa sulla barra di testo
+
+- Quando si seleziona la barra di testo per scrivere, compare un contorno rosa.
+- Rachele non lo ha deciso e non lo vuole. Va rimosso o rivisto, da allineare alle indicazioni di Figma.
+
+**Fatto (2026-11-17):** la barra di testo non ha più nessun contorno quando si clicca per scrivere. Il contorno resta solo sugli elementi raggiunti con la tastiera, per l'accessibilità (vedi punto 23.4, ancora aperto). Online e controllato.
+
+---
+
+### 16. Grassetto non renderizzato
+
+- A volte il grassetto non viene letto e compare il doppio asterisco, per esempio `**parola**`, invece della parola in grassetto. Da verificare il perché.
+
+**Fatto (2026-11-18):** la causa era che la chat mostrava il testo della IA così com'era. Decisione di Rachele: nella chat niente grassetto. Ora la chat toglie sempre il doppio asterisco e la parola resta normale; le email restano link. Una regola nel prompt per non usarlo è facoltativa e la scrive Rachele. Provato in locale e online con una risposta finta.
+
+---
+
+### 19. Barra di scorrimento visibile nella chat
+
+- Nella chat si vede la barra per scorrere. Rachele non vuole che si veda.
+- Lo scorrimento deve restare possibile, ma la barra deve essere nascosta.
+
+**Fatto (2026-11-17):** la barra di scorrimento della chat è nascosta; si scorre come prima. Online e controllato. Insieme al punto 23.1.
+
+---
+
+### 20. Prototipi e storytelling dei progetti
+
+1. Glovo Duo e Pillowtalk: pulire i prototipi e decidere lo storytelling, cioè cosa raccontare e cosa lasciare fuori. Prima Glovo Duo, che ne ha più bisogno.
+2. Video: girarli solo quando i prototipi sono definitivi.
+
+**Fatto (2026-11-17):** prototipi di Glovo Duo e Pillowtalk sistemati (lo ha confermato Rachele). L'articolo di Glovo è online con il testo del system prompt, 6 video e la foto finale. Pillowtalk: il testo è online; video e immagini arrivano quando Rachele manda i contenuti.
+
+---
+
+### 22. Cambio di logo e font
+
+- Cambiare il logo con "Redaction".
+- Cambiare il font dei testi con IBM Plex Sans.
+- Dettagli nella mail di Rachele, da riportare qui quando serve. Da questa chat non posso leggere la mail.
+- Sostituisce quanto scritto nel brief §5: Figtree per i testi e Funnel Display per il logo.
+
+**Fatto (2026-11-17):** logo "otrorumbo" in Redaction 50 Italic, 24 px, colore accento, anche su 404 e privacy. Per i testi IBM Plex Sans è stato provato in Figma e scartato ("troppo serio"): al suo posto Funnel Sans, con testi Light, titoli dei progetti SemiBold, titoli di sezione e tag Medium, chips, pulsanti e sottotitoli Regular. Online e controllato.
+
+---
+
+### 23.1. Scrollbar della chat
+
+1. Chat: togliere la scrollbar visibile. Lo scroll resta, ma non si deve vedere nessuna scrollbar. Vedi anche punto 19.
+
+**Fatto (2026-11-17):** risolto insieme al punto 19.
+
+---
+
+### 24. Link aggiornati dei prototipi
+
+- Pillow Talk: https://otrorumbo-pillowtalk.vercel.app
+- Glovo Duo: https://otrorumbo-glovoduo.vercel.app
+- Da fare, nella sessione di build o nel PRD: sostituire i vecchi URL con questi due nuovi nel PRD §3.4, dove sono elencati i prototipi, e in ogni altro punto che li cita.
+- I vecchi URL sono: https://glovo-duo.vercel.app/ e https://astounding-cajeta-04da12.netlify.app/#springboard.
+
+**Fatto (2026-11-17):** i pulsanti "Abrir prototipo" del sito aprono i due link nuovi. Nel codice, nel PRD e negli altri documenti non resta nessun link vecchio. Online e controllato.

@@ -98,7 +98,8 @@ Prossimo: punti 12 (vetro sulle pills) e 23.3 (spazio sotto la barra).
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
-Lista salvata in `miglioramenti-portfolio.md` (solo i punti aperti).
+Lista salvata in `miglioramenti-portfolio.md`: punti aperti in alto,
+"Punti fatti" in fondo con il come (9, 15, 16, 19, 20, 22, 23.1, 24).
 Proposta di Lola in attesa: gli "imbarazzi" 18 e 17 (prompt, li scrive
 Rachele).
 
