@@ -94,22 +94,23 @@ chiamare la IA).
 Per provare la chat nel browser di Lola: l'animazione di apertura lì resta
 ferma, e il primo clic o Invio la salta invece di spedire. Non è un bug
 del sito.
-**Sfondo sfocato ovunque (2026-11-18, in locale, non pubblicato):**
-richiesta di Rachele, lo sfondo pesava troppo. Un solo componente
-`Background.tsx` per home, privacy e 404, con `public/background-blur.mp4`:
-il video della home già sfocato e schiarito nel file con ffmpeg (1280×720,
-sfocatura sigma 10, 74% sul colore caldo, come la 404 in Figma; 0,3 MB
-contro 8). L'animazione di apertura resta uguale. Controllato in locale:
-home desktop, 404, privacy; su mobile il video parte. Manca: ok di
-Rachele e pubblicazione.
+**Punto 7 fatto (2026-11-18, commit 32ab7e5 del Portfolio):** sfondo
+unico e sfocato. Un solo componente `Background.tsx` per home, privacy e
+404, con `public/background-blur.mp4`: il video della home già sfocato e
+schiarito nel file con ffmpeg (1280×720, sfocatura sigma 10, 74% sul
+colore caldo, come la 404 in Figma; 0,3 MB contro 8). Originale nitido:
+`background.mp4`, resta nel progetto. L'animazione di apertura è uguale.
+Approvato da Rachele ("è perfetto"); online e controllato su home, 404 e
+privacy.
 Punto 12 (vetro) in pausa: si riscrive dopo lo sfondo, con il riferimento
 Figma del vetro e l'elenco dei componenti.
-Prossimo: dopo lo sfondo, punti 12 e 23.3 (spazio sotto la barra).
+Prossimo: punto 12 (serve il riferimento Figma del vetro da Rachele) o
+23.3 (spazio sotto la barra).
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
 Lista salvata in `miglioramenti-portfolio.md`: punti aperti in alto,
-"Punti fatti" in fondo con il come (9, 15, 16, 19, 20, 22, 23.1, 24).
+"Punti fatti" in fondo con il come (7, 9, 15, 16, 19, 20, 22, 23.1, 24).
 Proposta di Lola in attesa: gli "imbarazzi" 18 e 17 (prompt, li scrive
 Rachele).
 

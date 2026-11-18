@@ -108,14 +108,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ---
 
-## 7. Sfondo troppo pesante
-
-- Lo sfondo della spiaggia è troppo pesante. Va applicata la sfocatura, come da richiesta di Rachele.
-- Con lo sfondo generale completamente sfocato, la sfocatura va uniformata su tutti gli elementi che ne hanno una personalizzata, come la pagina 404.
-- Lo sfondo della chat va reso totalmente sfocato. Ora ha troppo peso visivo, e Rachele non lo vuole.
-
----
-
 ## 8. Microinterazioni
 
 - Rivedere le microinterazioni.
@@ -199,7 +191,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 - [ ] "Nueva conversación": confermare se disattivare il pulsante finché la conversazione non inizia, e verificare i tre casi del punto 3.
 - [ ] Tag: verificare più volte l'offerta dell'argomento già usato, nei due ordini, e scegliere la correzione del punto 4.
 - [ ] Pulsante "fammi un riassunto": decidere dove appare il riassunto, secondo il punto 5.
-- [ ] Sfondo: applicare la sfocatura, secondo il punto 7.
 - [ ] Microinterazioni: rivedere, secondo il punto 8.
 - [ ] Cambio di progetto nella sidebar: far sparire solo copertina e articolo, secondo il punto 10.
 - [ ] Spaziature e sfumatura della chat: rivedere, secondo il punto 11.
@@ -217,6 +208,16 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 ## Punti fatti
 
 Testo originale del punto, poi **Fatto:** come si è risolto.
+
+---
+
+### 7. Sfondo troppo pesante
+
+- Lo sfondo della spiaggia è troppo pesante. Va applicata la sfocatura, come da richiesta di Rachele.
+- Con lo sfondo generale completamente sfocato, la sfocatura va uniformata su tutti gli elementi che ne hanno una personalizzata, come la pagina 404.
+- Lo sfondo della chat va reso totalmente sfocato. Ora ha troppo peso visivo, e Rachele non lo vuole.
+
+**Fatto (2026-11-18):** home, privacy e 404 hanno lo stesso sfondo: il video della spiaggia già sfocato e schiarito nel file (`background-blur.mp4`), come la 404 in Figma (sfocatura 22, opacità 74%). La sfocatura è nel file e non nel browser, quindi non pesa; il video passa da 8 MB a 0,3 MB. L'animazione di apertura è uguale. La foto a parte della 404 è stata tolta. Approvato da Rachele, online e controllato.
 
 ---
 

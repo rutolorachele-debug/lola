@@ -13,8 +13,8 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 `estado.md` que existe.
 
 - **Portfolio Otrorumbo** — online; passo 4 (24 migliorie) in corso,
-  punto 16 fatto (niente grassetto in chat); prossimo: punti 12
-  e 23.3 (Lola); Pillowtalk quando Rachele manda i contenuti →
+  punto 7 fatto (sfondo unico e sfocato); prossimo: 12 (serve il
+  riferimento Figma del vetro) o 23.3 (Lola); Pillowtalk quando Rachele manda i contenuti →
   [stato](proyectos/portfolio-otrorumbo/estado.md)
 - **Propuesta de ejemplo** (ejemplo: bórralo cuando tengas el tuyo) — una
   propuesta para un cliente inventado; el resumen del encargo está hecho,
