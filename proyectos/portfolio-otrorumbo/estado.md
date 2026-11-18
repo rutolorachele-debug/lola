@@ -105,7 +105,14 @@ privacy.
 Punto 12 (vetro) in pausa: si riscrive dopo lo sfondo, con il riferimento
 Figma del vetro e l'elenco dei componenti.
 Punto 12 (vetro) rimandato al futuro (Rachele, 2026-11-18): in fondo
-alla lista. Prossimo: punto 23.
+alla lista. Punto 23.4 chiuso (fatto da Rachele in un'altra chat).
+Prossimo: 23.2 e 23.3, che per Rachele vengono dal design system (spazi e
+raggi). Verificato da Lola il 2026-11-18: i token esistono, nella
+collezione Figma "Misure" (raggio/xs…pill, spazio/2…32) e nel codice
+(`--r-*`, `--s-*`), ma in Figma solo 10 valori su circa 4.000 nelle
+schermate finali sono collegati ai token. Valori fuori scala usati: 7, 9,
+14, 18, 22, 40, 48, 64 (14 usato 215 volte; nel codice `--s-14` è usato
+ma non esiste). Dopo: 23.5.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).

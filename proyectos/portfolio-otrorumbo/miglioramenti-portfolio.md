@@ -173,7 +173,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 2. Sidebar: rivedere lo spacing, c'è qualcosa di strano.
 3. Chat: rivedere lo spazio tra la barra per scrivere e la caption sotto, che è troppo ampio. Vedi anche punto 11.
-4. Contorno viola: sulla barra di testo è tolto. Resta, voluto, sugli elementi raggiunti con la tastiera. Da verificare se compare ancora cliccando con il mouse su altri elementi.
 5. Chat: aggiungere nella parte alta una sfumatura che fa sparire la chat all'altezza del logo. Vedi anche punto 11, dove la sfumatura parte dal margine della sidebar.
 
 ---
@@ -200,7 +199,7 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 - [ ] Domande fuori contesto con ricerca sul web: gestire nel system prompt §9 e testare, secondo il punto 17.
 - [ ] Tono di voce troppo brusco: rivedere il system prompt e testare, secondo il punto 18.
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
-- [ ] Correzioni di layout e stato: spacing sidebar, spazio sotto la barra, contorno viola col mouse, sfumatura sotto il logo, secondo il punto 23.
+- [ ] Correzioni di layout e stato: spacing sidebar, spazio sotto la barra, sfumatura sotto il logo, secondo il punto 23.
 - [ ] Formattazione degli articoli: dire quale progetto e quale paragrafo, poi confrontare con Figma, secondo il punto 6.
 - [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
 
@@ -281,6 +280,14 @@ Testo originale del punto, poi **Fatto:** come si è risolto.
 1. Chat: togliere la scrollbar visibile. Lo scroll resta, ma non si deve vedere nessuna scrollbar. Vedi anche punto 19.
 
 **Fatto (2026-11-17):** risolto insieme al punto 19.
+
+---
+
+### 23.4. Contorno viola cliccando con il mouse
+
+4. Contorno viola: sulla barra di testo è tolto. Resta, voluto, sugli elementi raggiunti con la tastiera. Da verificare se compare ancora cliccando con il mouse su altri elementi.
+
+**Fatto (2026-11-18):** sistemato da Rachele in un'altra chat. Nel codice il contorno viola compare solo quando si arriva a un elemento con la tastiera (`:focus-visible`), non con il clic del mouse; sulla barra di testo non compare mai. Verificato nel codice, non provato a mano.
 
 ---
 
