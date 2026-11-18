@@ -104,8 +104,8 @@ Approvato da Rachele ("è perfetto"); online e controllato su home, 404 e
 privacy.
 Punto 12 (vetro) in pausa: si riscrive dopo lo sfondo, con il riferimento
 Figma del vetro e l'elenco dei componenti.
-Prossimo: punto 12 (serve il riferimento Figma del vetro da Rachele) o
-23.3 (spazio sotto la barra).
+Punto 12 (vetro) rimandato al futuro (Rachele, 2026-11-18): in fondo
+alla lista. Prossimo: punto 23.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).

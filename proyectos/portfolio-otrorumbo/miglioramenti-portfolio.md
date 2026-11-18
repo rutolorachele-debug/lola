@@ -128,12 +128,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ---
 
-## 12. Effetto glass sulle pills della chat
-
-- Le pills della chat non hanno l'effetto glass. Da correggere.
-
----
-
 ## 13. La chat apre un progetto su richiesta
 
 - Il visitatore scrive, per esempio, "voglio vedere il progetto di Glovo", e la chat apre il progetto.
@@ -184,6 +178,13 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ---
 
+## 12. Effetto glass sulle pills della chat (per il futuro)
+
+- Le pills della chat non hanno l'effetto glass. Da correggere.
+- Non urgente (Rachele, 2026-11-18). Quando si riprende: con lo sfondo ora sfocato, la sfocatura dei componenti quasi non si vede. Il punto va riscritto con il riferimento Figma del vetro e l'elenco dei componenti a cui applicarlo.
+
+---
+
 ## Da decidere
 
 - [ ] Immagini dei progetti: raccogliere i dettagli e scegliere le versioni da sostituire.
@@ -194,7 +195,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 - [ ] Microinterazioni: rivedere, secondo il punto 8.
 - [ ] Cambio di progetto nella sidebar: far sparire solo copertina e articolo, secondo il punto 10.
 - [ ] Spaziature e sfumatura della chat: rivedere, secondo il punto 11.
-- [ ] Pills della chat: applicare l'effetto glass, secondo il punto 12.
 - [ ] La chat apre un progetto su richiesta: marcatore nascosto, regola nel system prompt e risposta mentre apre, secondo il punto 13.
 - [ ] Messaggi lunghi: verificare perché non vengono spezzati, secondo il punto 14.
 - [ ] Domande fuori contesto con ricerca sul web: gestire nel system prompt §9 e testare, secondo il punto 17.
@@ -202,6 +202,7 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
 - [ ] Correzioni di layout e stato: spacing sidebar, spazio sotto la barra, contorno viola col mouse, sfumatura sotto il logo, secondo il punto 23.
 - [ ] Formattazione degli articoli: dire quale progetto e quale paragrafo, poi confrontare con Figma, secondo il punto 6.
+- [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
 
 ---
 
