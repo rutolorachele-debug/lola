@@ -8,5 +8,6 @@ Una ficha = un hecho; el diario de un frente, en `historial/`. Este índice se c
 - [Login a GitHub senza GitHub CLI](push-github-senza-gh.md) — Git usa il suo gestore di login, login salvato, il push lo fa Lola; solo se il login va rifatto lo fa Rachele dal suo terminale
 - [Liste: punti fatti in fondo](liste-punti-fatti-in-fondo.md) — in ogni progetto i punti fatti non si cancellano: vanno in "Punti fatti" in fondo, testo uguale + "Fatto: come si è risolto"
 - [ffmpeg nel Portfolio](ffmpeg-nel-portfolio.md) — non è nel sistema ma c'è in `node_modules\ffmpeg-static`; cercare lì prima di dire che manca
+- [Non supporre che non abbia visto](non-supporre-che-non-abbia-visto.md) — modifica in locale: chiedere solo "la pubblico?", mai "la guardi?"; se dice "pubblica" ha già visto
 - [Provare la chat senza IA](provare-chat-senza-ia.md) — risposta finta al posto di `/api/chat` nel browser di Lola; prima un clic per saltare l'apertura, poi invio
 

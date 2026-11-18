@@ -121,9 +121,9 @@ In pausa (Rachele, 2026-11-18): l'analisi è fatta, la decisione la
 prende quando ha tempo di leggere. Intanto si passa al 23.5.
 **Punto 23.5 fatto (2026-11-18, commit a6e33d2 del Portfolio):**
 sfumatura in alto nella chat desktop, piena a 80 px (sidebar), sparita a
-30 px (logo). Maschera su `.chat-area` in `globals.css`. Pubblicata su
-richiesta di Rachele senza vederla prima; controllata online da Lola.
-Prossimo: decisione di Rachele su 23.2 e 23.3 (elenco già pronto).
+30 px (logo). Maschera su `.chat-area` in `globals.css`. Vista da
+Rachele in locale e pubblicata su sua richiesta; controllata online.
+23.2 e 23.3: li vede Rachele più avanti (elenco già pronto).
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
