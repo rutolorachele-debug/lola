@@ -130,6 +130,10 @@ ferme. L'articolo scorre di lato verso la pill scelta, 32 px con
 dissolvenza (0,3 s + 0,45 s, valori in `MOTION.tab`). A 0,2 + 0,3 s
 "faceva scatto". Approvato da Rachele; online (nuovi valori verificati nel
 codice del sito).
+Punti nuovi aggiunti da Rachele (2026-11-19) nella lista: 25 testo dei
+messaggi a 14 px, 26 chat più compatta, 27 logo di caricamento più
+piccolo, 28 dettagli dell'animazione di entrata, 29 tag delle domande
+diversi dalle chips dei progetti.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).

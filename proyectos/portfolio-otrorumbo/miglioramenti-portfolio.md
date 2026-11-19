@@ -219,6 +219,39 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 ---
 
+## 25. Testo dei messaggi troppo grande (2026-11-19)
+
+- Il testo dei messaggi a 16 px sembra grande, sproporzionato rispetto ai testi dei progetti: gli stili di testo non sono in equilibrio tra loro.
+- Ipotesi di Rachele: portare i messaggi a 14 px dovrebbe bastare. Da provare prima di decidere.
+
+---
+
+## 26. La chat occupa troppo spazio (2026-11-19)
+
+- I riquadri che contengono i messaggi hanno un padding troppo grande.
+- Nell'insieme la chat pesa troppo a livello visivo: deve occupare meno spazio. Va insieme al punto 25 (testo più piccolo, componenti più piccoli).
+
+---
+
+## 27. Logo troppo grande durante il caricamento (2026-11-19)
+
+- Il logo che si vede mentre la pagina carica è troppo grande: va rimpicciolito.
+
+---
+
+## 28. Dettagli dell'animazione di entrata (2026-11-19)
+
+- L'animazione di entrata va bene, ma ci sono piccoli dettagli da rivedere. Quali, li dice Rachele.
+
+---
+
+## 29. Tag delle domande e chips dei progetti troppo uguali (2026-11-19)
+
+- Le pills delle domande (tag in chat) e le etichette dei progetti sembrano lo stesso componente. Non va bene: devono essere diversi.
+- Modifica grossa: da progettare in Figma prima del codice (criterio di Lola).
+
+---
+
 ## 12. Effetto glass sulle pills della chat (per il futuro)
 
 - Le pills della chat non hanno l'effetto glass. Da correggere.
@@ -234,7 +267,6 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 - [ ] Tag: verificare più volte l'offerta dell'argomento già usato, nei due ordini, e scegliere la correzione del punto 4.
 - [ ] Pulsante "fammi un riassunto": decidere dove appare il riassunto, secondo il punto 5.
 - [ ] Microinterazioni: rivedere, secondo il punto 8.
-- [ ] Cambio di progetto nella sidebar: far sparire solo copertina e articolo, secondo il punto 10.
 - [ ] Spaziature e sfumatura della chat: rivedere, secondo il punto 11.
 - [ ] La chat apre un progetto su richiesta: marcatore nascosto, regola nel system prompt e risposta mentre apre, secondo il punto 13.
 - [ ] Messaggi lunghi: verificare perché non vengono spezzati, secondo il punto 14.
@@ -243,6 +275,11 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
 - [ ] Correzioni di layout e stato: spacing sidebar, spazio sotto la barra, sfumatura sotto il logo, secondo il punto 23.
 - [ ] Formattazione degli articoli: dire quale progetto e quale paragrafo, poi confrontare con Figma, secondo il punto 6.
+- [ ] Testo dei messaggi: provare 14 px, secondo il punto 25.
+- [ ] Chat più compatta: meno padding nei messaggi, secondo il punto 26.
+- [ ] Logo di caricamento più piccolo, secondo il punto 27.
+- [ ] Animazione di entrata: Rachele elenca i dettagli, secondo il punto 28.
+- [ ] Tag delle domande diversi dalle chips dei progetti, secondo il punto 29.
 - [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
 
 ---
