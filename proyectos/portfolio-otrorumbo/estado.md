@@ -162,9 +162,13 @@ al 4), non calcolate sulle misure vere, e i messaggi si muovono due volte
 del 25-26 (posizione finale y 392) stavano 68 px più in basso, sopra lo
 spazio di tag e barra: al 4 ci restavano sopra mentre comparivano. Con le
 misure nuove (finale y 463) salgono di 41 px e poi riscendono di 44.
-Proposta di Lola: posizioni calcolate sulle misure vere e un solo
-movimento. Aspetta la decisione di Rachele.
-Dopo: 29 prima in Figma.
+Decisione di Rachele: «Sì, correggi». Corretto in locale (page.tsx):
+all'inizio i messaggi stanno più in basso di quanto misurano i tag
+(fondo tag − fondo messaggi, oggi 46 px a 1440×900), al 4 salgono una
+volta sola (1 s) e i tag compaiono dopo, a spazio libero. Tolte le
+posizioni fisse 460/419. TypeScript ok; stato finale misurato ok.
+L'animazione la guarda Rachele (il pannello di Lola non la fa girare).
+Aspetta l'ok di Rachele per pubblicare. Dopo: 29 prima in Figma.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
