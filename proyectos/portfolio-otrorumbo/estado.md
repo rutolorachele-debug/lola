@@ -142,8 +142,10 @@ a 14 px (interlinea 1,5); padding desktop da 14/20 a 10/16, mobile da
 testo: desktop 14 px, padding 8/8/8/16 (alta 54 px invece di 58); mobile
 padding 6/6/6/12 (era 7, fuori token) e testo a 16 px, perché sotto i 16 px
 l'iPhone ingrandisce la pagina. Solo token. Rachele: "molto meglio".
-Prossimo: 27 (logo di caricamento) o 28 (dettagli dell'entrata, li dice
-Rachele); 29 prima in Figma.
+**Punto 27 in locale (2026-11-19), in attesa dell'ok di Rachele:** logo
+di caricamento (video `loader.mp4`, `.loader-logo` in `globals.css`) da
+104 a 64 px su desktop, da 88 a 56 px su mobile. Non pubblicato.
+Dopo: 28 (dettagli dell'entrata, li dice Rachele); 29 prima in Figma.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
