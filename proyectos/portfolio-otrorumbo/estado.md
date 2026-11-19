@@ -144,7 +144,15 @@ padding 6/6/6/12 (era 7, fuori token) e testo a 16 px, perché sotto i 16 px
 l'iPhone ingrandisce la pagina. Solo token. Rachele: "molto meglio".
 **Punto 27 in locale (2026-11-19), in attesa dell'ok di Rachele:** logo
 di caricamento (video `loader.mp4`, `.loader-logo` in `globals.css`) da
-104 a 64 px su desktop, da 88 a 56 px su mobile. Non pubblicato.
+104 a 64 px su desktop, da 88 a 56 px su mobile. Rachele lo vedeva "un
+millesimo di secondo" e prima dell'entrata compariva per un attimo il
+portfolio aperto. Due difetti in `Loader.tsx`, corretti in locale: (1) il
+controllo "almeno un giro" scattava subito (video ancora a 0), ora il logo
+esce alla fine del primo giro (1,1 s; sicurezza a 6 s); (2) svaniva tutta
+la schermata e sotto si vedeva il sito già aperto, ora svanisce solo il
+logo e lo sfondo caldo resta, uguale alla prima schermata dell'entrata.
+Codice senza errori; l'effetto non l'ha visto Lola (nel suo browser
+nascosto le animazioni restano ferme): lo guarda Rachele. Non pubblicato.
 Dopo: 28 (dettagli dell'entrata, li dice Rachele); 29 prima in Figma.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
