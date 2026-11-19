@@ -137,9 +137,11 @@ diversi dalle chips dei progetti.
 **Punti 25 + 26 in locale (2026-11-19), in attesa dell'ok di Rachele:**
 in `globals.css` i messaggi (IA, utente, "sta scrivendo") passano da 16
 a 14 px (interlinea 1,5); padding desktop da 14/20 a 10/16, mobile da
-12/16 a 8/12; spazio tra messaggi desktop 10 → 8, mobile 8 → 6. Solo
-token. Il campo di testo resta a 16 px (avviso di Lola: ora è più grande
-dei messaggi; su mobile sotto i 16 px l'iPhone fa lo zoom). Non pubblicato.
+12/16 a 8/12; spazio tra messaggi desktop 10 → 8, mobile 8 → 6. Barra di
+testo: desktop 14 px, padding 8/8/8/16 (alta 54 px invece di 58); mobile
+padding 6/6/6/12 (era 7, fuori token) e testo a 16 px, perché sotto i 16 px
+l'iPhone ingrandisce la pagina. Solo token. Rachele: "molto meglio".
+Non pubblicato.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).

@@ -10,4 +10,5 @@ Una ficha = un hecho; el diario de un frente, en `historial/`. Este índice se c
 - [ffmpeg nel Portfolio](ffmpeg-nel-portfolio.md) — non è nel sistema ma c'è in `node_modules\ffmpeg-static`; cercare lì prima di dire che manca
 - [Non supporre che non abbia visto](non-supporre-che-non-abbia-visto.md) — modifica in locale: chiedere solo "la pubblico?", mai "la guardi?"; se dice "pubblica" ha già visto
 - [Provare la chat senza IA](provare-chat-senza-ia.md) — risposta finta al posto di `/api/chat` nel browser di Lola; prima un clic per saltare l'apertura, poi invio
+- [Una domanda è una domanda](domanda-e-domanda.md) — "perché non hai fatto X?" = spiegare il perché e fermarsi, mai eseguire
 
