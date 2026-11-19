@@ -164,8 +164,8 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ## 23. Correzioni di layout e stato
 
-2. Sidebar: rivedere lo spacing, c'è qualcosa di strano.
-3. Chat: rivedere lo spazio tra la barra per scrivere e la caption sotto, che è troppo ampio. Vedi anche punto 11.
+2. Sidebar: rivedere lo spacing, c'è qualcosa di strano. Logo a 24 e fondo della sidebar fatti con il punto 33 (vedi Punti fatti); restano le misure mobile della tabella sotto.
+3. Fatto: vedi Punti fatti, 23.3.
 
 ### Misure fuori token nel codice (per 23.2 e 23.3)
 
@@ -199,6 +199,8 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 | Card della chat | chat mobile, margine in basso | :217 | 24 | sul token, ok |
 
 - **Su desktop tutto è già sui token:** lo spazio largo (6 + 8 = 14 px) è una somma di due token, non un errore di token. Va deciso quanto deve essere.
+- **Correzione (Lola, 2026-11-19, misurato online 1440×900):** lo spazio vero è 26 px, non 14. La caption è un paragrafo (`<p>` in `Chat.tsx`:356) e il browser gli aggiunge da solo 12 px sopra e 12 sotto, che nel CSS non ci sono. Quindi: 6 (gruppo) + 12 (margine automatico) + 8 (padding) = 26 dalla barra al testo. Sotto la caption: 8 + 12 + 24 = 44 dal fondo. Su mobile succede lo stesso (10 px). Collegato al 33: la sidebar non si può allineare alla barra finché la barra sta così in alto.
+- **Fatto:** vedi Punti fatti, 23.3.
 
 **Altre misure fuori scala (non legate a 23.2 e 23.3)**
 
@@ -223,6 +225,7 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 - Le pills delle domande (tag in chat) e le etichette dei progetti sembrano lo stesso componente. Non va bene: devono essere diversi.
 - Modifica grossa: da progettare in Figma prima del codice (criterio di Lola).
+- In corso: prove in Figma nel frame "29 · Tag delle domande vs etichette dei progetti". Da decidere.
 
 ---
 
@@ -237,13 +240,6 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 - Ora che il portfolio è online, Rachele vuole rivedere i tempi scelti: sembrano irregolari, come se non tutto avesse la stessa misura.
 - Da fare: elencare tutti i tempi usati (sono in `lib/motion.ts` e in alcuni componenti) e confrontarli, poi decide Rachele.
-
----
-
-## 33. Spazi strani intorno alla sidebar (2026-11-19)
-
-- Gli spazi che separano la sidebar dal resto hanno qualcosa di strano.
-- Si sovrappone in parte al punto 23.2 (logo a 28 dal bordo, sidebar a 24: non allineati di 4 px). Da guardare insieme.
 
 ---
 
@@ -268,12 +264,12 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 - [ ] Domande fuori contesto con ricerca sul web: gestire nel system prompt §9 e testare, secondo il punto 17.
 - [ ] Tono di voce troppo brusco: rivedere il system prompt e testare, secondo il punto 18.
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
-- [ ] Correzioni di layout e stato: spacing sidebar, spazio sotto la barra, sfumatura sotto il logo, secondo il punto 23.
+- [ ] Correzioni di layout e stato: misure mobile della sidebar (23.2), secondo il punto 23.
 - [ ] Formattazione degli articoli: dire quale progetto e quale paragrafo, poi confrontare con Figma, secondo il punto 6.
 - [ ] Tag delle domande diversi dalle chips dei progetti, secondo il punto 29.
 - [ ] Applicazione da centrare, secondo il punto 31.
 - [ ] Tempi delle animazioni da uniformare, secondo il punto 32.
-- [ ] Spazi intorno alla sidebar, con il 23.2, secondo il punto 33.- [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
+- [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
 
 ---
 
@@ -431,3 +427,22 @@ Testo originale del punto, poi **Fatto:** come si è risolto.
 - I messaggi di Claude riempiono tutta la colonna della conversazione. Devono sembrare veri messaggi: fermarsi un po' prima, come le risposte di Rachele.
 
 **Fatto (2026-11-19, commit e6e6d31 del Portfolio):** su desktop le bolle della IA non avevano una larghezza massima (su mobile sì, 302 px). Ora `.bubble-ai` in `globals.css` ha `max-width: 80%`, come le bolle dell'utente (criterio di Lola): 432 px su una colonna di 540. Mobile invariato. Approvato da Rachele, online e controllato nel CSS pubblicato.
+
+---
+
+### 23.3. Spazio tra la barra per scrivere e la caption (2026-11-19)
+
+- Chat: rivedere lo spazio tra la barra per scrivere e la caption sotto, che è troppo ampio. Vedi anche punto 11.
+
+**Fatto (2026-11-19, commit 266a7bc del Portfolio):** lo spazio vero era 26 px, non 14: la caption è un `<p>` e il browser le dava da solo 12 px sopra e sotto. Ora `.aviso` ha `margin: 0 0 12px` (mobile sotto 10). La caption non si muove (44 px dal fondo su desktop, 41 su mobile); la barra scende di 12 (desktop) e 10 (mobile). Barra–testo: 14 px desktop, 13 mobile. Approvato da Rachele dallo screenshot.
+
+---
+
+### 33. Spazi strani intorno alla sidebar (2026-11-19)
+
+- Gli spazi che separano la sidebar dal resto hanno qualcosa di strano. Collegato al 23.2 e al 23.3.
+
+**Fatto (2026-11-19, commit 266a7bc del Portfolio):**
+- **Logo:** a 24 dal bordo sinistro (era 28), allineato a sidebar e menu. Rachele: «tienilo a 24».
+- **Fondo della sidebar:** decisione di Rachele, sempre allineato al fondo del testo della caption, su qualunque schermo. In `globals.css` `.sidebar` ha altezza = schermo − 80 sopra − 44 sotto; se le card non ci stanno scorrono dentro, senza barra visibile. Progetto aperto: stessa altezza (`page.tsx`, `openH`).
+- **Misurato in locale:** finestre alte 900 e 720 → sidebar e caption entrambe a 44 px dal fondo. Da progetto aperto non controllato a occhio. Approvato da Rachele dallo screenshot.

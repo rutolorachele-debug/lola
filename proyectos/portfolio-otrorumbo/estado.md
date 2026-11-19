@@ -180,6 +180,17 @@ Approvato da Rachele, online (commit e6e6d31), spostato in Punti fatti.
 animazioni irregolari, 33 spazi strani intorno alla sidebar (con il 23.2).
 Ordine proposto da Lola: 33 con 23.2, poi 31 (stesse misure di layout),
 poi 32 (tempi, a parte). Ognuno in una sessione nuova.
+**Punti 33 e 23.3 fatti (2026-11-19, commit 266a7bc del Portfolio):**
+logo a 24; tolto il margine automatico sopra la caption (barra più in
+basso, caption ferma); fondo della sidebar sempre allineato alla caption
+(decisione di Rachele), con scorrimento interno. Approvati da Rachele
+dallo screenshot. Push su GitHub fatto alle 17:27, ma alle 17:37 Vercel
+non l'aveva ancora messo online (sito fermo al commit e6e6d31): da
+controllare nel pannello di Vercel (Lola non ha l'accesso). Dettagli in
+Punti fatti della lista.
+Prossimo nell'ordine proposto: punto 31.
+**Punto 29 in corso:** prove in Figma nel frame "29 · Tag delle domande
+vs etichette dei progetti". Da decidere.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
