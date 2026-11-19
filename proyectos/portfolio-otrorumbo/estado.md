@@ -170,6 +170,11 @@ posizioni fisse 460/419. TypeScript ok; stato finale misurato ok.
 L'animazione la guarda Rachele (il pannello di Lola non la fa girare).
 Approvato da Rachele, online (commit b55c839), spostato in Punti fatti.
 Prossimo: 29 prima in Figma.
+**Punto 30 (2026-11-19):** le bolle della IA su desktop occupavano tutta
+la colonna (nessuna larghezza massima; su mobile c'era già, 302 px).
+Corretto in locale: `max-width: 80%` su `.bubble-ai` in `globals.css`,
+come le bolle dell'utente (criterio di Lola). Misurato: 432 px su 540.
+Aspetta l'ok di Rachele per pubblicare.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).

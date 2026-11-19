@@ -226,6 +226,12 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 ---
 
+## 30. Messaggi della IA a tutta larghezza (2026-11-19)
+
+- I messaggi di Claude riempiono tutta la colonna della conversazione. Devono sembrare veri messaggi: fermarsi un po' prima, come le risposte di Rachele.
+
+---
+
 ## 12. Effetto glass sulle pills della chat (per il futuro)
 
 - Le pills della chat non hanno l'effetto glass. Da correggere.
@@ -250,6 +256,7 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 - [ ] Correzioni di layout e stato: spacing sidebar, spazio sotto la barra, sfumatura sotto il logo, secondo il punto 23.
 - [ ] Formattazione degli articoli: dire quale progetto e quale paragrafo, poi confrontare con Figma, secondo il punto 6.
 - [ ] Tag delle domande diversi dalle chips dei progetti, secondo il punto 29.
+- [ ] Messaggi della IA più stretti della colonna, secondo il punto 30.
 - [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
 
 ---
