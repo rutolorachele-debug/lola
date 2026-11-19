@@ -219,12 +219,6 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 ---
 
-## 27. Logo troppo grande durante il caricamento (2026-11-19)
-
-- Il logo che si vede mentre la pagina carica è troppo grande: va rimpicciolito.
-
----
-
 ## 28. Dettagli dell'animazione di entrata (2026-11-19)
 
 - L'animazione di entrata va bene, ma ci sono piccoli dettagli da rivedere. Quali, li dice Rachele.
@@ -399,3 +393,11 @@ Testo originale del punto, poi **Fatto:** come si è risolto.
 - Nell'insieme la chat pesa troppo a livello visivo: deve occupare meno spazio. Va insieme al punto 25 (testo più piccolo, componenti più piccoli).
 
 **Fatto (2026-11-19, commit 6bef29c del Portfolio):** padding dei messaggi: desktop 10/16 px (prima 14/20), mobile 8/12 (prima 12/16). Spazio tra i messaggi: desktop 8 px (prima 10), mobile 6 (prima 8). Barra di testo: desktop 8/8/8/16 px (prima 10/10/10/20, alta 54 px invece di 58), mobile 6/6/6/12 (prima 7, fuori token). Solo token. Online e controllato su desktop e mobile.
+
+---
+
+### 27. Logo troppo grande durante il caricamento (2026-11-19)
+
+- Il logo che si vede mentre la pagina carica è troppo grande: va rimpicciolito.
+
+**Fatto (2026-11-19, commit b477d24 del Portfolio):** logo di caricamento (`.loader-logo` in `globals.css`) da 104 a 64 px su desktop, da 88 a 56 px su mobile. Provandolo, Rachele lo vedeva solo un istante e prima dell'entrata compariva per un attimo il portfolio aperto: due difetti in `Loader.tsx`, corretti insieme. Il logo ora esce alla fine del primo giro (1,1 s; sicurezza a 6 s), mentre prima usciva subito. Svanisce solo il logo e lo sfondo caldo resta, uguale alla prima schermata dell'entrata, quindi sotto non si vede più il sito aperto. Visto da Rachele in locale, online.

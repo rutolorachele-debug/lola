@@ -142,7 +142,7 @@ a 14 px (interlinea 1,5); padding desktop da 14/20 a 10/16, mobile da
 testo: desktop 14 px, padding 8/8/8/16 (alta 54 px invece di 58); mobile
 padding 6/6/6/12 (era 7, fuori token) e testo a 16 px, perché sotto i 16 px
 l'iPhone ingrandisce la pagina. Solo token. Rachele: "molto meglio".
-**Punto 27 in locale (2026-11-19), in attesa dell'ok di Rachele:** logo
+**Punto 27 fatto e online (2026-11-19, commit b477d24 del Portfolio):** logo
 di caricamento (video `loader.mp4`, `.loader-logo` in `globals.css`) da
 104 a 64 px su desktop, da 88 a 56 px su mobile. Rachele lo vedeva "un
 millesimo di secondo" e prima dell'entrata compariva per un attimo il
@@ -151,8 +151,8 @@ controllo "almeno un giro" scattava subito (video ancora a 0), ora il logo
 esce alla fine del primo giro (1,1 s; sicurezza a 6 s); (2) svaniva tutta
 la schermata e sotto si vedeva il sito già aperto, ora svanisce solo il
 logo e lo sfondo caldo resta, uguale alla prima schermata dell'entrata.
-Codice senza errori; l'effetto non l'ha visto Lola (nel suo browser
-nascosto le animazioni restano ferme): lo guarda Rachele. Non pubblicato.
+Codice senza errori; l'effetto l'ha visto Rachele in locale (nel browser
+nascosto di Lola le animazioni restano ferme) e ha detto di pubblicare.
 Dopo: 28 (dettagli dell'entrata, li dice Rachele); 29 prima in Figma.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
@@ -160,7 +160,7 @@ Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
 Lista salvata in `miglioramenti-portfolio.md`: punti aperti in alto,
-"Punti fatti" in fondo con il come (7, 9, 10, 15, 16, 19, 20, 22, 23.1, 23.4, 23.5, 24, 25, 26).
+"Punti fatti" in fondo con il come (7, 9, 10, 15, 16, 19, 20, 22, 23.1, 23.4, 23.5, 24, 25, 26, 27).
 Proposta di Lola in attesa: gli "imbarazzi" 18 e 17 (prompt, li scrive
 Rachele).
 
