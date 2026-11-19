@@ -153,7 +153,18 @@ la schermata e sotto si vedeva il sito già aperto, ora svanisce solo il
 logo e lo sfondo caldo resta, uguale alla prima schermata dell'entrata.
 Codice senza errori; l'effetto l'ha visto Rachele in locale (nel browser
 nascosto di Lola le animazioni restano ferme) e ha detto di pubblicare.
-Dopo: 28 (dettagli dell'entrata, li dice Rachele); 29 prima in Figma.
+**Punto 28 (2026-11-19), analisi fatta, codice non toccato:** il difetto
+che resta (Rachele) è al messaggio 4: messaggi, tag e barra si scontrano
+mentre compaiono. Causa (`page.tsx`, sequenza di apertura, solo desktop):
+le posizioni dei messaggi sono fisse dal brief (y 460 durante 1-3, y 419
+al 4), non calcolate sulle misure vere, e i messaggi si muovono due volte
+(al 4 e poi di nuovo verso la posizione finale). Con le misure di prima
+del 25-26 (posizione finale y 392) stavano 68 px più in basso, sopra lo
+spazio di tag e barra: al 4 ci restavano sopra mentre comparivano. Con le
+misure nuove (finale y 463) salgono di 41 px e poi riscendono di 44.
+Proposta di Lola: posizioni calcolate sulle misure vere e un solo
+movimento. Aspetta la decisione di Rachele.
+Dopo: 29 prima in Figma.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
