@@ -134,21 +134,23 @@ Punti nuovi aggiunti da Rachele (2026-11-19) nella lista: 25 testo dei
 messaggi a 14 px, 26 chat più compatta, 27 logo di caricamento più
 piccolo, 28 dettagli dell'animazione di entrata, 29 tag delle domande
 diversi dalle chips dei progetti.
-**Punti 25 + 26 in locale (2026-11-19), in attesa dell'ok di Rachele:**
+**Punti 25 + 26 fatti e online (2026-11-19, commit 6bef29c del
+Portfolio), controllati su desktop e mobile:**
 in `globals.css` i messaggi (IA, utente, "sta scrivendo") passano da 16
 a 14 px (interlinea 1,5); padding desktop da 14/20 a 10/16, mobile da
 12/16 a 8/12; spazio tra messaggi desktop 10 → 8, mobile 8 → 6. Barra di
 testo: desktop 14 px, padding 8/8/8/16 (alta 54 px invece di 58); mobile
 padding 6/6/6/12 (era 7, fuori token) e testo a 16 px, perché sotto i 16 px
 l'iPhone ingrandisce la pagina. Solo token. Rachele: "molto meglio".
-Non pubblicato.
+Prossimo: 27 (logo di caricamento) o 28 (dettagli dell'entrata, li dice
+Rachele); 29 prima in Figma.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
 Lista salvata in `miglioramenti-portfolio.md`: punti aperti in alto,
-"Punti fatti" in fondo con il come (7, 9, 10, 15, 16, 19, 20, 22, 23.1, 23.4, 23.5, 24).
+"Punti fatti" in fondo con il come (7, 9, 10, 15, 16, 19, 20, 22, 23.1, 23.4, 23.5, 24, 25, 26).
 Proposta di Lola in attesa: gli "imbarazzi" 18 e 17 (prompt, li scrive
 Rachele).
 

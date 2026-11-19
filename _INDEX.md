@@ -12,9 +12,9 @@ estamos y el siguiente paso con quién. Lo demás vive en ese `estado.md`, no
 aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 `estado.md` que existe.
 
-- **Portfolio Otrorumbo** — online; passo 4 (24 migliorie) in corso,
-  punto 7 fatto (sfondo unico e sfocato); 12 (vetro) rimandato;
-  23.5 fatto; prossimo: 23.2 e 23.3 (decide Rachele sull'elenco dei token); Pillowtalk quando Rachele manda i contenuti →
+- **Portfolio Otrorumbo** — online; passo 4 (migliorie) in corso,
+  25-26 fatti (chat più compatta); prossimo: 27 o 28; 29 prima in Figma;
+  23.2-23.3 e Pillowtalk aspettano Rachele →
   [stato](proyectos/portfolio-otrorumbo/estado.md)
 - **Propuesta de ejemplo** (ejemplo: bórralo cuando tengas el tuyo) — una
   propuesta para un cliente inventado; el resumen del encargo está hecho,

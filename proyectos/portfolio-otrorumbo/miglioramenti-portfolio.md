@@ -219,20 +219,6 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 ---
 
-## 25. Testo dei messaggi troppo grande (2026-11-19)
-
-- Il testo dei messaggi a 16 px sembra grande, sproporzionato rispetto ai testi dei progetti: gli stili di testo non sono in equilibrio tra loro.
-- Ipotesi di Rachele: portare i messaggi a 14 px dovrebbe bastare. Da provare prima di decidere.
-
----
-
-## 26. La chat occupa troppo spazio (2026-11-19)
-
-- I riquadri che contengono i messaggi hanno un padding troppo grande.
-- Nell'insieme la chat pesa troppo a livello visivo: deve occupare meno spazio. Va insieme al punto 25 (testo più piccolo, componenti più piccoli).
-
----
-
 ## 27. Logo troppo grande durante il caricamento (2026-11-19)
 
 - Il logo che si vede mentre la pagina carica è troppo grande: va rimpicciolito.
@@ -395,3 +381,21 @@ Testo originale del punto, poi **Fatto:** come si è risolto.
 - I vecchi URL sono: https://glovo-duo.vercel.app/ e https://astounding-cajeta-04da12.netlify.app/#springboard.
 
 **Fatto (2026-11-17):** i pulsanti "Abrir prototipo" del sito aprono i due link nuovi. Nel codice, nel PRD e negli altri documenti non resta nessun link vecchio. Online e controllato.
+
+---
+
+### 25. Testo dei messaggi troppo grande (2026-11-19)
+
+- Il testo dei messaggi a 16 px sembra grande, sproporzionato rispetto ai testi dei progetti: gli stili di testo non sono in equilibrio tra loro.
+- Ipotesi di Rachele: portare i messaggi a 14 px dovrebbe bastare. Da provare prima di decidere.
+
+**Fatto (2026-11-19, commit 6bef29c del Portfolio):** messaggi della IA, dell'utente e "sta scrivendo" a 14 px con interlinea 1,5 (prima 16 px e 1,6), su desktop e mobile. Testo della barra a 14 px su desktop; su mobile resta a 16 px, perché sotto i 16 px l'iPhone ingrandisce la pagina quando si tocca il campo. In `globals.css`. Approvato da Rachele ("molto meglio"), online e controllato.
+
+---
+
+### 26. La chat occupa troppo spazio (2026-11-19)
+
+- I riquadri che contengono i messaggi hanno un padding troppo grande.
+- Nell'insieme la chat pesa troppo a livello visivo: deve occupare meno spazio. Va insieme al punto 25 (testo più piccolo, componenti più piccoli).
+
+**Fatto (2026-11-19, commit 6bef29c del Portfolio):** padding dei messaggi: desktop 10/16 px (prima 14/20), mobile 8/12 (prima 12/16). Spazio tra i messaggi: desktop 8 px (prima 10), mobile 6 (prima 8). Barra di testo: desktop 8/8/8/16 px (prima 10/10/10/20, alta 54 px invece di 58), mobile 6/6/6/12 (prima 7, fuori token). Solo token. Online e controllato su desktop e mobile.
