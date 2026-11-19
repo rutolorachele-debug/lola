@@ -174,14 +174,14 @@ Prossimo: 29 prima in Figma.
 la colonna (nessuna larghezza massima; su mobile c'era già, 302 px).
 Corretto in locale: `max-width: 80%` su `.bubble-ai` in `globals.css`,
 come le bolle dell'utente (criterio di Lola). Misurato: 432 px su 540.
-Aspetta l'ok di Rachele per pubblicare.
+Approvato da Rachele, online (commit e6e6d31), spostato in Punti fatti.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
 Lista salvata in `miglioramenti-portfolio.md`: punti aperti in alto,
-"Punti fatti" in fondo con il come (7, 9, 10, 15, 16, 19, 20, 22, 23.1, 23.4, 23.5, 24, 25, 26, 27, 28).
+"Punti fatti" in fondo con il come (7, 9, 10, 15, 16, 19, 20, 22, 23.1, 23.4, 23.5, 24, 25, 26, 27, 28, 30).
 Proposta di Lola in attesa: gli "imbarazzi" 18 e 17 (prompt, li scrive
 Rachele).
 

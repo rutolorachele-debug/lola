@@ -13,7 +13,7 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 `estado.md` que existe.
 
 - **Portfolio Otrorumbo** — online; passo 4 (migliorie) in corso,
-  25-28 fatti (chat compatta, caricamento, entrata); prossimo: 29 prima in Figma;
+  25-28 e 30 fatti (chat compatta, caricamento, entrata, bolle IA); prossimo: 29 prima in Figma;
   23.2-23.3 e Pillowtalk aspettano Rachele →
   [stato](proyectos/portfolio-otrorumbo/estado.md)
 - **Propuesta de ejemplo** (ejemplo: bórralo cuando tengas el tuyo) — una

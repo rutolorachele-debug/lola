@@ -226,12 +226,6 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 ---
 
-## 30. Messaggi della IA a tutta larghezza (2026-11-19)
-
-- I messaggi di Claude riempiono tutta la colonna della conversazione. Devono sembrare veri messaggi: fermarsi un po' prima, come le risposte di Rachele.
-
----
-
 ## 12. Effetto glass sulle pills della chat (per il futuro)
 
 - Le pills della chat non hanno l'effetto glass. Da correggere.
@@ -255,9 +249,7 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
 - [ ] Correzioni di layout e stato: spacing sidebar, spazio sotto la barra, sfumatura sotto il logo, secondo il punto 23.
 - [ ] Formattazione degli articoli: dire quale progetto e quale paragrafo, poi confrontare con Figma, secondo il punto 6.
-- [ ] Tag delle domande diversi dalle chips dei progetti, secondo il punto 29.
-- [ ] Messaggi della IA più stretti della colonna, secondo il punto 30.
-- [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
+- [ ] Tag delle domande diversi dalle chips dei progetti, secondo il punto 29.- [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
 
 ---
 
@@ -407,3 +399,11 @@ Testo originale del punto, poi **Fatto:** come si è risolto.
 - Dettaglio di Rachele: al messaggio 4 messaggi, tag e barra si scontrano e si sovrappongono mentre compaiono.
 
 **Fatto (2026-11-19, commit b55c839 del Portfolio):** la causa erano posizioni fisse prese da Figma (460 e 419 su 900) e due movimenti separati: con la chat più compatta i messaggi salivano di 41 px e poi riscendevano di 44, sopra tag e barra. Ora in `page.tsx` all'inizio i messaggi stanno più in basso di quanto misurano i tag sulla pagina vera (46 px a 1440×900). Al messaggio 4 salgono una volta sola (1 s) e i tag compaiono dopo, a spazio libero. Su mobile non cambia nulla. Approvato da Rachele, online e controllato nel codice pubblicato.
+
+---
+
+### 30. Messaggi della IA a tutta larghezza (2026-11-19)
+
+- I messaggi di Claude riempiono tutta la colonna della conversazione. Devono sembrare veri messaggi: fermarsi un po' prima, come le risposte di Rachele.
+
+**Fatto (2026-11-19, commit e6e6d31 del Portfolio):** su desktop le bolle della IA non avevano una larghezza massima (su mobile sì, 302 px). Ora `.bubble-ai` in `globals.css` ha `max-width: 80%`, come le bolle dell'utente (criterio di Lola): 432 px su una colonna di 540. Mobile invariato. Approvato da Rachele, online e controllato nel CSS pubblicato.
