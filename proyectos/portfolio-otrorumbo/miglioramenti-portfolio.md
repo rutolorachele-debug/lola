@@ -226,6 +226,27 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 ---
 
+## 31. L'applicazione non è centrata (2026-11-19)
+
+- La sensazione di Rachele è che l'applicazione sia un po' spostata a sinistra, mentre dovrebbe stare un pochino più a destra.
+- Prima di correggere: misurare dove sta oggi rispetto allo schermo e rispetto alla sidebar (criterio di Lola).
+
+---
+
+## 32. Tempi delle animazioni irregolari (2026-11-19)
+
+- Ora che il portfolio è online, Rachele vuole rivedere i tempi scelti: sembrano irregolari, come se non tutto avesse la stessa misura.
+- Da fare: elencare tutti i tempi usati (sono in `lib/motion.ts` e in alcuni componenti) e confrontarli, poi decide Rachele.
+
+---
+
+## 33. Spazi strani intorno alla sidebar (2026-11-19)
+
+- Gli spazi che separano la sidebar dal resto hanno qualcosa di strano.
+- Si sovrappone in parte al punto 23.2 (logo a 28 dal bordo, sidebar a 24: non allineati di 4 px). Da guardare insieme.
+
+---
+
 ## 12. Effetto glass sulle pills della chat (per il futuro)
 
 - Le pills della chat non hanno l'effetto glass. Da correggere.
@@ -249,7 +270,10 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
 - [ ] Correzioni di layout e stato: spacing sidebar, spazio sotto la barra, sfumatura sotto il logo, secondo il punto 23.
 - [ ] Formattazione degli articoli: dire quale progetto e quale paragrafo, poi confrontare con Figma, secondo il punto 6.
-- [ ] Tag delle domande diversi dalle chips dei progetti, secondo il punto 29.- [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
+- [ ] Tag delle domande diversi dalle chips dei progetti, secondo il punto 29.
+- [ ] Applicazione da centrare, secondo il punto 31.
+- [ ] Tempi delle animazioni da uniformare, secondo il punto 32.
+- [ ] Spazi intorno alla sidebar, con il 23.2, secondo il punto 33.- [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
 
 ---
 

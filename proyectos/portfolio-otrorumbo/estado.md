@@ -175,6 +175,11 @@ la colonna (nessuna larghezza massima; su mobile c'era già, 302 px).
 Corretto in locale: `max-width: 80%` su `.bubble-ai` in `globals.css`,
 come le bolle dell'utente (criterio di Lola). Misurato: 432 px su 540.
 Approvato da Rachele, online (commit e6e6d31), spostato in Punti fatti.
+**Nuovi punti (2026-11-19), scritti nella lista, non ancora guardati:**
+31 applicazione non centrata (un po' a sinistra), 32 tempi delle
+animazioni irregolari, 33 spazi strani intorno alla sidebar (con il 23.2).
+Ordine proposto da Lola: 33 con 23.2, poi 31 (stesse misure di layout),
+poi 32 (tempi, a parte). Ognuno in una sessione nuova.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
