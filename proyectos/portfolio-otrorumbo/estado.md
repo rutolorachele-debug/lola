@@ -22,6 +22,11 @@ visiva.
 
 ## Dove riprendere (2026-11-17)
 
+**Aperto (2026-11-19):** prossimo punto 32 (tempi delle animazioni), in
+una sessione nuova. Vercel ha saltato il push di 266a7bc (causa non vista:
+serve il login di Rachele al pannello); il push dopo (6bbb870) è andato
+online in 43 s. Se un push non arriva, prima cosa: pannello Deployments.
+
 I passi 1-3 sono fatti. Passo 4 in corso, si parte dal **punto 22
 (tipografie)**. Decisioni di Rachele (2026-11-17): il logo lo fa lei e lo
 manda da Figma; i testi restano uguali, cambia solo il font in IBM Plex
@@ -184,20 +189,23 @@ poi 32 (tempi, a parte). Ognuno in una sessione nuova.
 logo a 24; tolto il margine automatico sopra la caption (barra più in
 basso, caption ferma); fondo della sidebar sempre allineato alla caption
 (decisione di Rachele), con scorrimento interno. Approvati da Rachele
-dallo screenshot. Push su GitHub fatto alle 17:27, ma alle 17:37 Vercel
-non l'aveva ancora messo online (sito fermo al commit e6e6d31): da
-controllare nel pannello di Vercel (Lola non ha l'accesso). Dettagli in
-Punti fatti della lista.
-Prossimo nell'ordine proposto: punto 31.
-**Punto 29 in corso:** prove in Figma nel frame "29 · Tag delle domande
-vs etichette dei progetti". Da decidere.
+dallo screenshot. Vercel non ha pubblicato questo push; sono andati online
+con il commit dopo (6bbb870), misurati online.
+**Punti 29 e 31 fatti (2026-11-19, commit 6bbb870 del Portfolio), online
+e misurati:** 29 etichette dei progetti neutre (#efe9eb / #6b5e64). 31 la
+colonna chat si sposta tutta a destra perché i messaggi (432 su 540)
+stiano al centro: a 1440 colonna a 504, messaggi 504 | 504; animazione
+apri/chiudi progetto provata. Resta per gli schermi stretti (decisione di
+Rachele: più avanti, con tablet e mobile): sotto ~1300 px, a progetto
+aperto, la chat esce a destra (c'era già).
+Prossimo nell'ordine proposto: punto 32.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
 Lista salvata in `miglioramenti-portfolio.md`: punti aperti in alto,
-"Punti fatti" in fondo con il come (7, 9, 10, 15, 16, 19, 20, 22, 23.1, 23.4, 23.5, 24, 25, 26, 27, 28, 30).
+"Punti fatti" in fondo con il come (7, 9, 10, 15, 16, 19, 20, 22, 23.1, 23.3, 23.4, 23.5, 24, 25, 26, 27, 28, 29, 30, 31, 33).
 Proposta di Lola in attesa: gli "imbarazzi" 18 e 17 (prompt, li scrive
 Rachele).
 
@@ -222,6 +230,12 @@ Rachele).
   usarlo · Intenzione: messaggi tutti uguali, controllati da lei.
   Scartato: mostrare il grassetto in SemiBold (pubblicato e tolto lo
   stesso giorno).
+- **2026-11-19 · Accento solo su ciò che si clicca** · Tag delle domande
+  restano come sono (accento); etichette dei progetti neutre (#efe9eb,
+  testo #6b5e64), stessa forma · Perché: le etichette sono informative, e
+  l'accento dice "qui puoi fare qualcosa" · Intenzione: distinguere a
+  colpo d'occhio cosa si clicca. Scartato: tag in primario (il primario è
+  inviare), tag grigi come il secondario o il menu (non staccano).
 
 ## Coda
 

@@ -221,21 +221,6 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 ---
 
-## 29. Tag delle domande e chips dei progetti troppo uguali (2026-11-19)
-
-- Le pills delle domande (tag in chat) e le etichette dei progetti sembrano lo stesso componente. Non va bene: devono essere diversi.
-- Modifica grossa: da progettare in Figma prima del codice (criterio di Lola).
-- In corso: prove in Figma nel frame "29 · Tag delle domande vs etichette dei progetti". Da decidere.
-
----
-
-## 31. L'applicazione non è centrata (2026-11-19)
-
-- La sensazione di Rachele è che l'applicazione sia un po' spostata a sinistra, mentre dovrebbe stare un pochino più a destra.
-- Prima di correggere: misurare dove sta oggi rispetto allo schermo e rispetto alla sidebar (criterio di Lola).
-
----
-
 ## 32. Tempi delle animazioni irregolari (2026-11-19)
 
 - Ora che il portfolio è online, Rachele vuole rivedere i tempi scelti: sembrano irregolari, come se non tutto avesse la stessa misura.
@@ -266,8 +251,6 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
 - [ ] Correzioni di layout e stato: misure mobile della sidebar (23.2), secondo il punto 23.
 - [ ] Formattazione degli articoli: dire quale progetto e quale paragrafo, poi confrontare con Figma, secondo il punto 6.
-- [ ] Tag delle domande diversi dalle chips dei progetti, secondo il punto 29.
-- [ ] Applicazione da centrare, secondo il punto 31.
 - [ ] Tempi delle animazioni da uniformare, secondo il punto 32.
 - [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
 
@@ -434,7 +417,7 @@ Testo originale del punto, poi **Fatto:** come si è risolto.
 
 - Chat: rivedere lo spazio tra la barra per scrivere e la caption sotto, che è troppo ampio. Vedi anche punto 11.
 
-**Fatto (2026-11-19, commit 266a7bc del Portfolio):** lo spazio vero era 26 px, non 14: la caption è un `<p>` e il browser le dava da solo 12 px sopra e sotto. Ora `.aviso` ha `margin: 0 0 12px` (mobile sotto 10). La caption non si muove (44 px dal fondo su desktop, 41 su mobile); la barra scende di 12 (desktop) e 10 (mobile). Barra–testo: 14 px desktop, 13 mobile. Approvato da Rachele dallo screenshot.
+**Fatto (2026-11-19, commit 266a7bc del Portfolio):** lo spazio vero era 26 px, non 14: la caption è un `<p>` e il browser le dava da solo 12 px sopra e sotto. Ora `.aviso` ha `margin: 0 0 12px` (mobile sotto 10). La caption non si muove (44 px dal fondo su desktop, 41 su mobile); la barra scende di 12 (desktop) e 10 (mobile). Barra–testo: 14 px desktop, 13 mobile. Approvato da Rachele dallo screenshot. Online dal commit 6bbb870 e misurato online (1440×900 e 1440×720).
 
 ---
 
@@ -445,4 +428,20 @@ Testo originale del punto, poi **Fatto:** come si è risolto.
 **Fatto (2026-11-19, commit 266a7bc del Portfolio):**
 - **Logo:** a 24 dal bordo sinistro (era 28), allineato a sidebar e menu. Rachele: «tienilo a 24».
 - **Fondo della sidebar:** decisione di Rachele, sempre allineato al fondo del testo della caption, su qualunque schermo. In `globals.css` `.sidebar` ha altezza = schermo − 80 sopra − 44 sotto; se le card non ci stanno scorrono dentro, senza barra visibile. Progetto aperto: stessa altezza (`page.tsx`, `openH`).
-- **Misurato in locale:** finestre alte 900 e 720 → sidebar e caption entrambe a 44 px dal fondo. Da progetto aperto non controllato a occhio. Approvato da Rachele dallo screenshot.
+- **Misurato online** (pubblicato con il commit 6bbb870): finestre alte 900 e 720 → logo a 24, sidebar e caption entrambe a 44 px dal fondo. Da progetto aperto non controllato a occhio. Approvato da Rachele dallo screenshot.
+
+---
+
+### 29. Tag delle domande e chips dei progetti troppo uguali (2026-11-19)
+
+- Le pills delle domande (tag in chat) e le etichette dei progetti sembrano lo stesso componente. Non va bene: devono essere diversi.
+
+**Fatto (2026-11-19, commit 6bbb870 del Portfolio):** decisione di Rachele (frame Figma "29 · E"): i tag delle domande restano in accento, le etichette dei progetti diventano neutre. In `globals.css` `.label` ha sfondo `--morbido` (#efe9eb) e testo `--secondario` (#6b5e64); tolta la variabile `--accento-tenue`, che non usava più nessuno. L'accento resta solo su ciò che si clicca. Online e misurato (colori calcolati sulla pagina).
+
+---
+
+### 31. L'applicazione non è centrata (2026-11-19)
+
+- La sensazione di Rachele è che l'applicazione sia un po' spostata a sinistra, mentre dovrebbe stare un pochino più a destra.
+
+**Fatto (2026-11-19, commit 6bbb870 del Portfolio):** la colonna della chat (540) era centrata, ma messaggi e tag sono larghi al massimo 432 (punto 30) e partono da sinistra: a 1440 stavano a 450 dal bordo sinistro e 558 dal destro. Decisione di Rachele: spostare tutta la colonna a destra, senza cambiare misure. Ora `--chat-left` = metà del contenitore − 216 (40% di 540): a 1440 la colonna parte a 504, messaggi a 504 | 504; vale su ogni larghezza. In chiusura progetto la chat torna a quel valore (`page.tsx`), non più a 450 fisso. Animazione apertura/chiusura provata. Online e misurato. Resta per il lavoro su schermi stretti: sotto ~1300 px, a progetto aperto, la chat esce a destra (c'era già).
