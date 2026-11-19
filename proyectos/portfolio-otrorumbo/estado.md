@@ -134,6 +134,12 @@ Punti nuovi aggiunti da Rachele (2026-11-19) nella lista: 25 testo dei
 messaggi a 14 px, 26 chat più compatta, 27 logo di caricamento più
 piccolo, 28 dettagli dell'animazione di entrata, 29 tag delle domande
 diversi dalle chips dei progetti.
+**Punti 25 + 26 in locale (2026-11-19), in attesa dell'ok di Rachele:**
+in `globals.css` i messaggi (IA, utente, "sta scrivendo") passano da 16
+a 14 px (interlinea 1,5); padding desktop da 14/20 a 10/16, mobile da
+12/16 a 8/12; spazio tra messaggi desktop 10 → 8, mobile 8 → 6. Solo
+token. Il campo di testo resta a 16 px (avviso di Lola: ora è più grande
+dei messaggi; su mobile sotto i 16 px l'iPhone fa lo zoom). Non pubblicato.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
