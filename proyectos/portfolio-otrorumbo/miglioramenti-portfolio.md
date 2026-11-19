@@ -219,12 +219,6 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 ---
 
-## 28. Dettagli dell'animazione di entrata (2026-11-19)
-
-- L'animazione di entrata va bene, ma ci sono piccoli dettagli da rivedere. Quali, li dice Rachele.
-
----
-
 ## 29. Tag delle domande e chips dei progetti troppo uguali (2026-11-19)
 
 - Le pills delle domande (tag in chat) e le etichette dei progetti sembrano lo stesso componente. Non va bene: devono essere diversi.
@@ -255,10 +249,6 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
 - [ ] Correzioni di layout e stato: spacing sidebar, spazio sotto la barra, sfumatura sotto il logo, secondo il punto 23.
 - [ ] Formattazione degli articoli: dire quale progetto e quale paragrafo, poi confrontare con Figma, secondo il punto 6.
-- [ ] Testo dei messaggi: provare 14 px, secondo il punto 25.
-- [ ] Chat più compatta: meno padding nei messaggi, secondo il punto 26.
-- [ ] Logo di caricamento più piccolo, secondo il punto 27.
-- [ ] Animazione di entrata: Rachele elenca i dettagli, secondo il punto 28.
 - [ ] Tag delle domande diversi dalle chips dei progetti, secondo il punto 29.
 - [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
 
@@ -401,3 +391,12 @@ Testo originale del punto, poi **Fatto:** come si è risolto.
 - Il logo che si vede mentre la pagina carica è troppo grande: va rimpicciolito.
 
 **Fatto (2026-11-19, commit b477d24 del Portfolio):** logo di caricamento (`.loader-logo` in `globals.css`) da 104 a 64 px su desktop, da 88 a 56 px su mobile. Provandolo, Rachele lo vedeva solo un istante e prima dell'entrata compariva per un attimo il portfolio aperto: due difetti in `Loader.tsx`, corretti insieme. Il logo ora esce alla fine del primo giro (1,1 s; sicurezza a 6 s), mentre prima usciva subito. Svanisce solo il logo e lo sfondo caldo resta, uguale alla prima schermata dell'entrata, quindi sotto non si vede più il sito aperto. Visto da Rachele in locale, online.
+
+---
+
+### 28. Dettagli dell'animazione di entrata (2026-11-19)
+
+- L'animazione di entrata va bene, ma ci sono piccoli dettagli da rivedere. Quali, li dice Rachele.
+- Dettaglio di Rachele: al messaggio 4 messaggi, tag e barra si scontrano e si sovrappongono mentre compaiono.
+
+**Fatto (2026-11-19, commit b55c839 del Portfolio):** la causa erano posizioni fisse prese da Figma (460 e 419 su 900) e due movimenti separati: con la chat più compatta i messaggi salivano di 41 px e poi riscendevano di 44, sopra tag e barra. Ora in `page.tsx` all'inizio i messaggi stanno più in basso di quanto misurano i tag sulla pagina vera (46 px a 1440×900). Al messaggio 4 salgono una volta sola (1 s) e i tag compaiono dopo, a spazio libero. Su mobile non cambia nulla. Approvato da Rachele, online e controllato nel codice pubblicato.

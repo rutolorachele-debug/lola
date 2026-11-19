@@ -168,14 +168,15 @@ all'inizio i messaggi stanno più in basso di quanto misurano i tag
 volta sola (1 s) e i tag compaiono dopo, a spazio libero. Tolte le
 posizioni fisse 460/419. TypeScript ok; stato finale misurato ok.
 L'animazione la guarda Rachele (il pannello di Lola non la fa girare).
-Aspetta l'ok di Rachele per pubblicare. Dopo: 29 prima in Figma.
+Approvato da Rachele, online (commit b55c839), spostato in Punti fatti.
+Prossimo: 29 prima in Figma.
 Da approfondire più avanti (Rachele): nei prompt dire sempre di usare il
 design system alla lettera e solo i token.
 Font: in `Portfolio\tipografie` (copiati da `pillowtalk\`, dove erano).
 Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
 Lista salvata in `miglioramenti-portfolio.md`: punti aperti in alto,
-"Punti fatti" in fondo con il come (7, 9, 10, 15, 16, 19, 20, 22, 23.1, 23.4, 23.5, 24, 25, 26, 27).
+"Punti fatti" in fondo con il come (7, 9, 10, 15, 16, 19, 20, 22, 23.1, 23.4, 23.5, 24, 25, 26, 27, 28).
 Proposta di Lola in attesa: gli "imbarazzi" 18 e 17 (prompt, li scrive
 Rachele).
 
