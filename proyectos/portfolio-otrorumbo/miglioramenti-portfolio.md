@@ -136,15 +136,6 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ---
 
-## 17. Domande fuori contesto con ricerca sul web (edge case)
-
-- Un amico ha chiesto alla chat che cos'è un "flusso" e che cos'è una "pantaglia". La chat ha risposto cercando su internet.
-- Rachele non vuole che la chat cerchi sul web per rispondere al posto suo: è un imbroglio, e se sbaglia sbaglia a suo nome.
-- Da gestire come edge case nel system prompt (§9, Edge cases), scritto da Rachele.
-- Da testare nei test futuri.
-
----
-
 ## 18. Tono di voce troppo brusco
 
 - Alla domanda su come disegnare un'applicazione in Figma, la chat ha risposto: "io non disegno in Figma per nessuno, calmati". Il tono è stato percepito come aggressivo.
@@ -445,3 +436,14 @@ Testo originale del punto, poi **Fatto:** come si è risolto.
 - La sensazione di Rachele è che l'applicazione sia un po' spostata a sinistra, mentre dovrebbe stare un pochino più a destra.
 
 **Fatto (2026-11-19, commit 6bbb870 del Portfolio):** la colonna della chat (540) era centrata, ma messaggi e tag sono larghi al massimo 432 (punto 30) e partono da sinistra: a 1440 stavano a 450 dal bordo sinistro e 558 dal destro. Decisione di Rachele: spostare tutta la colonna a destra, senza cambiare misure. Ora `--chat-left` = metà del contenitore − 216 (40% di 540): a 1440 la colonna parte a 504, messaggi a 504 | 504; vale su ogni larghezza. In chiusura progetto la chat torna a quel valore (`page.tsx`), non più a 450 fisso. Animazione apertura/chiusura provata. Online e misurato. Resta per il lavoro su schermi stretti: sotto ~1300 px, a progetto aperto, la chat esce a destra (c'era già).
+
+---
+
+### 17. Domande fuori contesto con ricerca sul web (edge case)
+
+- Un amico ha chiesto alla chat che cos'è un "flusso" e che cos'è una "pantaglia". La chat ha risposto cercando su internet.
+- Rachele non vuole che la chat cerchi sul web per rispondere al posto suo: è un imbroglio, e se sbaglia sbaglia a suo nome.
+- Da gestire come edge case nel system prompt (§9, Edge cases), scritto da Rachele.
+- Da testare nei test futuri.
+
+**Fatto (2026-11-20, commit 1ec5f62 del Portfolio):** la chat non cercava sul web (non ha strumenti): rispondeva col sapere generale del modello, che il §9 permetteva. Nel §9 di `prompt/system_prompt.md` ora ci sono tre casi: le parole base del mestiere (frame, flujo, pantalla…) si spiegano in una o due frasi; tutto ciò che non è nel prompt (metodi, strumenti, cifre, leggi, opinioni, anche il contesto dei progetti) riceve una frase del §10, mai "non l'ho fatto" o "non lo so"; le curiosità fuori tema restano come prima. Tolta la sezione "Facts about the context of your projects", assorbita nel secondo caso. Testo approvato da Rachele e inserito da Lola. Da testare nei test futuri.

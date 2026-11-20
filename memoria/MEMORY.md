@@ -14,6 +14,7 @@ Una ficha = un hecho; el diario de un frente, en `historial/`. Este índice se c
 - [Layout: parlare di bordi](layout-parlare-di-bordi.md) — proposte di layout bordo per bordo (fermo/spostato), mai "allungare/abbassare"
 - [Misurare a più larghezze](misurare-piu-larghezze.md) — dove sta un elemento: misurarlo sulla pagina vera a 2-3 larghezze, mai dedurlo dal CSS
 - [Iniziare non è eseguire](iniziare-non-e-eseguire.md) — "punto X" = analisi + proposta + "lo correggo?"; codice solo dopo il sì
+- [Il prompt lo inserisce Lola](prompt-lo-inserisce-lola.md) — dopo l'ok sulla bozza Lola scrive nel system prompt; niente file bozza a parte
 - [Suggerimenti mai primari](suggerimenti-mai-primari.md) — primario solo per l'azione principale (inviare); prove Figma da schermate a riposo
 - [Commit solo righe mie](commit-solo-righe-mie.md) — prima di `git add` guardare il diff; modifiche di altre chat restano fuori dal commit
 

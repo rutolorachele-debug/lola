@@ -243,6 +243,16 @@ Rachele).
   l'accento dice "qui puoi fare qualcosa" · Intenzione: distinguere a
   colpo d'occhio cosa si clicca. Scartato: tag in primario (il primario è
   inviare), tag grigi come il secondario o il menu (non staccano).
+- **2026-11-20 · La chat non risponde col sapere generale a nome di
+  Rachele** (punto 17) · Tre casi: parole base del mestiere (frame,
+  flujo…) si spiegano in una frase; tutto ciò che non è nel prompt
+  (metodi, strumenti, cifre, leggi, opinioni) riceve una frase del §10
+  ("Eso no te lo sé decir por aquí" o la CTA), mai "non l'ho fatto/non lo
+  so"; curiosità fuori tema come ora · Perché: ogni risposta si legge come
+  di Rachele, e il sapere del modello non è il suo · Intenzione: che chi
+  scrive non legga mai qualcosa che Rachele non direbbe in un colloquio.
+  Accettato: qualche caso limite (es. SAP) resta senza risposta. Nel §9
+  del prompt, commit 1ec5f62 del Portfolio.
 
 ## Coda
 

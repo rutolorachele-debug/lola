@@ -1,20 +1,28 @@
 ---
 name: documenti-stato-attuale
-description: Quando Rachele corregge un documento (PRD, brief, testi), si riscrive allo stato attuale, senza cronologia
+description: Documenti e liste dicono solo lo stato attuale; un punto della lista si aggiorna solo quando è chiuso, mai mentre ci si lavora
 metadata:
   type: feedback
 ---
 
-Quando Rachele corregge qualcosa in un documento di lavoro (PRD, brief,
-system prompt, testi, schede di progetto), il documento si riscrive come se
-fosse sempre stato così. Niente "prima era X, ora è Y", niente "sostituisce
-quanto scritto in…", niente "aggiornato il…".
+I documenti di lavoro (PRD, brief, system prompt, testi, liste dei
+miglioramenti, `estado.md`) dicono solo come stanno le cose adesso. Niente
+"prima era X, ora è Y", niente "aggiornato il…".
 
-**Why:** con Claude le correzioni trasformano PRD e brief in cronologie di
-progetto, e Rachele perde molto tempo a ripulirli (2026-11-17).
+**Un punto di una lista si aggiorna solo quando è chiuso**: deciso o fatto.
+Mentre ci si lavora (prove, idee, pareri, scarti) non si scrive niente nella
+lista né nello stato. Se la sessione si chiude a metà, una sola riga: «In
+corso: prove in <dove>. Da decidere.» Quando si chiude: la decisione e il
+perché, in poche righe.
 
-**How to apply:** la storia sta solo in due posti. Git (lo storico) tiene le
-versioni vecchie. `canon/decisiones.md` e la sezione "Decisioni" di ogni
-`estado.md` tengono il perché di una scelta, con una riga "Scartato" se
-serve. Ovunque altrove: solo lo stato attuale. Negli appunti di memoria il
-"Why" racconta la correzione, perché serve a non ripetere l'errore.
+**Why:** con Claude le correzioni trasformano i documenti in cronologie e
+Rachele perde tempo a ripulirli (2026-11-17). Si è ripetuto il 2026-11-19
+sul punto 29 del portfolio: ad ogni prova scrivevo nella lista e nello stato
+idee, pareri di Rachele e scarti, e il punto è diventato un diario, con la
+formattazione rotta. Causa: avevo preso «le decisioni si registrano nella
+sessione» come «registra ogni passo», e la cronologia dello `estado.md` mi
+ha fatto da modello.
+
+**How to apply:** prima di toccare una lista chiediti «questo punto è
+chiuso?». Se no, non scrivere. La storia sta solo in Git e nella sezione
+"Decisioni" di `estado.md` / `canon/decisiones.md` (con "Scartato" se serve).
