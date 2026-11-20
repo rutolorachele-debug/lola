@@ -22,9 +22,9 @@ visiva.
 
 ## Dove riprendere (2026-11-17)
 
-**Aperto (2026-11-20):** punto 32 (solo apertura) online (777018b):
-primo messaggio corto e pause nuove (vedi Decisioni). Rachele lo prova
-online domani e dice se i tempi vanno; il punto si chiude solo dopo. Vercel ha saltato il push di 266a7bc (causa non vista:
+**Aperto (2026-11-20):** punto 32 (solo apertura): pause corrette dopo
+la prova di Rachele (1,5 / 3,5 / 3,5 s, vedi Decisioni), in locale,
+aspettano il suo ok per il push; il punto si chiude dopo la sua prova. Vercel ha saltato il push di 266a7bc (causa non vista:
 serve il login di Rachele al pannello); il push dopo (6bbb870) è andato
 online in 43 s. Se un push non arriva, prima cosa: pannello Deployments.
 
@@ -257,8 +257,9 @@ Rachele).
 - **2026-11-20 · Apertura: primo messaggio corto e tempi per messaggio**
   (punto 32, solo la sequenza di apertura) · Il messaggio 1 diventa "Hola,
   soy Rachele." (via "Bueno, mi versión digital"). Pause dopo i messaggi:
-  1 → 0,5 s (corto, niente attesa), 2 → 3,5 s (uguale), 3 → 4,5 s (era 3,
-  fa comparire sidebar e titolo), 4 e tag non si toccano · Perché: il
+  1 → 1,5 s (corto, attesa breve), 2 → 3,5 s (uguale), 3 → 3,5 s (era 3,
+  fa comparire sidebar e titolo), 4 e tag non si toccano. Prima prova
+  online con 0,5 e 4,5: per Rachele 1→2 troppo corto, 3→4 troppo lungo · Perché: il
   tempo va dove c'è da guardare, non dove il testo è lungo · Intenzione:
   ritmo dell'apertura che segue l'attenzione. Che è un'IA lo dice la
   caption sotto la barra. Commit 777018b del Portfolio, online
