@@ -223,6 +223,35 @@ disattivato finché non c'è un messaggio o un tag; codice dopo il 32.
 Punti 4 e 13: Rachele li guarda a casa, con calma.
 Punto 2 deciso (2026-11-20): si toglie il gradino 4, la chat si chiude al
 3 con `[[cierre]]`; prompt §9 e PRD §3.3 dopo il 32. Punto 5 in pausa.
+**Mobile rotto (2026-11-20, aperto):** su iPhone di Rachele l'apertura non
+si vede. Escluse: "Riduci movimento" (spento), risparmio energetico (succede
+anche senza). Logo: rifatto 256×192, 39 kB (e784651, online) e ora gira da
+solo. Resta: dopo il logo la card è a metà altezza (46%), vuota, sfondo
+chiaro, e non si muove; un tocco fa apparire tutto. Quindi la sequenza
+GSAP parte (la card prende il 46%) ma resta ferma all'inizio; il tocco la
+porta alla fine (`skipOpening`, `page.tsx`:64). Succede anche in Safari.
+**Causa trovata (misurata in Chrome a 390×664):** la sequenza non è ferma.
+Con la card bassa (46%, poi 55%), tag e barra, ancora invisibili, occupano
+già il loro spazio; ai messaggi restano 45 px, coperti tutti dalla
+sfumatura in alto (`.chat-fade`). Il messaggio 1 sta sopra, fuori dalla
+card. Tutto si vede solo quando la card sale piena (t4, ~10 s). Corretto
+(39e4bf4 + c01c5e1, online, provato in locale a 390×664): messaggi 2-4, tag
+e barra `display: none` finché non compaiono; durante l'apertura la card
+abbraccia i messaggi (hug) e cresce con ognuno, a t4 altezza piena.
+Intenzione (Rachele): far capire che la card si muove e che dietro c'è
+qualcosa. Sfumatura in alto solo se c'è testo nascosto sopra (vale sempre,
+non solo in apertura; non provata con una conversazione lunga). Da provare
+su iPhone. Ancora da fare: tocco che non salta l'apertura su mobile.
+**Prova su iPhone dopo c01c5e1: va tutto a scatti.** Rachele: ogni
+correzione ne fa uscire altre 4, quindi il mobile si rifà in una
+conversazione nuova, come **audit completo** (tutti gli errori prima,
+poi le correzioni). Da portare all'audit: (1) a scatti, ipotesi di Lola non
+verificata: la card cambia `--chat-card-height` a ogni fotogramma e tutta la
+pagina si ricalcola (anche in `openChatCard`/`closeChatCard`); (2) un tocco
+salta l'apertura; (3) sfumatura non provata in conversazione lunga; (4) i
+video dei progetti chiedono play. Le prove in locale a misura iPhone (Chrome
+headless) non vedono gli scatti: serve il telefono vero. Script di prova:
+Chrome headless + CDP (`shot.mjs` nella scratchpad, non conservato).
 
 ## Decisioni di questo progetto
 
