@@ -22,9 +22,8 @@ visiva.
 
 ## Dove riprendere (2026-11-17)
 
-**Aperto (2026-11-20):** video Pillowtalk pronti in locale, aspettano
-l'ok di Rachele per il push. Poi punto 32 (tempi delle animazioni), in
-una sessione nuova. Vercel ha saltato il push di 266a7bc (causa non vista:
+**Aperto (2026-11-20):** video Pillowtalk online. Prossimo punto 32
+(tempi delle animazioni), in una sessione nuova. Vercel ha saltato il push di 266a7bc (causa non vista:
 serve il login di Rachele al pannello); il push dopo (6bbb870) è andato
 online in 43 s. Se un push non arriva, prima cosa: pannello Deployments.
 
@@ -84,13 +83,13 @@ spagnolo approvate: "Partimos de", "el brief ha ido cambiando de forma",
 codice mostra video (muti, in loop) e foto. La foto 07 (4:3) viene
 tagliata un po' nel riquadro 16:9: Rachele la guarda online. Push fatto
 da Lola il 2026-11-17 (il login a GitHub funziona).
-**Articolo Pillowtalk (2026-11-20, commit 37c32b3 del Portfolio, non
-ancora online):** testo uguale al prompt; 5 video al loro posto, niente
+**Articolo Pillowtalk (2026-11-20, commit 37c32b3 del Portfolio,
+online):** testo uguale al prompt; 5 video al loro posto, niente
 foto finale. Originali da Drive in `Portfolio\pillowtalk` (01-05.mov),
 nel sito versioni web 1280×720 senza audio né GPS in `public/pillowtalk/`
 (0,3-1,4 MB). Il video 02 mostra varie sezioni di contenuto: descrizione
-aggiornata nel prompt e in `articles.ts`. Provato in locale: 5 video
-caricati, numerati 01/05-05/05. Video dal telefono: Rachele li carica in
+aggiornata nel prompt e in `articles.ts`. Provato online: 5 video
+caricati, muti, in loop. Video dal telefono: Rachele li carica in
 una cartella Drive condivisa col link, Lola li scarica.
 Correzioni di Rachele (commit c57d480): la prima frase ("Feature para la
 app Glovo Riders.", per Pillowtalk "Proyecto: …") è una descrizione sotto
