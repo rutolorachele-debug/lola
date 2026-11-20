@@ -174,13 +174,6 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 ---
 
-## 32. Tempi delle animazioni irregolari (2026-11-19)
-
-- Ora che il portfolio è online, Rachele vuole rivedere i tempi scelti: sembrano irregolari, come se non tutto avesse la stessa misura.
-- Da fare: elencare tutti i tempi usati (sono in `lib/motion.ts` e in alcuni componenti) e confrontarli, poi decide Rachele.
-
----
-
 ## 12. Effetto glass sulle pills della chat (per il futuro)
 
 - Le pills della chat non hanno l'effetto glass. Da correggere.
@@ -199,7 +192,6 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 - [ ] Messaggi lunghi: verificare perché non vengono spezzati, secondo il punto 14.
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
 - [ ] Correzioni di layout e stato: misure mobile della sidebar (23.2), secondo il punto 23.
-- [ ] Tempi delle animazioni da uniformare, secondo il punto 32.
 - [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
 
 ---
@@ -404,3 +396,12 @@ Testo originale del punto, poi **Fatto:** come si è risolto.
 - Da testare nei test futuri.
 
 **Fatto (2026-11-20, commit 1ec5f62 del Portfolio):** la chat non cercava sul web (non ha strumenti): rispondeva col sapere generale del modello, che il §9 permetteva. Nel §9 di `prompt/system_prompt.md` ora ci sono tre casi: le parole base del mestiere (frame, flujo, pantalla…) si spiegano in una o due frasi; tutto ciò che non è nel prompt (metodi, strumenti, cifre, leggi, opinioni, anche il contesto dei progetti) riceve una frase del §10, mai "non l'ho fatto" o "non lo so"; le curiosità fuori tema restano come prima. Tolta la sezione "Facts about the context of your projects", assorbita nel secondo caso. Testo approvato da Rachele e inserito da Lola. Da testare nei test futuri.
+
+---
+
+### 32. Tempi delle animazioni irregolari (2026-11-19)
+
+- Ora che il portfolio è online, Rachele vuole rivedere i tempi scelti: sembrano irregolari, come se non tutto avesse la stessa misura.
+- Da fare: elencare tutti i tempi usati (sono in `lib/motion.ts` e in alcuni componenti) e confrontarli, poi decide Rachele.
+
+**Fatto (2026-11-20, commit 777018b e f1fa4df del Portfolio):** il punto riguardava solo la sequenza di apertura con i messaggi; il resto va bene. Il messaggio 1 ora è solo "Hola, soy Rachele." (anche nel §11 del prompt). Pause dopo i messaggi in `lib/motion.ts` (`readMs`): 1 → 1,5 s (era 2,5), 2 → 3,5 s (uguale), 3 → 3,5 s (era 3, fa comparire sidebar e titolo). Il messaggio 4 e i tag mantengono il loro ritmo. Una prima prova a 0,5 e 4,5 s era sbagliata: tra 1 e 2 troppo poco, tra 3 e 4 troppo. Rachele chiude il punto con questi valori (la seconda versione non l'ha ancora riprovata); se vorrà, lo ritocca più avanti.
