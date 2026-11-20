@@ -22,9 +22,9 @@ visiva.
 
 ## Dove riprendere (2026-11-17)
 
-**Aperto (2026-11-20):** punto 32 (solo apertura) in locale: primo
-messaggio corto e pause nuove (vedi Decisioni). Rachele lo prova quando
-può aprire il portfolio, poi push. Vercel ha saltato il push di 266a7bc (causa non vista:
+**Aperto (2026-11-20):** punto 32 (solo apertura) online (777018b):
+primo messaggio corto e pause nuove (vedi Decisioni). Rachele lo prova
+online domani e dice se i tempi vanno; il punto si chiude solo dopo. Vercel ha saltato il push di 266a7bc (causa non vista:
 serve il login di Rachele al pannello); il push dopo (6bbb870) è andato
 online in 43 s. Se un push non arriva, prima cosa: pannello Deployments.
 
@@ -261,7 +261,8 @@ Rachele).
   fa comparire sidebar e titolo), 4 e tag non si toccano · Perché: il
   tempo va dove c'è da guardare, non dove il testo è lungo · Intenzione:
   ritmo dell'apertura che segue l'attenzione. Che è un'IA lo dice la
-  caption sotto la barra. In locale, non pubblicato.
+  caption sotto la barra. Commit 777018b del Portfolio, online
+  (controllati testo e pause nel codice pubblicato).
 
 ## Coda
 
