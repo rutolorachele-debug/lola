@@ -23,8 +23,8 @@ visiva.
 ## Dove riprendere (2026-11-17)
 
 **Aperto (2026-11-20):** punto 32 (solo apertura): pause corrette dopo
-la prova di Rachele (1,5 / 3,5 / 3,5 s, vedi Decisioni), in locale,
-aspettano il suo ok per il push; il punto si chiude dopo la sua prova. Vercel ha saltato il push di 266a7bc (causa non vista:
+la prova di Rachele (1,5 / 3,5 / 3,5 s, vedi Decisioni), online
+(f1fa4df); il punto si chiude dopo la sua prova. Vercel ha saltato il push di 266a7bc (causa non vista:
 serve il login di Rachele al pannello); il push dopo (6bbb870) è andato
 online in 43 s. Se un push non arriva, prima cosa: pannello Deployments.
 
@@ -262,7 +262,7 @@ Rachele).
   online con 0,5 e 4,5: per Rachele 1→2 troppo corto, 3→4 troppo lungo · Perché: il
   tempo va dove c'è da guardare, non dove il testo è lungo · Intenzione:
   ritmo dell'apertura che segue l'attenzione. Che è un'IA lo dice la
-  caption sotto la barra. Commit 777018b del Portfolio, online
+  caption sotto la barra. Commit 777018b e f1fa4df del Portfolio, online
   (controllati testo e pause nel codice pubblicato).
 
 ## Coda
