@@ -16,6 +16,8 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 **Deciso (Rachele, 2026-11-20):** si toglie il gradino 4. La chiusura avviene al gradino 3 ("Lo dejamos aquí. Si en algún momento quieres hablar de mi trabajo, puedes empezar una conversación nueva."), che finisce con `[[cierre]]` e blocca l'invio. Perché: il gradino 3 è già un messaggio di chiusura e indica cosa fare; il 4 invitava a scrivere quando non si poteva più. Da fare dopo il punto 32: system prompt §9 e PRD §3.3 (gradini da 4 a 3).
 
+**Fatto in locale (2026-11-20, commit a415ccd del Portfolio, non ancora online):** prompt §9 e PRD §3.3 a tre gradini; `[[cierre]]` al gradino 3. Non provato con una conversazione vera.
+
 ---
 
 ## 3. Pulsante "Nueva conversación" sempre attivo
@@ -33,6 +35,8 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 3. Dopo aver usato solo un tag: deve comparire il dialogo, perché il tag avvia la conversazione.
 
 **Deciso (Rachele, 2026-11-20):** il pulsante è disattivato finché il visitatore non ha scritto un messaggio o usato un tag. Da riportare nel PRD §3.5; il riavvio senza dialogo non serve più. Codice da fare dopo il punto 32 (tocca gli stessi file).
+
+**Fatto in locale (2026-11-20, commit a415ccd del Portfolio, non ancora online):** pulsante disattivo (opacità 0,5 come la card WIP) e PRD §3.5 aggiornato. Provato in locale: disattivo all'inizio, attivo dopo un messaggio, dialogo al clic, di nuovo disattivo dopo la conferma. Il caso del solo tag non si può provare nel browser di Lola (le animazioni lì non finiscono): da provare online.
 
 **Nota.** I messaggi che compaiono senza animazione sono previsti: l'animazione arriva nella fase 5 della build.
 

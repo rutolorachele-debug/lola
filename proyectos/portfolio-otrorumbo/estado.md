@@ -23,8 +23,9 @@ visiva.
 ## Dove riprendere (2026-11-17)
 
 **Aperto (2026-11-20):** punto 32 fatto e chiuso da Rachele (1,5 / 3,5 /
-3,5 s, online in f1fa4df; se vorrà, lo ritocca più avanti). Ora si
-sbloccano codice e prompt dei punti 2 e 3. Vercel ha saltato il push di 266a7bc (causa non vista:
+3,5 s, online in f1fa4df; se vorrà, lo ritocca più avanti). Punti 2 e 3
+fatti in locale (a415ccd del Portfolio), aspettano l'ok di Rachele per il
+push; poi lei prova online il tag e la scala ostile. Vercel ha saltato il push di 266a7bc (causa non vista:
 serve il login di Rachele al pannello); il push dopo (6bbb870) è andato
 online in 43 s. Se un push non arriva, prima cosa: pannello Deployments.
 
