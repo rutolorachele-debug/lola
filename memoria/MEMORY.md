@@ -18,4 +18,5 @@ Una ficha = un hecho; el diario de un frente, en `historial/`. Este índice se c
 - [Suggerimenti mai primari](suggerimenti-mai-primari.md) — primario solo per l'azione principale (inviare); prove Figma da schermate a riposo
 - [Commit solo righe mie](commit-solo-righe-mie.md) — prima di `git add` guardare il diff; modifiche di altre chat restano fuori dal commit
 - [Perimetro del punto](perimetro-del-punto.md) — punto vago ("tempi delle animazioni") = chiedere quale parte prima di analizzare tutto il sito
+- [Lista: incrociare con lo stato](lista-incrociare-con-stato.md) — prima di presentare punti aperti, controllare stato e Punti fatti; per ogni decisione riassumere cosa diceva il punto
 

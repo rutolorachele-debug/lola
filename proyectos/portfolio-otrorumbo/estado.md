@@ -214,8 +214,15 @@ Per lavorare sul codice serve la cartella Portfolio aperta nella sessione
 (la sola `@` nel messaggio non basta).
 Lista salvata in `miglioramenti-portfolio.md`: punti aperti in alto,
 "Punti fatti" in fondo con il come (7, 9, 10, 15, 16, 19, 20, 22, 23.1, 23.3, 23.4, 23.5, 24, 25, 26, 27, 28, 29, 30, 31, 33).
-Proposta di Lola in attesa: gli "imbarazzi" 18 e 17 (prompt, li scrive
-Rachele).
+Punto 17 fatto in un'altra chat (2026-11-20, commit 1ec5f62). Punto 18
+(tono brusco) scartato da Rachele (2026-11-20): non si vede, tolto dalla
+lista. Punto 21 (prompt più corto) necessario, ma più avanti.
+Tolti anche 1 e 6 (articoli già con struttura e contenuti nuovi) e 11
+(era il 23.3, fatto). Punto 3 deciso (2026-11-20): "Nueva conversación"
+disattivato finché non c'è un messaggio o un tag; codice dopo il 32.
+Punti 4 e 13: Rachele li guarda a casa, con calma.
+Punto 2 deciso (2026-11-20): si toglie il gradino 4, la chat si chiude al
+3 con `[[cierre]]`; prompt §9 e PRD §3.3 dopo il 32. Punto 5 in pausa.
 
 ## Decisioni di questo progetto
 

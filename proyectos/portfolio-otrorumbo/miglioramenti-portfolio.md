@@ -4,14 +4,6 @@ Note raccolte durante il testing del portfolio. Non sono da fare adesso: si valu
 
 ---
 
-## 1. Immagini dei progetti
-
-- Migliorare le immagini dei progetti Glovo Duo e Pillowtalk.
-- Da dettagliare: quali immagini non convincono e perché (qualità, peso, ritaglio, formato, resa su mobile).
-- Riferimento: fase 7 della build (articoli e immagini), PRD §3.4.
-
----
-
 ## 2. Chat chiusa dopo conversazione ostile: messaggio incoerente
 
 **Cosa succede.** Quando si arriva al gradino 4 della scala ostile (PRD §3.3, system prompt §9), il pulsante di invio si disattiva, come previsto. Però l'ultimo messaggio di Rachele dice "Si tienes una pregunta sobre mi trabajo, aquí estoy", cioè invita a scrivere ancora, mentre il visitatore non può più farlo. L'unica strada è iniziare una nuova conversazione.
@@ -22,12 +14,7 @@ Note raccolte durante il testing del portfolio. Non sono da fare adesso: si valu
 
 Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empieza una nueva conversación o reserva una llamada"). Il caso ostile è l'unico senza una spiegazione chiara.
 
-**Opzioni da decidere (non ancora scelte):**
-1. Mostrare un avviso fisso quando l'invio è disattivato per ostilità, per esempio "Esta conversación está cerrada. Puedes empezar una nueva desde el menú." Richiede di modificare la regola "no extra message" del PRD §3.3.
-2. Cambiare il testo del gradino 4 nel system prompt, così non invita a scrivere. È una scelta di Rachele, perché il testo è suo.
-3. Lasciare tutto com'è, accettando la contraddizione.
-
-**Nota.** Il messaggio del gradino 4 va cambiato solo da Rachele. Prima di toccarlo serve il suo via.
+**Deciso (Rachele, 2026-11-20):** si toglie il gradino 4. La chiusura avviene al gradino 3 ("Lo dejamos aquí. Si en algún momento quieres hablar de mi trabajo, puedes empezar una conversación nueva."), che finisce con `[[cierre]]` e blocca l'invio. Perché: il gradino 3 è già un messaggio di chiusura e indica cosa fare; il 4 invitava a scrivere quando non si poteva più. Da fare dopo il punto 32: system prompt §9 e PRD §3.3 (gradini da 4 a 3).
 
 ---
 
@@ -45,7 +32,7 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 2. Dopo un messaggio: deve comparire il dialogo di conferma.
 3. Dopo aver usato solo un tag: deve comparire il dialogo, perché il tag avvia la conversazione.
 
-**Da decidere:** disattivare il pulsante finché la conversazione non è iniziata (scelta di Rachele, da riportare nel PRD §3.5). In quel caso il riavvio senza dialogo non servirebbe più.
+**Deciso (Rachele, 2026-11-20):** il pulsante è disattivato finché il visitatore non ha scritto un messaggio o usato un tag. Da riportare nel PRD §3.5; il riavvio senza dialogo non serve più. Codice da fare dopo il punto 32 (tocca gli stessi file).
 
 **Nota.** I messaggi che compaiono senza animazione sono previsti: l'animazione arriva nella fase 5 della build.
 
@@ -71,6 +58,8 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 - Il frontend passa al modello quali tag sono già stati usati, così la risposta non propone l'argomento già usato.
 - Chiarire nel system prompt §12 che l'offerta vale solo se l'altro tag è ancora disponibile. Questa modifica è di Rachele.
 
+**Rachele (2026-11-20):** da vedere con calma, a casa.
+
 ---
 
 ## 5. Pulsante "fammi un riassunto" accanto ai progetti
@@ -89,22 +78,9 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 - Il pulsante non deve mandare messaggi in chat. La regola del PRD e del brief che lo vieta per l'apertura dei progetti è un residuo, da pulire nei documenti più avanti.
 
 **Da decidere:**
-1. Dove appare il riassunto: nella chat, in un overlay o nell'articolo.
+1. Dove appare il riassunto: in un overlay o in cima all'articolo (la chat è esclusa, perché il pulsante non manda messaggi).
 
----
-
-## 6. Formattazione dei testi degli articoli
-
-**Cosa succede.** Nei testi degli articoli dei progetti manca la formattazione. Esempio segnalato: il primo paragrafo.
-
-**Cosa dicono i documenti.**
-- La fase 3 chiede di copiare il "Texto portfolio" alla lettera, con i grassetti dove ci sono (system prompt §14).
-- La fase 3 chiede anche di togliere la riga del titolo in grassetto prima di `[01]`, perché in Figma non c'è. Il primo paragrafo, "Proyecto: ...", è rimasto senza formattazione. Va verificato se in Figma quel paragrafo ha uno stile proprio.
-
-**Da verificare:**
-1. Quale progetto e quale paragrafo (il primo di Glovo Duo, di Pillowtalk o di entrambi).
-2. Confrontare il testo sul sito con Figma, nella pagina "Design System e Schermate finali", per capire lo stile atteso.
-3. Controllare che i grassetti e le sezioni del system prompt §14 arrivino nel sito.
+**Rachele (2026-11-20):** in pausa, per ora non si fa.
 
 ---
 
@@ -114,18 +90,12 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ---
 
-## 11. Spaziature e sfumatura della chat
-
-- La chat non rispetta gli spazi: in basso è molto alta e separata dalla frase sulla privacy. Da rivedere.
-- In alto i messaggi devono uscire sfumando. La sfumatura parte dal margine della sidebar al 100% e finisce al margine dell'header al 0%. **Fatto con il 23.5** (vedi Punti fatti). Resta aperta solo la prima riga, che è il 23.3.
-
----
-
 ## 13. La chat apre un progetto su richiesta
 
 - Il visitatore scrive, per esempio, "voglio vedere il progetto di Glovo", e la chat apre il progetto.
 - Serve un marcatore nascosto nella risposta, letto dal frontend, come `[[cierre]]`. Serve anche una regola nel system prompt che dica quando usarlo, scritta da Rachele.
 - Da decidere: come deve rispondere la chat mentre apre il progetto.
+- **Rachele (2026-11-20):** da vedere con calma, a casa.
 
 ---
 
@@ -136,20 +106,12 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 ---
 
-## 18. Tono di voce troppo brusco
-
-- Alla domanda su come disegnare un'applicazione in Figma, la chat ha risposto: "io non disegno in Figma per nessuno, calmati". Il tono è stato percepito come aggressivo.
-- Il tono deve restare sempre gentile, anche con domande dirette o provocatorie.
-- Da rivedere nel system prompt (§6 e §9, scala ostile), perché la scala ostile non deve mai essere usata su domande normali.
-- Rachele pensava che fosse già stato sistemato. Da verificare nei test futuri.
-
----
-
 ## 21. Ottimizzare il system prompt (è molto lungo)
 
 - Il system prompt è molto lungo. Da valutare se e come ridurlo, senza perdere le regole che la chat deve rispettare.
 - Nei documenti non è scritto un limite di lunghezza. Il brief (§6) dice solo che il costo dipende dalla lunghezza del prompt moltiplicata per i messaggi, e che il prompt caching serve a questo.
-- Da rivedere insieme ai punti 17 e 18 (regole da aggiungere o correggere), perché ottimizzare non deve togliere le correzioni.
+- Ottimizzare non deve togliere le regole nuove del §9 (punto 17, fatto).
+- Necessario, ma in un altro momento (Rachele, 2026-11-20).
 
 ---
 
@@ -228,20 +190,15 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 ## Da decidere
 
-- [ ] Immagini dei progetti: raccogliere i dettagli e scegliere le versioni da sostituire.
-- [ ] Chat chiusa: scegliere tra le opzioni 1, 2 o 3 del punto 2.
-- [ ] "Nueva conversación": confermare se disattivare il pulsante finché la conversazione non inizia, e verificare i tre casi del punto 3.
-- [ ] Tag: verificare più volte l'offerta dell'argomento già usato, nei due ordini, e scegliere la correzione del punto 4.
-- [ ] Pulsante "fammi un riassunto": decidere dove appare il riassunto, secondo il punto 5.
+- [ ] Chat chiusa: togliere il gradino 4, chiusura al 3 (deciso), prompt e PRD dopo il punto 32, secondo il punto 2.
+- [ ] "Nueva conversación": disattivare il pulsante finché la conversazione non inizia (deciso), codice dopo il punto 32, secondo il punto 3.
+- [ ] Tag (a casa, con calma): verificare più volte l'offerta dell'argomento già usato, nei due ordini, e scegliere la correzione del punto 4.
+- [ ] Pulsante "fammi un riassunto" (in pausa): decidere dove appare il riassunto, secondo il punto 5.
 - [ ] Microinterazioni: rivedere, secondo il punto 8.
-- [ ] Spaziature e sfumatura della chat: rivedere, secondo il punto 11.
-- [ ] La chat apre un progetto su richiesta: marcatore nascosto, regola nel system prompt e risposta mentre apre, secondo il punto 13.
+- [ ] La chat apre un progetto su richiesta (a casa, con calma): marcatore nascosto, regola nel system prompt e risposta mentre apre, secondo il punto 13.
 - [ ] Messaggi lunghi: verificare perché non vengono spezzati, secondo il punto 14.
-- [ ] Domande fuori contesto con ricerca sul web: gestire nel system prompt §9 e testare, secondo il punto 17.
-- [ ] Tono di voce troppo brusco: rivedere il system prompt e testare, secondo il punto 18.
 - [ ] Ottimizzare il system prompt, che è molto lungo: valutare la riduzione, secondo il punto 21.
 - [ ] Correzioni di layout e stato: misure mobile della sidebar (23.2), secondo il punto 23.
-- [ ] Formattazione degli articoli: dire quale progetto e quale paragrafo, poi confrontare con Figma, secondo il punto 6.
 - [ ] Tempi delle animazioni da uniformare, secondo il punto 32.
 - [ ] Per il futuro: effetto glass, da riscrivere con il riferimento Figma, secondo il punto 12.
 
