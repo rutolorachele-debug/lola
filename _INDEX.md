@@ -14,7 +14,7 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 
 - **Portfolio Otrorumbo** — online; passo 4 (migliorie) in corso,
   25-28 e 30 fatti (chat compatta, caricamento, entrata, bolle IA); nuovi 31-33 (centratura, tempi, spazi sidebar); 29 prima in Figma;
-  23.2-23.3 e Pillowtalk aspettano Rachele →
+  23.2 aspetta Rachele; video Pillowtalk in locale, aspettano l'ok per il push →
   [stato](proyectos/portfolio-otrorumbo/estado.md)
 - **Propuesta de ejemplo** (ejemplo: bórralo cuando tengas el tuyo) — una
   propuesta para un cliente inventado; el resumen del encargo está hecho,

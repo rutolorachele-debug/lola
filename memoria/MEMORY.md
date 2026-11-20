@@ -15,4 +15,5 @@ Una ficha = un hecho; el diario de un frente, en `historial/`. Este índice se c
 - [Misurare a più larghezze](misurare-piu-larghezze.md) — dove sta un elemento: misurarlo sulla pagina vera a 2-3 larghezze, mai dedurlo dal CSS
 - [Iniziare non è eseguire](iniziare-non-e-eseguire.md) — "punto X" = analisi + proposta + "lo correggo?"; codice solo dopo il sì
 - [Suggerimenti mai primari](suggerimenti-mai-primari.md) — primario solo per l'azione principale (inviare); prove Figma da schermate a riposo
+- [Commit solo righe mie](commit-solo-righe-mie.md) — prima di `git add` guardare il diff; modifiche di altre chat restano fuori dal commit
 
