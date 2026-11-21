@@ -33,8 +33,17 @@ Siguiente: Rachele la prova e porta le misure mancanti.
 - **2026-11-21 · condividere = copia/incolla del testo** · nella pagina
   pubblicata download e finestre di conferma sono bloccati.
 
+- **2026-11-21 · mobile first** · sul telefono: pianta a tutta altezza,
+  barra in basso per il mobile scelto, catalogo che sale dal basso. Da
+  980 px in su: tre colonne (catalogo, pianta, misure).
+- **2026-11-21 · GitHub e Vercel in un repo a parte** · la pagina non si
+  pubblica dal repo `lola`, perché esporrebbe la memoria di Lola. Serve un
+  repo vuoto solo per la pagina (es. `arredo-casa`).
+
 ## Cola
 
+0. Rachele crea su GitHub il repo vuoto `arredo-casa`; Lola ci mette la
+   pagina; Rachele la importa su Vercel (Rachele, poi Lola)
 1. Rachele prova la pagina e dice cosa non torna (Rachele)
 2. Misure di cucina, bagno, corridoio e posizione reale dei pilastri (Rachele)
 3. Nomi delle stanze: quale è salone, camera, studio (Rachele, si scrive nella pagina)
