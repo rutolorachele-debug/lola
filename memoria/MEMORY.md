@@ -24,4 +24,5 @@ Una ficha = un hecho; el diario de un frente, en `historial/`. Este índice se c
 - [Lista: incrociare con lo stato](lista-incrociare-con-stato.md) — prima di presentare punti aperti, controllare stato e Punti fatti; per ogni decisione riassumere cosa diceva il punto
 - [PowerShell tra virgolette singole](powershell-virgolette-singole.md) — da Bash `powershell -Command '...'`, mai doppie: Bash mangia i `$`
 - [Lola su GitHub](lola-su-github.md) — copia privata in rutolorachele-debug/lola; ogni commit fa push da solo (hook in `.git/hooks`, da ricreare su un pc nuovo)
+- [OpenClaw: leggere i log di setup](openclaw-log-setup.md) — stato vero in `Roaming\OpenClawTray\Logs` + porta 18789, non solo il log della tray
 
