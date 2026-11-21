@@ -22,4 +22,5 @@ Una ficha = un hecho; el diario de un frente, en `historial/`. Este índice se c
 - [Troubleshooting: un passo per messaggio](troubleshooting-un-passo.md) — problema che stressa = una cosa per messaggio, niente elenchi di cause; il resto va nello stato
 - [Spiegare il codice in Figma](spiegare-codice-in-figma.md) — una correzione si spiega col paragone Figma e col prima/dopo sullo schermo, mai in termini CSS
 - [Lista: incrociare con lo stato](lista-incrociare-con-stato.md) — prima di presentare punti aperti, controllare stato e Punti fatti; per ogni decisione riassumere cosa diceva il punto
+- [PowerShell tra virgolette singole](powershell-virgolette-singole.md) — da Bash `powershell -Command '...'`, mai doppie: Bash mangia i `$`
 

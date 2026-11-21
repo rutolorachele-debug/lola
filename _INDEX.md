@@ -16,6 +16,9 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
   25-28 e 30 fatti (chat compatta, caricamento, entrata, bolle IA); nuovi 31-33 (centratura, tempi, spazi sidebar); 29 prima in Figma;
   23.2 aspetta Rachele; punto 32 fatto; punti 2 e 3 in locale, aspettano l'ok di Rachele per il push →
   [stato](proyectos/portfolio-otrorumbo/estado.md)
+- **Pulizia pc** — diagnosi fatta: RAM piena (8 GB) e disco al 90%;
+  siguiente: Rachele decide se togliere Windows.old (81 GB) →
+  [stato](proyectos/pulizia-pc/estado.md)
 - **Propuesta de ejemplo** (ejemplo: bórralo cuando tengas el tuyo) — una
   propuesta para un cliente inventado; el resumen del encargo está hecho,
   falta el enfoque; siguiente: el enfoque (agente) →
@@ -29,7 +32,7 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 | `CLAUDE.md` | Quién es el agente, cómo trabaja y sus reglas | completo |
 | `EMPEZAR.md` · `PRIMERA-SESION.md` · `EXTRACCION.md` | Cómo empezar, el guion de la primera sesión y las seis preguntas | listo |
 | `canon/` | Decisiones tuyas: `decisiones.md` y `personas.md`. **Manda sobre todo** | ficha de Rachele + 2 decisiones |
-| `proyectos/` | Una carpeta por tema con su `estado.md` (un tema = un `estado.md` = una cola); `ejemplo-propuesta/` es el de práctica | portfolio-otrorumbo + el ejemplo |
+| `proyectos/` | Una carpeta por tema con su `estado.md` (un tema = un `estado.md` = una cola); `ejemplo-propuesta/` es el de práctica | portfolio-otrorumbo + pulizia-pc + el ejemplo |
 | `plantillas/` | El molde del `estado.md` de cada tema | listo |
 | `GLOSARIO.md` | Palabras de la casa, en llano | 2 ejemplos |
 | `memoria/` | La memoria del agente (`MEMORY.md` + una ficha por hecho) | 4 fichas |
