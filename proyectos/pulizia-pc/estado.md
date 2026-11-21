@@ -18,8 +18,8 @@ che torni fluido per lavorare (Figma, Chrome, Claude) senza perdere file.
 ## Dónde retomar (2026-11-21)
 
 Diagnosi fatta (solo lettura, niente toccato). Due cause: RAM poca (8 GB,
-quasi sempre piena) e disco pieno al 90%. Siguiente: Rachele decide se
-togliere Windows.old (passo 1).
+quasi sempre piena) e disco pieno al 90%. RAM: Rachele la compra. Siguiente: Rachele
+dice se usava CapCut/Chrome senza sync, poi si toglie Windows.old (passo 1).
 
 ## Diagnosi (2026-11-21, misurata sul PC)
 
@@ -47,10 +47,13 @@ togliere Windows.old (passo 1).
 
 ## Cola
 
-1. **Decidere Windows.old** (Rachele): c'è qualcosa del vecchio PC che ti
-   manca? Se no → si toglie con «Pulizia disco» (+81 GB). Lola guida passo
-   passo.
-2. **Comprare un banco RAM** (Rachele): DDR4 SO-DIMM 8 GB 2666 MHz, uguale a
+1. **Decidere Windows.old** (Rachele). Contiene SOLO i dati dei programmi di
+   prima (`Users\Rachele\AppData`, 80,6 GB), non foto né documenti. Da
+   salvare prima di toglierlo: progetti CapCut (`Local\CapCut\User
+   Data\Projects`, 2,7 GB) e, se Chrome non era sincronizzato, il profilo
+   Chrome (`Local\Google`, 26,6 GB, quasi tutto cache). Poi «Pulizia disco»
+   (+81 GB), Lola guida passo passo.
+2. **Comprare un banco RAM** (Rachele, deciso 2026-11-21): DDR4 SO-DIMM 8 GB 2666 MHz, uguale a
    quello montato → 16 GB. Il miglioramento più grande per pochi euro. Si
    monta in 10 minuti (o in negozio).
 3. **Resti vecchi** (Lola propone, Rachele approva): `$AV_ASW`,
