@@ -24,6 +24,11 @@ Progetto appena aperto: mappa dei 4 blocchi fatta (qui sotto). Prima
 decisione aperta: il nome (Otrorumbo è già usato dal portfolio). Prossimo
 passo: Rachele decide il punto 1 della coda.
 
+**Dati sul nome (2026-11-21):** Otro Rumbo (design) ha ~100 follower, tutti
+amici e gente di Valencia che la conosce già con quel nome. Otro Rumbo
+Studio: pagina chiusa, 0 follower. Rachele non vuole ancora parlare della
+marca con nessuno: si lavora in privato fino al lancio.
+
 ## I 4 blocchi (mappa, non ancora deciso nulla)
 
 1. **Marca:** nome, senso (perché esiste, per chi), personaggio, tono.
