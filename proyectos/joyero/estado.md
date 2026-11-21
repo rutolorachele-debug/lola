@@ -9,8 +9,8 @@ estado: ABIERTO
 # Joyero · collezione di reference con link, per lavorare con le reference a mano
 
 **Para qué existe** (2026-11-21): tenere in un solo posto le reference
-(con il loro link) per lavorarci a mano. Obiettivo concreto e per chi:
-da definire con Rachele.
+(con il loro link) per lavorarci a mano. Obiettivo: farlo provare anche
+ad altre persone, non solo a Rachele.
 
 - En vivo / dónde se ve: su Vercel — indirizzo da chiedere a Rachele
 - Código: repo GitHub a parte — nome e cartella locale da chiedere a Rachele
@@ -29,4 +29,8 @@ dove vive il codice sul pc. Siguiente: Rachele passa i link.
 1. Rachele passa il link del repo GitHub, quello di Vercel e la cartella
    locale del codice
 2. Lola guarda il sito online e il codice, e scrive qui cosa c'è
-3. Decidere con Rachele il primo lavoro da fare
+3. **Migliorare il collegamento al database** (nota di Rachele,
+   2026-11-21): oggi è scomodissimo e non scala, quindi non può farlo
+   provare ad altre persone. Intenzione: che altre persone possano usare
+   Joyero senza che Rachele faccia passaggi a mano. Lola prima capisce
+   com'è fatto oggi (passo 2), poi propone come cambiarlo; Rachele decide.
