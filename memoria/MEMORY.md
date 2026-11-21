@@ -25,4 +25,5 @@ Una ficha = un hecho; el diario de un frente, en `historial/`. Este índice se c
 - [PowerShell tra virgolette singole](powershell-virgolette-singole.md) — da Bash `powershell -Command '...'`, mai doppie: Bash mangia i `$`
 - [Lola su GitHub](lola-su-github.md) — copia privata in rutolorachele-debug/lola; ogni commit fa push da solo (hook in `.git/hooks`, da ricreare su un pc nuovo)
 - [OpenClaw: leggere i log di setup](openclaw-log-setup.md) — stato vero in `Roaming\OpenClawTray\Logs` + porta 18789, non solo il log della tray
+- [Marca: l'universo è il cuore](marca-universo-e-il-cuore.md) — mai rimandare l'universo col personaggio: l'MVP lo rimpicciolisce; un'idea per messaggio nei ragionamenti grandi
 

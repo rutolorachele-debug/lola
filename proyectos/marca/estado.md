@@ -36,7 +36,11 @@ passo: Rachele decide il punto 1 della coda.
 
 ## Decisioni di questo fronte
 
-(nessuna ancora)
+- **2026-11-21 · L'universo è il cuore** · l'esperienza digitale col
+  personaggio È il progetto: un'esperienza che poi ti entra in casa o
+  nell'armadio · **Intenzione:** mai uno shop qualsiasi; l'MVP rimpicciolisce
+  l'universo (perimetro chiuso), non lo toglie · Scartato: negozio semplice
+  prima e universo dopo (proposta di Lola).
 
 ## Coda
 
@@ -49,5 +53,6 @@ passo: Rachele decide il punto 1 della coda.
 3. Scegliere il primo "drop" (3-5 prodotti) e il modo di produrli.
 4. Business minimo per vendere: contratto di lavoro (clausola di
    esclusiva?), autónomo sì o no, una chiacchierata con un gestor.
-5. Web MVP: negozio semplice e bello prima, universo completo col
-   personaggio dopo, a pezzi.
+5. Web MVP: un universo piccolo ma vero (una scena, il personaggio, il
+   primo drop dentro), con pagamento e ordini comprati già fatti. Il resto
+   dell'universo si aggiunge a pezzi, ogni pezzo con un drop nuovo.
