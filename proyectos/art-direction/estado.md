@@ -40,4 +40,6 @@ il prompt.
 
 <!-- Uno per riga: data · strumento · cosa · prompt (link a file se lungo) · com'è andata -->
 
-_(nessuno ancora)_
+- 2026-11-21 · Figma Weave (workshop) · personaggio 1, il gangster senza
+  nome: immagine eroe → video · [scheda e prompt](personaggio-1.md) ·
+  in corso
