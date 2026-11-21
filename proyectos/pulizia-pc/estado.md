@@ -17,19 +17,16 @@ che torni fluido per lavorare (Figma, Chrome, Claude) senza perdere file.
 
 ## Dónde retomar (2026-11-21)
 
-Diagnosi fatta (solo lettura, niente toccato). Due cause: RAM poca (8 GB,
-quasi sempre piena) e disco pieno al 90%. RAM: Rachele la compra. Siguiente: Rachele
-dice se usava CapCut/Chrome senza sync, poi si toglie Windows.old (passo 1).
+Windows.old tolto: disco C da 51 a 125 GB liberi. Rachele compra la RAM
+(passo 1). Siguiente: resti vecchi (passo 2), Lola propone e Rachele approva.
 
 ## Diagnosi (2026-11-21, misurata sul PC)
 
 - **RAM 8 GB, un solo banco su 2 slot** (max 32 GB). Libera 2,3 GB; Windows
   già comprime la memoria (800 MB): segno che non basta. L'app Claude da
   sola usa ~2 GB. **È la causa principale della lentezza.**
-- **Disco C: 51 GB liberi su 503** (90% pieno). Sotto il 10-15% libero
+- **Disco C: 125 GB liberi su 503** (75% pieno). Sotto il 10-15% libero
   Windows rallenta (criterio mio, regola diffusa).
-- **Windows.old = 81 GB**: copia del vecchio Windows lasciata dal ripristino
-  del 12/11. Si toglie con lo strumento di Windows «Pulizia disco».
 - Avvio automatico: solo 6 programmi (OneDrive, Figma Agent, Edge, audio,
   antivirus). Va bene, poco da guadagnare.
 - Foto: Immagini ~92 GB locali + «iCloud Photos» (580 GB in totale, in gran
@@ -47,19 +44,21 @@ dice se usava CapCut/Chrome senza sync, poi si toglie Windows.old (passo 1).
 
 ## Cola
 
-1. **Decidere Windows.old** (Rachele). Contiene SOLO i dati dei programmi di
-   prima (`Users\Rachele\AppData`, 80,6 GB), non foto né documenti. Da
-   salvare prima di toglierlo: progetti CapCut (`Local\CapCut\User
-   Data\Projects`, 2,7 GB) e, se Chrome non era sincronizzato, il profilo
-   Chrome (`Local\Google`, 26,6 GB, quasi tutto cache). Poi «Pulizia disco»
-   (+81 GB), Lola guida passo passo.
-2. **Comprare un banco RAM** (Rachele, deciso 2026-11-21): DDR4 SO-DIMM 8 GB 2666 MHz, uguale a
-   quello montato → 16 GB. Il miglioramento più grande per pochi euro. Si
-   monta in 10 minuti (o in negozio).
-3. **Resti vecchi** (Lola propone, Rachele approva): `$AV_ASW`,
+1. **Comprare un banco RAM** (Rachele, deciso 2026-11-21): DDR4 SO-DIMM 8 GB
+   2666 MHz, uguale a quello montato → 16 GB. Il miglioramento più grande
+   per pochi euro. Si monta in 10 minuti (o in negozio).
+2. **Resti vecchi** (Lola propone, Rachele approva): `$AV_ASW`,
    `MobiSaverCache`, backup Dr.Fone, archivi iCloud doppi.
-4. **Foto**: impostare iCloud Photos su «ottimizza spazio» e spostare le
+3. **Foto**: impostare iCloud Photos su «ottimizza spazio» e spostare le
    cartelle grandi (PORTO, Fez, CAMERA) su disco esterno o cloud.
-5. **Abitudini**: riavviare almeno una volta a settimana; togliere Edge
+4. **Abitudini**: riavviare almeno una volta a settimana; togliere Edge
    dall'avvio automatico.
-6. **Capire il disco D** (7,7 GB quasi pieno).
+5. **Capire il disco D** (7,7 GB quasi pieno).
+
+## Punti fatti
+
+- **Decidere Windows.old** (Rachele). Conteneva SOLO i dati dei programmi di
+  prima (`Users\Rachele\AppData`, 80,6 GB: Chrome 26,6, CapCut 19,6 con 2,7
+  di progetti), non foto né documenti. Fatto (2026-11-21): Rachele ha detto
+  che non serve niente; Lola l'ha cancellato da terminale. Disco C da 51 a
+  125 GB liberi. Restano 10 MB di file protetti, ininfluenti.

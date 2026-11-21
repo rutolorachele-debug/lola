@@ -16,8 +16,8 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
   25-28 e 30 fatti (chat compatta, caricamento, entrata, bolle IA); nuovi 31-33 (centratura, tempi, spazi sidebar); 29 prima in Figma;
   23.2 aspetta Rachele; punto 32 fatto; punti 2 e 3 in locale, aspettano l'ok di Rachele per il push →
   [stato](proyectos/portfolio-otrorumbo/estado.md)
-- **Pulizia pc** — diagnosi fatta: RAM piena (8 GB) e disco al 90%;
-  siguiente: Rachele decide se togliere Windows.old (81 GB) →
+- **Pulizia pc** — Windows.old tolto (125 GB liberi); Rachele compra la
+  RAM; siguiente: resti vecchi, Lola propone e Rachele approva →
   [stato](proyectos/pulizia-pc/estado.md)
 - **Joyero** — collezione di reference con link; appena registrato;
   siguiente: Rachele passa i link di GitHub e Vercel →
