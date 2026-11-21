@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arredo casa: planimetria</title>
+<style>
+  :root{
+    --ink:#1f2937; --muted:#5b6472; --line:#d6d9de; --bg:#f6f6f4;
+    --accent:#1d4ed8; --danger:#b42318; --floor:#F3DCC6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+  header{padding:12px 20px;border-bottom:1px solid var(--line);background:#fff}
+  h1{font-size:20px;margin:0 0 2px}
+  header p{margin:0;color:var(--muted);font-size:14px}
+  .app{display:grid;grid-template-columns:270px minmax(0,1fr) 290px;min-height:calc(100vh - 66px)}
+  aside{background:#fff;padding:16px;overflow:auto}
+  aside.left{border-right:1px solid var(--line)}
+  aside.right{border-left:1px solid var(--line)}
+  h2{font-size:13px;margin:22px 0 8px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  h2:first-child{margin-top:0}
+  button,select,input{font:inherit;font-size:15px;color:var(--ink)}
+  button{border:1px solid #b3bac4;background:#fff;border-radius:8px;padding:8px 10px;cursor:pointer;min-height:40px}
+  button:hover{background:#eef1f5}
+  button.danger{color:var(--danger);border-color:#e3a39c}
+  button.danger:hover{background:#fdecea}
+  button:focus-visible,select:focus-visible,input:focus-visible,.item:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  label{display:block;font-size:14px;font-weight:600;margin:10px 0 4px}
+  input[type=text],input[type=number],select{width:100%;border:1px solid #b3bac4;border-radius:8px;padding:8px 10px;min-height:40px;background:#fff}
+  .row{display:flex;gap:8px}
+  .row > *{flex:1}
+  .presets{display:grid;gap:6px}
+  .preset{display:flex;align-items:center;gap:8px;text-align:left;width:100%}
+  .sw{width:16px;height:16px;border-radius:3px;border:1.5px solid var(--ink);flex:none}
+  .preset .dim{margin-left:auto;color:var(--muted);font-size:13px;white-space:nowrap}
+  .cat{font-weight:600;font-size:14px;margin:14px 0 6px}
+  .hint{color:var(--muted);font-size:14px;margin:6px 0}
+  .warn{background:#fdecea;color:var(--danger);border:1px solid #f1b5ad;border-radius:8px;padding:8px 10px;font-size:14px;margin-top:10px}
+  .ok{background:#e9f6ec;color:#1e6b34;border:1px solid #b5ddbf;border-radius:8px;padding:8px 10px;font-size:14px;margin-top:10px}
+  ol.how{padding-left:20px;margin:0;font-size:14px}
+  ol.how li{margin-bottom:4px}
+  .center{display:flex;flex-direction:column;min-width:0}
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);background:#fff}
+  .toolbar .zoom{min-width:52px;text-align:center;font-variant-numeric:tabular-nums}
+  .toolbar .sep{flex:1}
+  .toolbar label.inline{display:flex;align-items:center;gap:6px;margin:0;font-weight:500}
+  .stage{flex:1;overflow:auto;padding:16px;background:#ececea}
+  #plan{display:block;width:100%;height:auto;background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.12);user-select:none;-webkit-user-select:none}
+  .item{cursor:grab;touch-action:none}
+  .item.dragging{cursor:grabbing}
+  .handle{cursor:nwse-resize;touch-action:none}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);padding:8px 16px;background:#fff;border-top:1px solid var(--line)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  @media (max-width: 980px){
+    .app{grid-template-columns:1fr}
+    .center{order:1}
+    aside.right{order:2;border-left:0;border-top:1px solid var(--line)}
+    aside.left{order:3;border-right:0;border-top:1px solid var(--line)}
+    .stage{max-height:70vh}
+  }
+  @media print{
+    header p, aside, .toolbar, .legend{display:none}
+    .app{display:block}
+    .stage{padding:0;background:#fff;overflow:visible}
+    #plan{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Arredo casa</h1>
+  <p>Planimetria in scala. Aggiungi i mobili, trascinali e cambia le misure. Tutto si salva da solo in questo browser.</p>
+</header>
+
+<div class="app">
+  <!-- SINISTRA: aggiungere mobili -->
+  <aside class="left" aria-label="Aggiungi mobili">
+    <h2>Aggiungi un mobile</h2>
+    <label for="target">Mettilo in</label>
+    <select id="target"></select>
+    <div id="presets"></div>
+
+    <h2>Come si usa</h2>
+    <ol class="how">
+      <li>Scegli un mobile qui sopra: appare nella stanza scelta.</li>
+      <li>Trascinalo col mouse o col dito.</li>
+      <li>Per cambiare le misure: tira il quadratino blu nell'angolo, oppure scrivile nel pannello a destra.</li>
+      <li>Bordo rosso = si sovrappone a un altro mobile o a un pilastro.</li>
+      <li>Da tastiera: frecce per spostare (5 cm, con Maiusc 1 cm), R per ruotare, Canc per eliminare.</li>
+    </ol>
+  </aside>
+
+  <!-- CENTRO: planimetria -->
+  <div class="center">
+    <div class="toolbar" role="toolbar" aria-label="Vista">
+      <button id="zoomOut" aria-label="Rimpicciolisci">−</button>
+      <span class="zoom" id="zoomLabel" aria-live="polite">100%</span>
+      <button id="zoomIn" aria-label="Ingrandisci">+</button>
+      <button id="zoomFit">Adatta</button>
+      <label class="inline"><input type="checkbox" id="gridToggle" checked> Griglia 50 cm</label>
+      <span class="sep"></span>
+      <button id="undo" title="Ctrl+Z">Annulla</button>
+    </div>
+    <div class="stage" id="stage">
+      <svg id="plan" xmlns="http://www.w3.org/2000/svg" viewBox="-40 -130 970 810" role="application" aria-label="Planimetria della casa">
+        <defs>
+          <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+            <path d="M50 0H0V50" fill="none" stroke="#a5866b" stroke-opacity=".28" stroke-width="1"/>
+          </pattern>
+          <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="14" stroke="#8a8f98" stroke-opacity=".35" stroke-width="3"/>
+          </pattern>
+        </defs>
+        <g id="world">
+          <g id="floors"></g>
+          <g id="gridLayer"></g>
+          <g id="rugs"></g>
+          <g id="walls"></g>
+          <g id="labels"></g>
+          <g id="items"></g>
+          <g id="ui"></g>
+        </g>
+      </svg>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span><svg width="16" height="16"><rect x="1" y="1" width="14" height="14" fill="#F3DCC6" stroke="#333"/></svg> Pavimento</span>
+      <span><svg width="16" height="16"><rect x="1" y="1" width="14" height="14" fill="#333"/></svg> Pilastro</span>
+      <span><svg width="22" height="16"><path d="M2 14 A12 12 0 0 1 14 2" fill="none" stroke="#555" stroke-dasharray="3 2"/><line x1="2" y1="14" x2="2" y2="2" stroke="#555" stroke-width="2"/></svg> Apertura porta</span>
+      <span><svg width="22" height="16"><rect x="1" y="6" width="20" height="5" fill="#bfe0f5" stroke="#3b82c4"/></svg> Finestra</span>
+      <span><svg width="16" height="16"><rect x="1" y="1" width="14" height="14" fill="url(#hatch)" stroke="#8a8f98"/></svg> Misure da confermare</span>
+      <span><svg width="16" height="16"><rect x="1.5" y="1.5" width="13" height="13" fill="#fff" stroke="#b42318" stroke-width="3"/></svg> Sovrapposto</span>
+    </div>
+  </div>
+
+  <!-- DESTRA: modificare -->
+  <aside class="right" aria-label="Modifica">
+    <h2>Mobile selezionato</h2>
+    <div id="editor"></div>
+
+    <h2>Nomi delle stanze</h2>
+    <div id="roomNames"></div>
+
+    <h2>Salva e condividi</h2>
+    <p class="hint">Si salva da solo in questo browser. Per passare la disposizione all'altra persona: «Copia» e mandale il testo; lei fa «Incolla».</p>
+    <div class="row">
+      <button id="exportBtn">Copia</button>
+      <button id="importBtn">Incolla</button>
+    </div>
+    <div id="pasteWrap" hidden>
+      <label for="pasteBox">Testo del salvataggio</label>
+      <textarea id="pasteBox" rows="4" style="width:100%;font:13px monospace;border:1px solid #b3bac4;border-radius:8px;padding:8px"></textarea>
+      <button id="pasteLoad" style="width:100%;margin-top:6px">Carica</button>
+    </div>
+    <div id="fileMsg" aria-live="polite"></div>
+    <p style="margin-top:8px"><button id="resetBtn" class="danger" style="width:100%">Ricomincia da capo</button></p>
+    <p class="hint">Pilastri, cucina, bagno e corridoio sono presi dallo schizzo a mano: posizioni indicative. I pilastri si possono spostare e ridimensionare come i mobili.</p>
+  </aside>
+</div>
+<div class="sr" aria-live="polite" id="live"></div>
+
+<script>
+(() => {
+  // ---------- PLANIMETRIA (tutto in centimetri) ----------
+  // Origine: angolo in alto a sinistra della Stanza 1. Muri spessi 10 cm.
+  const ROOMS = [
+    { id:'r1', x:0,   y:0,   w:430, h:290, def:'Stanza 1' },
+    { id:'r2', x:440, y:-80, w:443, h:370, def:'Stanza 2' },
+    { id:'r3', x:563, y:300, w:320, h:305, def:'Stanza 3' },
+  ];
+  const OTHER = [
+    { name:'Balcone',  x:0,   y:-70, w:430, h:60,  kind:'balcony' },
+    { name:'Corridoio',x:0,   y:300, w:553, h:100, kind:'open' },
+    { name:'Cucina',   x:0,   y:410, w:378, h:230, kind:'room' },
+    { name:'Bagno',    x:388, y:410, w:165, h:190, kind:'room' },
+  ];
+  // porte: varco nel muro + anta + arco di apertura
+  const DOORS = [
+    { gap:[250,290,80,10],  leaf:[250,290,250,210], arc:'M250 210 A80 80 0 0 1 330 290' },   // Stanza 1
+    { gap:[440,290,100,10], leaf:[440,290,440,190], arc:'M440 190 A100 100 0 0 1 540 290' }, // Stanza 2 (100 cm)
+    { gap:[563,290,80,10],  leaf:[563,300,563,380], arc:'M643 300 A80 80 0 0 1 563 380' },   // Stanza 3 (80 cm)
+  ];
+  const WINDOWS = [ [86,-10,70,10], [237,-10,85,10] ];
+  const DEFAULT_PILLARS = [
+    { x:0,   y:0,   w:25, h:20 },
+    { x:400, y:0,   w:30, h:15 },
+    { x:75,  y:280, w:30, h:10 },
+    { x:400, y:275, w:30, h:15 },
+    { x:853, y:-30, w:30, h:33 },
+    { x:853, y:260, w:30, h:30 },
+    { x:858, y:570, w:25, h:35 },
+  ];
+
+  // ---------- CATALOGO ----------
+  const CATS = {
+    camera:  { label:'Camera da letto', color:'#9CC3EB' },
+    salone:  { label:'Salone',          color:'#A8D5A2' },
+    studio:  { label:'Studio',          color:'#F2C66D' },
+    altro:   { label:'Altro',           color:'#D2C4EE' },
+    pilastro:{ label:'Pilastro',        color:'#333333' },
+  };
+  const PRESETS = [
+    ['camera','Letto matrimoniale',160,200], ['camera','Letto 1 piazza e mezza',120,190],
+    ['camera','Comodino',45,40], ['camera','Armadio',200,60], ['camera','Cassettiera',100,50],
+    ['salone','Divano 3 posti',210,90], ['salone','Divano 2 posti',160,90], ['salone','Poltrona',80,80],
+    ['salone','Tavolino',100,50], ['salone','Mobile TV',160,40], ['salone','Tavolo',140,80],
+    ['salone','Sedia',45,50], ['salone','Libreria',80,30],
+    ['studio','Scrivania',120,60], ['studio','Scrivania grande',160,80], ['studio','Sedia da ufficio',60,60],
+    ['studio','Cassettiera ufficio',40,50], ['studio','Scaffale',80,35],
+    ['altro','Mobile su misura',100,50], ['altro','Tappeto',160,230,'rug'], ['altro','Pianta',40,40],
+  ];
+
+  // ---------- STATO ----------
+  const KEY = 'casa-arredo-v1';
+  const SNAP = 5;
+  let state = load() || fresh();
+  let selected = null;
+  let history = [];
+  let zoom = 1;
+
+  function fresh(){
+    return {
+      rooms: Object.fromEntries(ROOMS.map(r => [r.id, r.def])),
+      items: DEFAULT_PILLARS.map((p,i) => ({ id:'p'+i, name:'Pilastro', cat:'pilastro', ...p })),
+      seq: 1,
+    };
+  }
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; } }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+  function snapshot(){ history.push(JSON.stringify(state)); if (history.length > 80) history.shift(); }
+  function commit(){ save(); renderItems(); renderEditor(); }
+
+  // ---------- SVG UTIL ----------
+  const NS = 'http://www.w3.org/2000/svg';
+  const $ = s => document.querySelector(s);
+  function el(tag, attrs={}, parent){
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  const svg = $('#plan'), world = $('#world');
+  function toPlan(ev){
+    const p = svg.createSVGPoint(); p.x = ev.clientX; p.y = ev.clientY;
+    return p.matrixTransform(world.getScreenCTM().inverse());
+  }
+  const pxPerCm = () => world.getScreenCTM().a || 1;
+  const snap = v => Math.round(v / SNAP) * SNAP;
+  const fmt = cm => (cm/100).toFixed(2).replace('.', ',');
+  const say = t => { $('#live').textContent = t; };
+
+  // ---------- DISEGNO PLANIMETRIA ----------
+  function renderPlan(){
+    const floors = $('#floors'), walls = $('#walls'), labels = $('#labels'), grid = $('#gridLayer');
+    floors.innerHTML = walls.innerHTML = labels.innerHTML = grid.innerHTML = '';
+    const showGrid = $('#gridToggle').checked;
+
+    for (const o of OTHER){
+      if (o.kind === 'balcony'){
+        el('rect', { x:o.x, y:o.y, width:o.w, height:o.h, fill:'#E7E9E2', stroke:'#8a8f98', 'stroke-width':2 }, floors);
+      } else {
+        el('rect', { x:o.x, y:o.y, width:o.w, height:o.h, fill:'var(--floor)' }, floors);
+        el('rect', { x:o.x, y:o.y, width:o.w, height:o.h, fill:'url(#hatch)' }, floors);
+        if (o.kind === 'room') el('rect', { x:o.x-5, y:o.y-5, width:o.w+10, height:o.h+10, fill:'none', stroke:'#6b7280', 'stroke-width':10 }, walls);
+      }
+      const t = el('text', { x:o.x+o.w/2, y:o.y+o.h/2+5, 'text-anchor':'middle', 'font-size':16, fill:'#4b5563', 'font-weight':600 }, labels);
+      t.textContent = o.name;
+      if (o.kind !== 'balcony'){
+        const t2 = el('text', { x:o.x+o.w/2, y:o.y+o.h/2+23, 'text-anchor':'middle', 'font-size':12, fill:'#6b7280' }, labels);
+        t2.textContent = 'misure da confermare';
+      }
+    }
+    for (const r of ROOMS){
+      el('rect', { x:r.x, y:r.y, width:r.w, height:r.h, fill:'var(--floor)' }, floors);
+      if (showGrid) el('rect', { x:r.x, y:r.y, width:r.w, height:r.h, fill:'url(#grid)' }, grid);
+      el('rect', { x:r.x-5, y:r.y-5, width:r.w+10, height:r.h+10, fill:'none', stroke:'#262626', 'stroke-width':10 }, walls);
+      const t = el('text', { x:r.x+r.w/2, y:r.y+46, 'text-anchor':'middle', 'font-size':22, 'font-weight':700, fill:'#7a5a44', 'fill-opacity':.55 }, labels);
+      t.textContent = state.rooms[r.id] || r.def;
+      const t2 = el('text', { x:r.x+r.w/2, y:r.y+66, 'text-anchor':'middle', 'font-size':15, fill:'#7a5a44', 'fill-opacity':.6 }, labels);
+      t2.textContent = fmt(r.w) + ' × ' + fmt(r.h) + ' m';
+      // quote sui muri
+      const qw = el('text', { x:r.x+r.w/2, y:r.y+16, 'text-anchor':'middle', 'font-size':12, fill:'#7a5a44', 'fill-opacity':.7 }, labels);
+      qw.textContent = fmt(r.w);
+      const qh = el('text', { x:r.x+12, y:r.y+r.h/2, 'text-anchor':'middle', 'font-size':12, fill:'#7a5a44', 'fill-opacity':.7, transform:`rotate(-90 ${r.x+12} ${r.y+r.h/2})` }, labels);
+      qh.textContent = fmt(r.h);
+    }
+    for (const [x,y,w,h] of WINDOWS){
+      el('rect', { x, y, width:w, height:h, fill:'#bfe0f5', stroke:'#3b82c4', 'stroke-width':1.5 }, walls);
+    }
+    for (const d of DOORS){
+      const [x,y,w,h] = d.gap;
+      el('rect', { x, y, width:w, height:h, fill:'var(--floor)' }, walls);
+      el('path', { d:d.arc, fill:'none', stroke:'#555', 'stroke-width':1.5, 'stroke-dasharray':'6 4' }, walls);
+      const [x1,y1,x2,y2] = d.leaf;
+      el('line', { x1, y1, x2, y2, stroke:'#555', 'stroke-width':4 }, walls);
+    }
+  }
+
+  // ---------- MOBILI ----------
+  const nodes = new Map();
+  function overlaps(a, b){
+    return a.x < b.x+b.w && b.x < a.x+a.w && a.y < b.y+b.h && b.y < a.y+a.h;
+  }
+  function conflictsOf(it){
+    if (it.kind === 'rug') return [];
+    return state.items.filter(o => o !== it && o.kind !== 'rug' && !(it.cat==='pilastro' && o.cat==='pilastro') && overlaps(it, o));
+  }
+
+  function renderItems(){
+    const layer = $('#items'), rugs = $('#rugs');
+    const alive = new Set();
+    for (const it of state.items){
+      alive.add(it.id);
+      let g = nodes.get(it.id);
+      if (!g){ g = makeNode(it); nodes.set(it.id, g); }
+      const parent = it.kind === 'rug' ? rugs : layer;
+      if (g.parentNode !== parent) parent.appendChild(g);
+      updateNode(g, it);
+    }
+    for (const [id, g] of nodes){ if (!alive.has(id)){ g.remove(); nodes.delete(id); } }
+    // il selezionato sopra gli altri
+    const sel = nodes.get(selected);
+    if (sel && sel.parentNode === layer && layer.lastChild !== sel){
+      const hadFocus = document.activeElement === sel;
+      layer.appendChild(sel);
+      if (hadFocus) sel.focus();
+    }
+    renderHandle();
+  }
+
+  function makeNode(it){
+    const g = el('g', { class:'item', tabindex:0, role:'button' });
+    g.dataset.id = it.id;
+    el('title', {}, g);
+    el('rect', { class:'body', rx:3, 'vector-effect':'non-scaling-stroke' }, g);
+    const tg = el('g', { class:'txt', 'pointer-events':'none' }, g);
+    el('text', { class:'name', 'text-anchor':'middle', 'font-weight':600 }, tg);
+    el('text', { class:'dim', 'text-anchor':'middle', fill:'#374151' }, tg);
+    g.addEventListener('pointerdown', ev => startDrag(ev, it.id, 'move'));
+    g.addEventListener('keydown', ev => onKey(ev, it.id));
+    g.addEventListener('focus', () => { if (selected !== it.id) select(it.id); });
+    return g;
+  }
+
+  function updateNode(g, it){
+    const isSel = it.id === selected;
+    const bad = conflictsOf(it).length > 0;
+    const cat = CATS[it.cat] || CATS.altro;
+    const pillar = it.cat === 'pilastro';
+    g.setAttribute('transform', `translate(${it.x} ${it.y})`);
+    g.setAttribute('aria-label', `${it.name}, ${it.w} per ${it.h} centimetri${bad ? ', si sovrappone' : ''}`);
+    g.querySelector('title').textContent = `${it.name} ${it.w}×${it.h} cm`;
+    const r = g.querySelector('rect.body');
+    r.setAttribute('width', it.w); r.setAttribute('height', it.h);
+    if (it.kind === 'rug'){
+      r.setAttribute('fill', cat.color); r.setAttribute('fill-opacity', .35);
+      r.setAttribute('stroke', isSel ? '#1d4ed8' : '#6b5b95');
+      r.setAttribute('stroke-dasharray', '6 4');
+      r.setAttribute('stroke-width', isSel ? 3 : 2);
+    } else {
+      r.setAttribute('fill', pillar ? '#333' : cat.color);
+      r.setAttribute('fill-opacity', 1);
+      r.setAttribute('stroke', bad ? '#b42318' : (isSel ? '#1d4ed8' : '#1f2937'));
+      r.setAttribute('stroke-width', bad ? 4 : (isSel ? 3 : 1.5));
+      r.removeAttribute('stroke-dasharray');
+    }
+    // testo
+    const tg = g.querySelector('.txt');
+    const name = tg.querySelector('.name'), dim = tg.querySelector('.dim');
+    const vertical = it.h > it.w * 1.4;
+    const W = vertical ? it.h : it.w, H = vertical ? it.w : it.h;
+    let f = Math.min(16, H / 3.2);
+    f = Math.min(f, (W - 6) / (Math.max(it.name.length, 4) * 0.56));
+    const showName = !pillar && f >= 6.5;
+    const fd = Math.min(13, f * 0.85);
+    const showDim = showName && H >= f + fd + 8;
+    name.textContent = showName ? it.name : '';
+    dim.textContent = showDim ? `${it.w}×${it.h}` : '';
+    name.setAttribute('font-size', f.toFixed(1));
+    dim.setAttribute('font-size', fd.toFixed(1));
+    name.setAttribute('fill', '#111827');
+    const cy = showDim ? -fd * 0.35 : f * 0.35;
+    name.setAttribute('x', 0); name.setAttribute('y', cy);
+    dim.setAttribute('x', 0);  dim.setAttribute('y', cy + fd + 3);
+    tg.setAttribute('transform', `translate(${it.w/2} ${it.h/2})${vertical ? ' rotate(-90)' : ''}`);
+  }
+
+  function renderHandle(){
+    const ui = $('#ui'); ui.innerHTML = '';
+    const it = state.items.find(i => i.id === selected);
+    if (!it) return;
+    const s = 22 / pxPerCm();
+    const h = el('rect', { class:'handle', x:it.x+it.w - s*0.6, y:it.y+it.h - s*0.6, width:s, height:s, rx:s*0.2,
+      fill:'#1d4ed8', stroke:'#fff', 'stroke-width':2, 'vector-effect':'non-scaling-stroke' }, ui);
+    el('title', {}, h).textContent = 'Trascina per cambiare le misure';
+    h.addEventListener('pointerdown', ev => startDrag(ev, it.id, 'resize'));
+  }
+
+  // ---------- TRASCINARE ----------
+  let drag = null;
+  function startDrag(ev, id, mode){
+    if (ev.button !== undefined && ev.button !== 0) return;
+    ev.preventDefault(); ev.stopPropagation();
+    const it = state.items.find(i => i.id === id);
+    if (!it) return;
+    if (selected !== id) select(id);
+    const p = toPlan(ev);
+    drag = { id, mode, sx:p.x, sy:p.y, ox:it.x, oy:it.y, ow:it.w, oh:it.h, moved:false, snap:JSON.stringify(state) };
+    nodes.get(id)?.classList.add('dragging');
+  }
+  window.addEventListener('pointermove', ev => {
+    if (!drag) return;
+    const it = state.items.find(i => i.id === drag.id);
+    if (!it) return;
+    const p = toPlan(ev);
+    const dx = p.x - drag.sx, dy = p.y - drag.sy;
+    if (Math.abs(dx) + Math.abs(dy) > 1) drag.moved = true;
+    if (drag.mode === 'move'){ it.x = snap(drag.ox + dx); it.y = snap(drag.oy + dy); }
+    else { it.w = Math.max(10, snap(drag.ow + dx)); it.h = Math.max(10, snap(drag.oh + dy)); }
+    renderItems(); renderEditorValues();
+  });
+  window.addEventListener('pointerup', () => {
+    if (!drag) return;
+    nodes.get(drag.id)?.classList.remove('dragging');
+    if (drag.moved){ history.push(drag.snap); save(); renderEditor(); }
+    drag = null;
+  });
+  svg.addEventListener('pointerdown', ev => {
+    if (ev.target.closest('.item') || ev.target.closest('.handle')) return;
+    select(null);
+  });
+
+  // ---------- TASTIERA ----------
+  function onKey(ev, id){
+    const it = state.items.find(i => i.id === id);
+    if (!it) return;
+    const step = ev.shiftKey ? 1 : SNAP;
+    const moves = { ArrowLeft:[-step,0], ArrowRight:[step,0], ArrowUp:[0,-step], ArrowDown:[0,step] };
+    if (moves[ev.key]){
+      ev.preventDefault(); snapshot();
+      it.x += moves[ev.key][0]; it.y += moves[ev.key][1];
+      commit(); return;
+    }
+    if (ev.key === 'r' || ev.key === 'R'){ ev.preventDefault(); rotate(); }
+    if (ev.key === 'Delete' || ev.key === 'Backspace'){ ev.preventDefault(); removeSel(); }
+    if ((ev.ctrlKey || ev.metaKey) && ev.key === 'd'){ ev.preventDefault(); duplicate(); }
+  }
+  document.addEventListener('keydown', ev => {
+    if ((ev.ctrlKey || ev.metaKey) && ev.key === 'z' && !/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)){
+      ev.preventDefault(); undo();
+    }
+  });
+
+  // ---------- AZIONI ----------
+  function select(id){ selected = id; renderItems(); renderEditor(); }
+  function addItem(cat, name, w, h, kind){
+    snapshot();
+    const room = ROOMS.find(r => r.id === $('#target').value) || ROOMS[1];
+    let x = snap(room.x + (room.w - w)/2), y = snap(room.y + (room.h - h)/2);
+    while (state.items.some(o => o.x === x && o.y === y)){ x += 10; y += 10; }
+    const it = { id:'m' + (state.seq++), name, cat, w, h, x, y };
+    if (kind) it.kind = kind;
+    state.items.push(it);
+    selected = it.id;
+    commit();
+    say(`${name} aggiunto in ${state.rooms[room.id]}`);
+  }
+  function rotate(){
+    const it = state.items.find(i => i.id === selected); if (!it) return;
+    snapshot();
+    const cx = it.x + it.w/2, cy = it.y + it.h/2;
+    [it.w, it.h] = [it.h, it.w];
+    it.x = snap(cx - it.w/2); it.y = snap(cy - it.h/2);
+    commit(); say('Ruotato');
+  }
+  function duplicate(){
+    const it = state.items.find(i => i.id === selected); if (!it) return;
+    snapshot();
+    const c = { ...it, id:'m' + (state.seq++), x:it.x + 20, y:it.y + 20 };
+    state.items.push(c); selected = c.id; commit(); say('Duplicato');
+  }
+  function removeSel(){
+    const it = state.items.find(i => i.id === selected); if (!it) return;
+    snapshot();
+    state.items = state.items.filter(i => i !== it);
+    selected = null; commit(); say(`${it.name} eliminato`);
+  }
+  function undo(){
+    if (!history.length){ say('Niente da annullare'); return; }
+    state = JSON.parse(history.pop());
+    if (!state.items.some(i => i.id === selected)) selected = null;
+    save(); renderPlan(); renderItems(); renderEditor(); renderRoomNames(); renderTarget();
+    say('Annullato');
+  }
+
+  // ---------- PANNELLI ----------
+  function renderTarget(){
+    const sel = $('#target'), prev = sel.value || 'r2';
+    sel.innerHTML = ROOMS.map(r => `<option value="${r.id}">${esc(state.rooms[r.id] || r.def)}</option>`).join('');
+    sel.value = prev;
+  }
+  function renderPresets(){
+    const box = $('#presets'); box.innerHTML = '';
+    for (const key of ['camera','salone','studio','altro']){
+      const c = document.createElement('div'); c.className = 'cat'; c.textContent = CATS[key].label; box.appendChild(c);
+      const list = document.createElement('div'); list.className = 'presets'; box.appendChild(list);
+      for (const [cat, name, w, h, kind] of PRESETS.filter(p => p[0] === key)){
+        const b = document.createElement('button'); b.className = 'preset'; b.type = 'button';
+        b.innerHTML = `<span class="sw" style="background:${CATS[cat].color}"></span><span>${name}</span><span class="dim">${w}×${h}</span>`;
+        b.setAttribute('aria-label', `Aggiungi ${name}, ${w} per ${h} centimetri`);
+        b.onclick = () => addItem(cat, name, w, h, kind);
+        list.appendChild(b);
+      }
+    }
+  }
+  function renderRoomNames(){
+    const box = $('#roomNames'); box.innerHTML = '';
+    for (const r of ROOMS){
+      const l = document.createElement('label'); l.htmlFor = 'rn-' + r.id;
+      l.textContent = `${r.def} (${fmt(r.w)} × ${fmt(r.h)} m)`;
+      const i = document.createElement('input'); i.type = 'text'; i.id = 'rn-' + r.id;
+      i.value = state.rooms[r.id] || ''; i.placeholder = 'es. Salone, Camera, Studio';
+      i.addEventListener('focus', () => snapshot(), { once:true });
+      i.addEventListener('input', () => { state.rooms[r.id] = i.value || r.def; save(); renderPlan(); renderTarget(); });
+      box.appendChild(l); box.appendChild(i);
+    }
+  }
+  function renderEditor(){
+    const box = $('#editor');
+    const it = state.items.find(i => i.id === selected);
+    if (!it){
+      box.innerHTML = '<p class="hint">Tocca un mobile nella planimetria per cambiarne nome e misure.</p>';
+      return;
+    }
+    const catOpts = Object.entries(CATS).map(([k,c]) => `<option value="${k}" ${k===it.cat?'selected':''}>${c.label}</option>`).join('');
+    box.innerHTML = `
+      <label for="ed-name">Nome</label>
+      <input type="text" id="ed-name" value="${esc(it.name)}">
+      <div class="row">
+        <div><label for="ed-w">Larghezza (cm)</label><input type="number" id="ed-w" min="5" step="1" inputmode="numeric" value="${it.w}"></div>
+        <div><label for="ed-h">Profondità (cm)</label><input type="number" id="ed-h" min="5" step="1" inputmode="numeric" value="${it.h}"></div>
+      </div>
+      <p class="hint" style="margin-top:4px">Larghezza = da sinistra a destra sul disegno. Profondità = dall'alto in basso.</p>
+      <label for="ed-cat">Colore (tipo di mobile)</label>
+      <select id="ed-cat">${catOpts}</select>
+      <div class="row" style="margin-top:12px">
+        <button id="ed-rot" type="button">Ruota 90°</button>
+        <button id="ed-dup" type="button">Duplica</button>
+      </div>
+      <p style="margin:8px 0 0"><button id="ed-del" type="button" class="danger" style="width:100%">Elimina</button></p>
+      <div id="ed-status"></div>`;
+    const field = (id, fn) => {
+      const i = $(id);
+      i.addEventListener('focus', () => snapshot());
+      i.addEventListener('input', () => { fn(i); save(); renderItems(); renderStatus(); });
+    };
+    field('#ed-name', i => { it.name = i.value || 'Mobile'; });
+    field('#ed-w', i => { const v = Math.round(+i.value); if (v >= 5) it.w = v; });
+    field('#ed-h', i => { const v = Math.round(+i.value); if (v >= 5) it.h = v; });
+    $('#ed-cat').addEventListener('change', e => { snapshot(); it.cat = e.target.value; commit(); });
+    $('#ed-rot').onclick = rotate;
+    $('#ed-dup').onclick = duplicate;
+    $('#ed-del').onclick = removeSel;
+    renderStatus();
+  }
+  function renderEditorValues(){
+    const it = state.items.find(i => i.id === selected); if (!it) return;
+    const w = $('#ed-w'), h = $('#ed-h');
+    if (w && document.activeElement !== w) w.value = it.w;
+    if (h && document.activeElement !== h) h.value = it.h;
+    renderStatus();
+  }
+  function renderStatus(){
+    const box = $('#ed-status'); if (!box) return;
+    const it = state.items.find(i => i.id === selected); if (!it){ box.innerHTML = ''; return; }
+    if (it.kind === 'rug'){ box.innerHTML = '<div class="ok">Il tappeto sta sotto i mobili: non conta come sovrapposizione.</div>'; return; }
+    const c = conflictsOf(it);
+    box.innerHTML = c.length
+      ? `<div class="warn">Si sovrappone a: ${[...new Set(c.map(o => esc(o.name)))].join(', ')}</div>`
+      : '<div class="ok">Non tocca altri mobili né pilastri.</div>';
+  }
+  function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+  // ---------- ZOOM ----------
+  function setZoom(z){
+    zoom = Math.min(4, Math.max(0.5, z));
+    svg.style.width = (zoom * 100) + '%';
+    $('#zoomLabel').textContent = Math.round(zoom * 100) + '%';
+    requestAnimationFrame(renderHandle);
+  }
+  $('#zoomIn').onclick = () => setZoom(zoom + 0.25);
+  $('#zoomOut').onclick = () => setZoom(zoom - 0.25);
+  $('#zoomFit').onclick = () => setZoom(1);
+  window.addEventListener('resize', () => requestAnimationFrame(renderHandle));
+  $('#gridToggle').onchange = renderPlan;
+  $('#undo').onclick = undo;
+
+  // ---------- SALVATAGGIO DA CONDIVIDERE (testo copiato e incollato) ----------
+  const msg = (t, ok) => { $('#fileMsg').innerHTML = `<div class="${ok ? 'ok' : 'warn'}">${t}</div>`; };
+  function loadData(data){
+    if (!data || !Array.isArray(data.items) || !data.rooms) throw new Error();
+    snapshot(); state = data; selected = null;
+    save(); renderPlan(); renderItems(); renderEditor(); renderRoomNames(); renderTarget();
+  }
+  $('#exportBtn').onclick = async () => {
+    const txt = JSON.stringify(state);
+    $('#pasteBox').value = txt;
+    try { await navigator.clipboard.writeText(txt); msg('Copiato. Incollalo in un messaggio all\'altra persona.', true); }
+    catch(e){ $('#pasteWrap').hidden = false; $('#pasteBox').select(); msg('Copia a mano il testo qui sotto (è già selezionato).', true); }
+  };
+  $('#importBtn').onclick = () => { $('#pasteWrap').hidden = false; $('#pasteBox').value = ''; $('#pasteBox').focus(); };
+  $('#pasteLoad').onclick = () => {
+    try { loadData(JSON.parse($('#pasteBox').value)); $('#pasteWrap').hidden = true; msg('Caricato.', true); }
+    catch(e){ msg('Questo testo non sembra un salvataggio di Arredo casa.'); }
+  };
+  let resetArmed = false;
+  $('#resetBtn').onclick = () => {
+    const b = $('#resetBtn');
+    if (!resetArmed){
+      resetArmed = true; b.textContent = 'Sicuro? Tocca di nuovo per cancellare tutto';
+      setTimeout(() => { resetArmed = false; b.textContent = 'Ricomincia da capo'; }, 4000);
+      return;
+    }
+    resetArmed = false; b.textContent = 'Ricomincia da capo';
+    snapshot(); state = fresh(); selected = null;
+    save(); renderPlan(); renderItems(); renderEditor(); renderRoomNames(); renderTarget();
+    msg('Ricominciato. Se ti sei sbagliata: «Annulla» in alto.', true);
+  };
+
+  // ---------- AVVIO ----------
+  renderTarget(); renderPresets(); renderPlan(); renderItems(); renderEditor(); renderRoomNames();
+  requestAnimationFrame(renderHandle);
+})();
+</script>
+</body>
+</html>

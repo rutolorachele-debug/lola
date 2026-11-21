@@ -23,6 +23,9 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
   database (Sheet + Apps Script) non scala; siguiente: Rachele sceglie
   la strada (Lola consiglia «accedi con Google») →
   [stato](proyectos/joyero/estado.md)
+- **Arredo casa** — pagina con la pianta e i mobili trascinabili, fatta;
+  siguiente: Rachele la prova e porta le misure di cucina, bagno e
+  corridoio → [stato](proyectos/casa-arredo/estado.md)
 - **Art direction** — esplorazione di IA generativa per immagini e video;
   appena aperto; siguiente: Rachele porta il primo esperimento, Lola
   scrive il prompt → [stato](proyectos/art-direction/estado.md)
