@@ -19,8 +19,9 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 - **Pulizia pc** — Windows.old tolto (125 GB liberi); Rachele compra la
   RAM; siguiente: resti vecchi, Lola propone e Rachele approva →
   [stato](proyectos/pulizia-pc/estado.md)
-- **Joyero** — collezione di reference con link; appena registrato;
-  siguiente: Rachele passa i link di GitHub e Vercel →
+- **Joyero** — collezione di reference con link; codice letto; il
+  database (Sheet + Apps Script) non scala; siguiente: Rachele sceglie
+  la strada (Lola consiglia «accedi con Google») →
   [stato](proyectos/joyero/estado.md)
 - **Propuesta de ejemplo** (ejemplo: bórralo cuando tengas el tuyo) — una
   propuesta para un cliente inventado; el resumen del encargo está hecho,
