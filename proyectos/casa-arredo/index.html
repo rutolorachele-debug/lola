@@ -2,106 +2,135 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Arredo casa: planimetria</title>
 <style>
+  /* Mobile first: la pianta occupa lo schermo, i comandi stanno in basso
+     a portata di pollice. Da 980px in su diventano colonne laterali. */
   :root{
     --ink:#1f2937; --muted:#5b6472; --line:#d6d9de; --bg:#f6f6f4;
     --accent:#1d4ed8; --danger:#b42318; --floor:#F3DCC6;
+    --dock-h:76px;
   }
-  *{box-sizing:border-box}
-  body{margin:0;font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
-  header{padding:12px 20px;border-bottom:1px solid var(--line);background:#fff}
-  h1{font-size:20px;margin:0 0 2px}
-  header p{margin:0;color:var(--muted);font-size:14px}
-  .app{display:grid;grid-template-columns:270px minmax(0,1fr) 290px;min-height:calc(100vh - 66px)}
-  aside{background:#fff;padding:16px;overflow:auto}
-  aside.left{border-right:1px solid var(--line)}
-  aside.right{border-left:1px solid var(--line)}
+  *{box-sizing:border-box;min-width:0}
+  html,body{margin:0}
+  body{font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);
+       padding-bottom:calc(var(--dock-h) + env(safe-area-inset-bottom));overflow-x:clip}
+  header{padding:10px 16px;padding-top:max(10px,env(safe-area-inset-top));background:#fff;border-bottom:1px solid var(--line)}
+  h1{font-size:18px;margin:0}
+  header p{margin:2px 0 0;color:var(--muted);font-size:13px}
   h2{font-size:13px;margin:22px 0 8px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
-  h2:first-child{margin-top:0}
-  button,select,input{font:inherit;font-size:15px;color:var(--ink)}
-  button{border:1px solid #b3bac4;background:#fff;border-radius:8px;padding:8px 10px;cursor:pointer;min-height:40px}
-  button:hover{background:#eef1f5}
+  button,select,input,textarea{font:inherit;font-size:16px;color:var(--ink)}
+  button{border:1px solid #b3bac4;background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;min-height:44px}
+  button:active{background:#e8ecf2}
+  button.primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
   button.danger{color:var(--danger);border-color:#e3a39c}
-  button.danger:hover{background:#fdecea}
-  button:focus-visible,select:focus-visible,input:focus-visible,.item:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-  label{display:block;font-size:14px;font-weight:600;margin:10px 0 4px}
-  input[type=text],input[type=number],select{width:100%;border:1px solid #b3bac4;border-radius:8px;padding:8px 10px;min-height:40px;background:#fff}
+  button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,.item:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  label{display:block;font-size:14px;font-weight:600;margin:8px 0 4px}
+  input[type=text],input[type=number],select,textarea{width:100%;border:1px solid #b3bac4;border-radius:10px;padding:8px 10px;min-height:44px;background:#fff}
   .row{display:flex;gap:8px}
   .row > *{flex:1}
-  .presets{display:grid;gap:6px}
-  .preset{display:flex;align-items:center;gap:8px;text-align:left;width:100%}
-  .sw{width:16px;height:16px;border-radius:3px;border:1.5px solid var(--ink);flex:none}
-  .preset .dim{margin-left:auto;color:var(--muted);font-size:13px;white-space:nowrap}
-  .cat{font-weight:600;font-size:14px;margin:14px 0 6px}
   .hint{color:var(--muted);font-size:14px;margin:6px 0}
-  .warn{background:#fdecea;color:var(--danger);border:1px solid #f1b5ad;border-radius:8px;padding:8px 10px;font-size:14px;margin-top:10px}
-  .ok{background:#e9f6ec;color:#1e6b34;border:1px solid #b5ddbf;border-radius:8px;padding:8px 10px;font-size:14px;margin-top:10px}
+  .warn,.ok{border-radius:8px;padding:6px 10px;font-size:14px;margin-top:8px}
+  .warn{background:#fdecea;color:var(--danger);border:1px solid #f1b5ad}
+  .ok{background:#e9f6ec;color:#1e6b34;border:1px solid #b5ddbf}
+
+  /* --- vista --- */
+  .toolbar{position:sticky;top:0;z-index:5;display:flex;gap:6px;align-items:center;padding:8px 12px;background:#fff;border-bottom:1px solid var(--line);white-space:nowrap}
+  .toolbar button{flex:none;padding:6px 12px}
+  .toolbar .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .toolbar .sep{flex:none;width:1px;align-self:stretch;background:var(--line);margin:0 2px}
+  #chips{display:flex;gap:6px;flex:1 1 0;overflow-x:auto;scrollbar-width:none}
+  #chips button{flex:none}
+  .stage{height:62vh;height:max(280px,calc(100svh - var(--dock-h) - var(--top-h,140px)));overflow:auto;padding:10px;background:#ececea;overscroll-behavior:contain}
+  #plan{display:block;width:100%;height:auto;background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.12);user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+  .item{cursor:grab;touch-action:none}
+  .handle{cursor:nwse-resize;touch-action:none}
+  details.legend{background:#fff;border-bottom:1px solid var(--line);padding:8px 16px;font-size:14px}
+  details.legend summary{cursor:pointer;min-height:32px;display:flex;align-items:center;color:var(--muted)}
+  .legend-list{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted);padding-top:4px}
+  .legend-list span{display:inline-flex;align-items:center;gap:6px}
+
+  /* --- barra in basso (dock) --- */
+  #dock{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--line);
+        box-shadow:0 -4px 16px rgba(0,0,0,.08);padding:10px 12px calc(10px + env(safe-area-inset-bottom));max-height:70vh;overflow:auto}
+  #dock .actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+  #dock .dims{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  #dock .dims label{margin:4px 0 2px;font-size:13px}
+  .name-row{display:flex;gap:8px}
+  .name-row input{flex:1}
+  .name-row button{flex:none}
+  .addBtn{width:100%;font-size:17px;min-height:52px}
+
+  /* --- catalogo: foglio che sale dal basso --- */
+  #sheet{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-radius:16px 16px 0 0;
+         box-shadow:0 -8px 30px rgba(0,0,0,.2);max-height:80vh;max-height:80svh;overflow:auto;
+         padding:0 14px calc(16px + env(safe-area-inset-bottom));transform:translateY(105%);transition:transform .22s ease;visibility:hidden}
+  #sheet.open{transform:none;visibility:visible}
+  .sheet-head{position:sticky;top:0;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 0 8px;z-index:1}
+  .sheet-head h2{margin:0}
+  #backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:30;display:none}
+  #backdrop.open{display:block}
+  .cat{font-weight:600;font-size:14px;margin:14px 0 6px}
+  .presets{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .preset{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:2px;width:100%;padding:8px 10px}
+  .preset .top{display:flex;align-items:center;gap:8px;font-size:15px;line-height:1.2}
+  .sw{width:14px;height:14px;border-radius:3px;border:1.5px solid var(--ink);flex:none}
+  .preset .dim{color:var(--muted);font-size:13px}
+
+  /* --- resto (sotto la pianta) --- */
+  .more{padding:4px 16px 24px;background:#fff}
   ol.how{padding-left:20px;margin:0;font-size:14px}
   ol.how li{margin-bottom:4px}
-  .center{display:flex;flex-direction:column;min-width:0}
-  .toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);background:#fff}
-  .toolbar .zoom{min-width:52px;text-align:center;font-variant-numeric:tabular-nums}
-  .toolbar .sep{flex:1}
-  .toolbar label.inline{display:flex;align-items:center;gap:6px;margin:0;font-weight:500}
-  .stage{flex:1;overflow:auto;padding:16px;background:#ececea}
-  #plan{display:block;width:100%;height:auto;background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.12);user-select:none;-webkit-user-select:none}
-  .item{cursor:grab;touch-action:none}
-  .item.dragging{cursor:grabbing}
-  .handle{cursor:nwse-resize;touch-action:none}
-  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);padding:8px 16px;background:#fff;border-top:1px solid var(--line)}
-  .legend span{display:inline-flex;align-items:center;gap:6px}
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-  @media (max-width: 980px){
-    .app{grid-template-columns:1fr}
-    .center{order:1}
-    aside.right{order:2;border-left:0;border-top:1px solid var(--line)}
-    aside.left{order:3;border-right:0;border-top:1px solid var(--line)}
-    .stage{max-height:70vh}
-  }
-  @media print{
-    header p, aside, .toolbar, .legend{display:none}
-    .app{display:block}
-    .stage{padding:0;background:#fff;overflow:visible}
-    #plan{box-shadow:none}
+  @media (prefers-reduced-motion: reduce){ #sheet{transition:none} }
+
+  /* --- schermi grandi --- */
+  @media (min-width: 980px){
+    body{padding-bottom:0}
+    header{padding:12px 20px}
+    h1{font-size:20px}
+    .app{display:grid;grid-template-columns:280px minmax(0,1fr) 300px;height:calc(100vh - 62px)}
+    #sheet{position:static;transform:none;visibility:visible;border-radius:0;box-shadow:none;max-height:none;border-right:1px solid var(--line);padding:0 16px 16px;transition:none}
+    .sheet-close,#backdrop{display:none !important}
+    .center{display:flex;flex-direction:column;min-height:0}
+    .stage{flex:1;height:auto}
+    .side{border-left:1px solid var(--line);background:#fff;overflow:auto}
+    #dock{position:static;box-shadow:none;border-top:0;max-height:none;padding:16px}
+    .addBtn{display:none}
+    .presets{grid-template-columns:1fr}
+    #chips{flex:none}
+    .more{padding:0 16px 16px}
   }
 </style>
 </head>
 <body>
 <header>
   <h1>Arredo casa</h1>
-  <p>Planimetria in scala. Aggiungi i mobili, trascinali e cambia le misure. Tutto si salva da solo in questo browser.</p>
+  <p>Pianta in scala. Aggiungi i mobili, trascinali col dito e cambia le misure. Si salva da solo.</p>
 </header>
 
 <div class="app">
-  <!-- SINISTRA: aggiungere mobili -->
-  <aside class="left" aria-label="Aggiungi mobili">
-    <h2>Aggiungi un mobile</h2>
+  <!-- CATALOGO (foglio dal basso sul telefono, colonna a sinistra sul computer) -->
+  <aside id="sheet" aria-label="Aggiungi un mobile">
+    <div class="sheet-head">
+      <h2>Aggiungi un mobile</h2>
+      <button class="sheet-close" id="sheetClose" aria-label="Chiudi">Chiudi</button>
+    </div>
     <label for="target">Mettilo in</label>
     <select id="target"></select>
     <div id="presets"></div>
-
-    <h2>Come si usa</h2>
-    <ol class="how">
-      <li>Scegli un mobile qui sopra: appare nella stanza scelta.</li>
-      <li>Trascinalo col mouse o col dito.</li>
-      <li>Per cambiare le misure: tira il quadratino blu nell'angolo, oppure scrivile nel pannello a destra.</li>
-      <li>Bordo rosso = si sovrappone a un altro mobile o a un pilastro.</li>
-      <li>Da tastiera: frecce per spostare (5 cm, con Maiusc 1 cm), R per ruotare, Canc per eliminare.</li>
-    </ol>
   </aside>
 
-  <!-- CENTRO: planimetria -->
-  <div class="center">
+  <!-- PIANTA -->
+  <main class="center">
     <div class="toolbar" role="toolbar" aria-label="Vista">
-      <button id="zoomOut" aria-label="Rimpicciolisci">−</button>
-      <span class="zoom" id="zoomLabel" aria-live="polite">100%</span>
-      <button id="zoomIn" aria-label="Ingrandisci">+</button>
-      <button id="zoomFit">Adatta</button>
-      <label class="inline"><input type="checkbox" id="gridToggle" checked> Griglia 50 cm</label>
+      <span id="chips"></span>
       <span class="sep"></span>
-      <button id="undo" title="Ctrl+Z">Annulla</button>
+      <button id="zoomOut" aria-label="Rimpicciolisci">−</button>
+      <button id="zoomIn" aria-label="Ingrandisci">+</button>
+      <span class="sep"></span>
+      <button id="undo" aria-label="Annulla" title="Annulla">↶</button>
     </div>
     <div class="stage" id="stage">
       <svg id="plan" xmlns="http://www.w3.org/2000/svg" viewBox="-40 -130 970 810" role="application" aria-label="Planimetria della casa">
@@ -124,40 +153,54 @@
         </g>
       </svg>
     </div>
-    <div class="legend" aria-hidden="true">
-      <span><svg width="16" height="16"><rect x="1" y="1" width="14" height="14" fill="#F3DCC6" stroke="#333"/></svg> Pavimento</span>
-      <span><svg width="16" height="16"><rect x="1" y="1" width="14" height="14" fill="#333"/></svg> Pilastro</span>
-      <span><svg width="22" height="16"><path d="M2 14 A12 12 0 0 1 14 2" fill="none" stroke="#555" stroke-dasharray="3 2"/><line x1="2" y1="14" x2="2" y2="2" stroke="#555" stroke-width="2"/></svg> Apertura porta</span>
-      <span><svg width="22" height="16"><rect x="1" y="6" width="20" height="5" fill="#bfe0f5" stroke="#3b82c4"/></svg> Finestra</span>
-      <span><svg width="16" height="16"><rect x="1" y="1" width="14" height="14" fill="url(#hatch)" stroke="#8a8f98"/></svg> Misure da confermare</span>
-      <span><svg width="16" height="16"><rect x="1.5" y="1.5" width="13" height="13" fill="#fff" stroke="#b42318" stroke-width="3"/></svg> Sovrapposto</span>
-    </div>
+    <details class="legend">
+      <summary>Legenda</summary>
+      <div class="legend-list">
+        <span><svg width="16" height="16"><rect x="1" y="1" width="14" height="14" fill="#F3DCC6" stroke="#333"/></svg> Pavimento (griglia 50 cm)</span>
+        <span><svg width="16" height="16"><rect x="1" y="1" width="14" height="14" fill="#333"/></svg> Pilastro</span>
+        <span><svg width="22" height="16"><path d="M2 14 A12 12 0 0 1 14 2" fill="none" stroke="#555" stroke-dasharray="3 2"/><line x1="2" y1="14" x2="2" y2="2" stroke="#555" stroke-width="2"/></svg> Apertura porta</span>
+        <span><svg width="22" height="16"><rect x="1" y="6" width="20" height="5" fill="#bfe0f5" stroke="#3b82c4"/></svg> Finestra</span>
+        <span><svg width="16" height="16"><rect x="1" y="1" width="14" height="14" fill="#eee" stroke="#8a8f98"/><path d="M1 15L15 1" stroke="#8a8f98"/></svg> Misure da confermare</span>
+        <span><svg width="16" height="16"><rect x="1.5" y="1.5" width="13" height="13" fill="#fff" stroke="#b42318" stroke-width="3"/></svg> Si sovrappone</span>
+      </div>
+    </details>
+  </main>
+
+  <!-- MODIFICA + ALTRO -->
+  <div class="side">
+    <section id="dock" aria-label="Mobile selezionato"></section>
+    <section class="more">
+      <h2>Nomi delle stanze</h2>
+      <div id="roomNames"></div>
+
+      <h2>Salva e condividi</h2>
+      <p class="hint">Si salva da solo in questo browser. Per passare la disposizione all'altra persona: «Copia» e mandale il testo; lei fa «Incolla».</p>
+      <div class="row">
+        <button id="exportBtn">Copia</button>
+        <button id="importBtn">Incolla</button>
+      </div>
+      <div id="pasteWrap" hidden>
+        <label for="pasteBox">Testo del salvataggio</label>
+        <textarea id="pasteBox" rows="4" style="font:13px monospace"></textarea>
+        <button id="pasteLoad" style="width:100%;margin-top:6px">Carica</button>
+      </div>
+      <div id="fileMsg" aria-live="polite"></div>
+      <p style="margin-top:8px"><button id="resetBtn" class="danger" style="width:100%">Ricomincia da capo</button></p>
+
+      <h2>Come si usa</h2>
+      <ol class="how">
+        <li>«Aggiungi mobile»: scegli la stanza e il mobile.</li>
+        <li>Trascinalo col dito. Per muovere la pianta, trascina fuori dai mobili.</li>
+        <li>Misure: tira il quadratino blu nell'angolo, o scrivile in centimetri.</li>
+        <li>Bordo rosso = tocca un altro mobile o un pilastro.</li>
+        <li>Tocca il nome di una stanza in alto per ingrandirla.</li>
+        <li>Da tastiera: frecce per spostare, R ruota, Canc elimina.</li>
+      </ol>
+      <p class="hint">Pilastri, cucina, bagno e corridoio vengono dallo schizzo a mano: posizioni indicative. I pilastri si spostano e si ridimensionano come i mobili.</p>
+    </section>
   </div>
-
-  <!-- DESTRA: modificare -->
-  <aside class="right" aria-label="Modifica">
-    <h2>Mobile selezionato</h2>
-    <div id="editor"></div>
-
-    <h2>Nomi delle stanze</h2>
-    <div id="roomNames"></div>
-
-    <h2>Salva e condividi</h2>
-    <p class="hint">Si salva da solo in questo browser. Per passare la disposizione all'altra persona: «Copia» e mandale il testo; lei fa «Incolla».</p>
-    <div class="row">
-      <button id="exportBtn">Copia</button>
-      <button id="importBtn">Incolla</button>
-    </div>
-    <div id="pasteWrap" hidden>
-      <label for="pasteBox">Testo del salvataggio</label>
-      <textarea id="pasteBox" rows="4" style="width:100%;font:13px monospace;border:1px solid #b3bac4;border-radius:8px;padding:8px"></textarea>
-      <button id="pasteLoad" style="width:100%;margin-top:6px">Carica</button>
-    </div>
-    <div id="fileMsg" aria-live="polite"></div>
-    <p style="margin-top:8px"><button id="resetBtn" class="danger" style="width:100%">Ricomincia da capo</button></p>
-    <p class="hint">Pilastri, cucina, bagno e corridoio sono presi dallo schizzo a mano: posizioni indicative. I pilastri si possono spostare e ridimensionare come i mobili.</p>
-  </aside>
 </div>
+<div id="backdrop"></div>
 <div class="sr" aria-live="polite" id="live"></div>
 
 <script>
@@ -175,6 +218,7 @@
     { name:'Cucina',   x:0,   y:410, w:378, h:230, kind:'room' },
     { name:'Bagno',    x:388, y:410, w:165, h:190, kind:'room' },
   ];
+  const VIEW = { x:-40, y:-130, w:970, h:810 };
   // porte: varco nel muro + anta + arco di apertura
   const DOORS = [
     { gap:[250,290,80,10],  leaf:[250,290,250,210], arc:'M250 210 A80 80 0 0 1 330 290' },   // Stanza 1
@@ -218,6 +262,7 @@
   let selected = null;
   let history = [];
   let zoom = 1;
+  let focusRoom = null;
 
   function fresh(){
     return {
@@ -229,7 +274,8 @@
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; } }
   function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
   function snapshot(){ history.push(JSON.stringify(state)); if (history.length > 80) history.shift(); }
-  function commit(){ save(); renderItems(); renderEditor(); }
+  function commit(){ save(); renderItems(); renderDock(); }
+  function renderAll(){ renderPlan(); renderItems(); renderDock(); renderRoomNames(); renderTarget(); renderChips(); }
 
   // ---------- SVG UTIL ----------
   const NS = 'http://www.w3.org/2000/svg';
@@ -240,21 +286,22 @@
     if (parent) parent.appendChild(e);
     return e;
   }
-  const svg = $('#plan'), world = $('#world');
+  const svg = $('#plan'), world = $('#world'), stage = $('#stage');
   function toPlan(ev){
     const p = svg.createSVGPoint(); p.x = ev.clientX; p.y = ev.clientY;
     return p.matrixTransform(world.getScreenCTM().inverse());
   }
-  const pxPerCm = () => world.getScreenCTM().a || 1;
+  const pxPerCm = () => world.getScreenCTM()?.a || 1;
   const snap = v => Math.round(v / SNAP) * SNAP;
   const fmt = cm => (cm/100).toFixed(2).replace('.', ',');
   const say = t => { $('#live').textContent = t; };
+  const coarse = matchMedia('(pointer: coarse)').matches;
+  const roomName = r => state.rooms[r.id] || r.def;
 
   // ---------- DISEGNO PLANIMETRIA ----------
   function renderPlan(){
     const floors = $('#floors'), walls = $('#walls'), labels = $('#labels'), grid = $('#gridLayer');
     floors.innerHTML = walls.innerHTML = labels.innerHTML = grid.innerHTML = '';
-    const showGrid = $('#gridToggle').checked;
 
     for (const o of OTHER){
       if (o.kind === 'balcony'){
@@ -273,13 +320,12 @@
     }
     for (const r of ROOMS){
       el('rect', { x:r.x, y:r.y, width:r.w, height:r.h, fill:'var(--floor)' }, floors);
-      if (showGrid) el('rect', { x:r.x, y:r.y, width:r.w, height:r.h, fill:'url(#grid)' }, grid);
+      el('rect', { x:r.x, y:r.y, width:r.w, height:r.h, fill:'url(#grid)' }, grid);
       el('rect', { x:r.x-5, y:r.y-5, width:r.w+10, height:r.h+10, fill:'none', stroke:'#262626', 'stroke-width':10 }, walls);
       const t = el('text', { x:r.x+r.w/2, y:r.y+46, 'text-anchor':'middle', 'font-size':22, 'font-weight':700, fill:'#7a5a44', 'fill-opacity':.55 }, labels);
-      t.textContent = state.rooms[r.id] || r.def;
+      t.textContent = roomName(r);
       const t2 = el('text', { x:r.x+r.w/2, y:r.y+66, 'text-anchor':'middle', 'font-size':15, fill:'#7a5a44', 'fill-opacity':.6 }, labels);
       t2.textContent = fmt(r.w) + ' × ' + fmt(r.h) + ' m';
-      // quote sui muri
       const qw = el('text', { x:r.x+r.w/2, y:r.y+16, 'text-anchor':'middle', 'font-size':12, fill:'#7a5a44', 'fill-opacity':.7 }, labels);
       qw.textContent = fmt(r.w);
       const qh = el('text', { x:r.x+12, y:r.y+r.h/2, 'text-anchor':'middle', 'font-size':12, fill:'#7a5a44', 'fill-opacity':.7, transform:`rotate(-90 ${r.x+12} ${r.y+r.h/2})` }, labels);
@@ -299,9 +345,7 @@
 
   // ---------- MOBILI ----------
   const nodes = new Map();
-  function overlaps(a, b){
-    return a.x < b.x+b.w && b.x < a.x+a.w && a.y < b.y+b.h && b.y < a.y+a.h;
-  }
+  const overlaps = (a, b) => a.x < b.x+b.w && b.x < a.x+a.w && a.y < b.y+b.h && b.y < a.y+a.h;
   function conflictsOf(it){
     if (it.kind === 'rug') return [];
     return state.items.filter(o => o !== it && o.kind !== 'rug' && !(it.cat==='pilastro' && o.cat==='pilastro') && overlaps(it, o));
@@ -313,33 +357,31 @@
     for (const it of state.items){
       alive.add(it.id);
       let g = nodes.get(it.id);
-      if (!g){ g = makeNode(it); nodes.set(it.id, g); }
+      if (!g){ g = makeNode(it.id); nodes.set(it.id, g); }
       const parent = it.kind === 'rug' ? rugs : layer;
       if (g.parentNode !== parent) parent.appendChild(g);
       updateNode(g, it);
     }
     for (const [id, g] of nodes){ if (!alive.has(id)){ g.remove(); nodes.delete(id); } }
-    // il selezionato sopra gli altri
     const sel = nodes.get(selected);
     if (sel && sel.parentNode === layer && layer.lastChild !== sel){
       const hadFocus = document.activeElement === sel;
       layer.appendChild(sel);
-      if (hadFocus) sel.focus();
+      if (hadFocus) sel.focus({ preventScroll:true });
     }
     renderHandle();
   }
 
-  function makeNode(it){
+  function makeNode(id){
     const g = el('g', { class:'item', tabindex:0, role:'button' });
-    g.dataset.id = it.id;
     el('title', {}, g);
     el('rect', { class:'body', rx:3, 'vector-effect':'non-scaling-stroke' }, g);
     const tg = el('g', { class:'txt', 'pointer-events':'none' }, g);
-    el('text', { class:'name', 'text-anchor':'middle', 'font-weight':600 }, tg);
+    el('text', { class:'name', 'text-anchor':'middle', 'font-weight':600, fill:'#111827' }, tg);
     el('text', { class:'dim', 'text-anchor':'middle', fill:'#374151' }, tg);
-    g.addEventListener('pointerdown', ev => startDrag(ev, it.id, 'move'));
-    g.addEventListener('keydown', ev => onKey(ev, it.id));
-    g.addEventListener('focus', () => { if (selected !== it.id) select(it.id); });
+    g.addEventListener('pointerdown', ev => startDrag(ev, id, 'move'));
+    g.addEventListener('keydown', ev => onKey(ev, id));
+    g.addEventListener('focus', () => { if (selected !== id) select(id); });
     return g;
   }
 
@@ -365,7 +407,6 @@
       r.setAttribute('stroke-width', bad ? 4 : (isSel ? 3 : 1.5));
       r.removeAttribute('stroke-dasharray');
     }
-    // testo
     const tg = g.querySelector('.txt');
     const name = tg.querySelector('.name'), dim = tg.querySelector('.dim');
     const vertical = it.h > it.w * 1.4;
@@ -379,7 +420,6 @@
     dim.textContent = showDim ? `${it.w}×${it.h}` : '';
     name.setAttribute('font-size', f.toFixed(1));
     dim.setAttribute('font-size', fd.toFixed(1));
-    name.setAttribute('fill', '#111827');
     const cy = showDim ? -fd * 0.35 : f * 0.35;
     name.setAttribute('x', 0); name.setAttribute('y', cy);
     dim.setAttribute('x', 0);  dim.setAttribute('y', cy + fd + 3);
@@ -390,7 +430,7 @@
     const ui = $('#ui'); ui.innerHTML = '';
     const it = state.items.find(i => i.id === selected);
     if (!it) return;
-    const s = 22 / pxPerCm();
+    const s = (coarse ? 30 : 22) / pxPerCm();
     const h = el('rect', { class:'handle', x:it.x+it.w - s*0.6, y:it.y+it.h - s*0.6, width:s, height:s, rx:s*0.2,
       fill:'#1d4ed8', stroke:'#fff', 'stroke-width':2, 'vector-effect':'non-scaling-stroke' }, ui);
     el('title', {}, h).textContent = 'Trascina per cambiare le misure';
@@ -407,7 +447,6 @@
     if (selected !== id) select(id);
     const p = toPlan(ev);
     drag = { id, mode, sx:p.x, sy:p.y, ox:it.x, oy:it.y, ow:it.w, oh:it.h, moved:false, snap:JSON.stringify(state) };
-    nodes.get(id)?.classList.add('dragging');
   }
   window.addEventListener('pointermove', ev => {
     if (!drag) return;
@@ -418,17 +457,25 @@
     if (Math.abs(dx) + Math.abs(dy) > 1) drag.moved = true;
     if (drag.mode === 'move'){ it.x = snap(drag.ox + dx); it.y = snap(drag.oy + dy); }
     else { it.w = Math.max(10, snap(drag.ow + dx)); it.h = Math.max(10, snap(drag.oh + dy)); }
-    renderItems(); renderEditorValues();
+    renderItems(); renderDockValues();
   });
-  window.addEventListener('pointerup', () => {
+  const endDrag = () => {
     if (!drag) return;
-    nodes.get(drag.id)?.classList.remove('dragging');
-    if (drag.moved){ history.push(drag.snap); save(); renderEditor(); }
+    if (drag.moved){ history.push(drag.snap); save(); renderDockValues(); }
     drag = null;
-  });
+  };
+  window.addEventListener('pointerup', endDrag);
+  window.addEventListener('pointercancel', endDrag);
+
+  // Toccare il pavimento deseleziona (ma non se si sta scorrendo la pianta)
+  let tap = null;
   svg.addEventListener('pointerdown', ev => {
     if (ev.target.closest('.item') || ev.target.closest('.handle')) return;
-    select(null);
+    tap = { x:ev.clientX, y:ev.clientY };
+  });
+  svg.addEventListener('pointerup', ev => {
+    if (tap && Math.hypot(ev.clientX - tap.x, ev.clientY - tap.y) < 8) select(null);
+    tap = null;
   });
 
   // ---------- TASTIERA ----------
@@ -447,13 +494,13 @@
     if ((ev.ctrlKey || ev.metaKey) && ev.key === 'd'){ ev.preventDefault(); duplicate(); }
   }
   document.addEventListener('keydown', ev => {
-    if ((ev.ctrlKey || ev.metaKey) && ev.key === 'z' && !/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)){
-      ev.preventDefault(); undo();
-    }
+    const typing = /INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName);
+    if ((ev.ctrlKey || ev.metaKey) && ev.key === 'z' && !typing){ ev.preventDefault(); undo(); }
+    if (ev.key === 'Escape') closeSheet();
   });
 
   // ---------- AZIONI ----------
-  function select(id){ selected = id; renderItems(); renderEditor(); }
+  function select(id){ selected = id; renderItems(); renderDock(); }
   function addItem(cat, name, w, h, kind){
     snapshot();
     const room = ROOMS.find(r => r.id === $('#target').value) || ROOMS[1];
@@ -463,8 +510,10 @@
     if (kind) it.kind = kind;
     state.items.push(it);
     selected = it.id;
+    closeSheet();
     commit();
-    say(`${name} aggiunto in ${state.rooms[room.id]}`);
+    if (!wide()) zoomToRoom(room.id);
+    say(`${name} aggiunto in ${roomName(room)}`);
   }
   function rotate(){
     const it = state.items.find(i => i.id === selected); if (!it) return;
@@ -490,14 +539,28 @@
     if (!history.length){ say('Niente da annullare'); return; }
     state = JSON.parse(history.pop());
     if (!state.items.some(i => i.id === selected)) selected = null;
-    save(); renderPlan(); renderItems(); renderEditor(); renderRoomNames(); renderTarget();
-    say('Annullato');
+    save(); renderAll(); say('Annullato');
   }
 
-  // ---------- PANNELLI ----------
+  // ---------- CATALOGO (foglio) ----------
+  const wide = () => matchMedia('(min-width: 980px)').matches;
+  function openSheet(){
+    $('#sheet').classList.add('open'); $('#backdrop').classList.add('open');
+    if (focusRoom) $('#target').value = focusRoom;
+    setTimeout(() => $('#target').focus(), 50);
+  }
+  function closeSheet(){
+    if (wide()) return;
+    const was = $('#sheet').classList.contains('open');
+    $('#sheet').classList.remove('open'); $('#backdrop').classList.remove('open');
+    if (was && !selected) $('#addBtn')?.focus();
+  }
+  $('#sheetClose').onclick = closeSheet;
+  $('#backdrop').onclick = closeSheet;
+
   function renderTarget(){
     const sel = $('#target'), prev = sel.value || 'r2';
-    sel.innerHTML = ROOMS.map(r => `<option value="${r.id}">${esc(state.rooms[r.id] || r.def)}</option>`).join('');
+    sel.innerHTML = ROOMS.map(r => `<option value="${r.id}">${esc(roomName(r))}</option>`).join('');
     sel.value = prev;
   }
   function renderPresets(){
@@ -507,49 +570,43 @@
       const list = document.createElement('div'); list.className = 'presets'; box.appendChild(list);
       for (const [cat, name, w, h, kind] of PRESETS.filter(p => p[0] === key)){
         const b = document.createElement('button'); b.className = 'preset'; b.type = 'button';
-        b.innerHTML = `<span class="sw" style="background:${CATS[cat].color}"></span><span>${name}</span><span class="dim">${w}×${h}</span>`;
+        b.innerHTML = `<span class="top"><span class="sw" style="background:${CATS[cat].color}"></span>${name}</span><span class="dim">${w} × ${h} cm</span>`;
         b.setAttribute('aria-label', `Aggiungi ${name}, ${w} per ${h} centimetri`);
         b.onclick = () => addItem(cat, name, w, h, kind);
         list.appendChild(b);
       }
     }
   }
-  function renderRoomNames(){
-    const box = $('#roomNames'); box.innerHTML = '';
-    for (const r of ROOMS){
-      const l = document.createElement('label'); l.htmlFor = 'rn-' + r.id;
-      l.textContent = `${r.def} (${fmt(r.w)} × ${fmt(r.h)} m)`;
-      const i = document.createElement('input'); i.type = 'text'; i.id = 'rn-' + r.id;
-      i.value = state.rooms[r.id] || ''; i.placeholder = 'es. Salone, Camera, Studio';
-      i.addEventListener('focus', () => snapshot(), { once:true });
-      i.addEventListener('input', () => { state.rooms[r.id] = i.value || r.def; save(); renderPlan(); renderTarget(); });
-      box.appendChild(l); box.appendChild(i);
-    }
-  }
-  function renderEditor(){
-    const box = $('#editor');
+
+  // ---------- DOCK: mobile selezionato ----------
+  function renderDock(){
+    const box = $('#dock');
     const it = state.items.find(i => i.id === selected);
     if (!it){
-      box.innerHTML = '<p class="hint">Tocca un mobile nella planimetria per cambiarne nome e misure.</p>';
-      return;
+      box.innerHTML = `<button class="primary addBtn" id="addBtn" type="button">+ Aggiungi mobile</button>
+        <p class="hint" style="margin:6px 0 0;text-align:center">Tocca un mobile nella pianta per cambiarlo.</p>`;
+      $('#addBtn').onclick = openSheet;
+      setDockHeight(); return;
     }
     const catOpts = Object.entries(CATS).map(([k,c]) => `<option value="${k}" ${k===it.cat?'selected':''}>${c.label}</option>`).join('');
     box.innerHTML = `
-      <label for="ed-name">Nome</label>
-      <input type="text" id="ed-name" value="${esc(it.name)}">
-      <div class="row">
-        <div><label for="ed-w">Larghezza (cm)</label><input type="number" id="ed-w" min="5" step="1" inputmode="numeric" value="${it.w}"></div>
-        <div><label for="ed-h">Profondità (cm)</label><input type="number" id="ed-h" min="5" step="1" inputmode="numeric" value="${it.h}"></div>
+      <div class="name-row">
+        <input type="text" id="ed-name" aria-label="Nome del mobile" value="${esc(it.name)}">
+        <button id="ed-done" type="button" class="primary">Fatto</button>
       </div>
-      <p class="hint" style="margin-top:4px">Larghezza = da sinistra a destra sul disegno. Profondità = dall'alto in basso.</p>
-      <label for="ed-cat">Colore (tipo di mobile)</label>
-      <select id="ed-cat">${catOpts}</select>
-      <div class="row" style="margin-top:12px">
-        <button id="ed-rot" type="button">Ruota 90°</button>
+      <div class="dims">
+        <div><label for="ed-w">Larghezza ↔ (cm)</label><input type="number" id="ed-w" min="5" step="1" inputmode="numeric" value="${it.w}"></div>
+        <div><label for="ed-h">Profondità ↕ (cm)</label><input type="number" id="ed-h" min="5" step="1" inputmode="numeric" value="${it.h}"></div>
+      </div>
+      <div class="actions">
+        <button id="ed-rot" type="button">Ruota</button>
         <button id="ed-dup" type="button">Duplica</button>
+        <button id="ed-del" type="button" class="danger">Elimina</button>
       </div>
-      <p style="margin:8px 0 0"><button id="ed-del" type="button" class="danger" style="width:100%">Elimina</button></p>
-      <div id="ed-status"></div>`;
+      <div id="ed-status"></div>
+      <details style="margin-top:6px"><summary class="hint" style="cursor:pointer">Colore</summary>
+        <select id="ed-cat" aria-label="Colore (tipo di mobile)">${catOpts}</select>
+      </details>`;
     const field = (id, fn) => {
       const i = $(id);
       i.addEventListener('focus', () => snapshot());
@@ -562,9 +619,10 @@
     $('#ed-rot').onclick = rotate;
     $('#ed-dup').onclick = duplicate;
     $('#ed-del').onclick = removeSel;
-    renderStatus();
+    $('#ed-done').onclick = () => select(null);
+    renderStatus(); setDockHeight();
   }
-  function renderEditorValues(){
+  function renderDockValues(){
     const it = state.items.find(i => i.id === selected); if (!it) return;
     const w = $('#ed-w'), h = $('#ed-h');
     if (w && document.activeElement !== w) w.value = it.w;
@@ -580,20 +638,64 @@
       ? `<div class="warn">Si sovrappone a: ${[...new Set(c.map(o => esc(o.name)))].join(', ')}</div>`
       : '<div class="ok">Non tocca altri mobili né pilastri.</div>';
   }
+  // lo spazio in fondo alla pagina segue l'altezza della barra
+  function setDockHeight(){
+    requestAnimationFrame(() => {
+      const r = document.documentElement.style;
+      r.setProperty("--dock-h", $("#dock").offsetHeight + "px");
+      r.setProperty("--top-h", (stage.getBoundingClientRect().top + scrollY) + "px");
+    });
+  }
+
+  function renderRoomNames(){
+    const box = $('#roomNames'); box.innerHTML = '';
+    for (const r of ROOMS){
+      const l = document.createElement('label'); l.htmlFor = 'rn-' + r.id;
+      l.textContent = `${r.def} (${fmt(r.w)} × ${fmt(r.h)} m)`;
+      const i = document.createElement('input'); i.type = 'text'; i.id = 'rn-' + r.id;
+      i.value = state.rooms[r.id] || ''; i.placeholder = 'es. Salone, Camera, Studio';
+      i.addEventListener('focus', () => snapshot(), { once:true });
+      i.addEventListener('input', () => { state.rooms[r.id] = i.value || r.def; save(); renderPlan(); renderTarget(); renderChips(); });
+      box.appendChild(l); box.appendChild(i);
+    }
+  }
   function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 
-  // ---------- ZOOM ----------
-  function setZoom(z){
-    zoom = Math.min(4, Math.max(0.5, z));
+  // ---------- ZOOM E STANZE ----------
+  function setZoom(z, keepCenter = true){
+    const cx = stage.scrollLeft + stage.clientWidth/2, cy = stage.scrollTop + stage.clientHeight/2;
+    const old = svg.clientWidth;
+    zoom = Math.min(5, Math.max(1, z));
     svg.style.width = (zoom * 100) + '%';
-    $('#zoomLabel').textContent = Math.round(zoom * 100) + '%';
+    if (keepCenter && old){
+      const k = svg.clientWidth / old;
+      stage.scrollLeft = cx * k - stage.clientWidth/2;
+      stage.scrollTop = cy * k - stage.clientHeight/2;
+    }
     requestAnimationFrame(renderHandle);
   }
-  $('#zoomIn').onclick = () => setZoom(zoom + 0.25);
-  $('#zoomOut').onclick = () => setZoom(zoom - 0.25);
-  $('#zoomFit').onclick = () => setZoom(1);
-  window.addEventListener('resize', () => requestAnimationFrame(renderHandle));
-  $('#gridToggle').onchange = renderPlan;
+  function zoomToRoom(id){
+    focusRoom = id;
+    const r = ROOMS.find(x => x.id === id);
+    if (!r){ setZoom(1, false); stage.scrollTo(0,0); renderChips(); return; }
+    const pad = 30, sw = stage.clientWidth - 20, sh = stage.clientHeight - 20;
+    const base = sw / VIEW.w; // px per cm a zoom 1
+    const z = Math.min(sw / ((r.w + pad*2) * base), sh / ((r.h + pad*2) * base));
+    setZoom(z, false);
+    const k = svg.clientWidth / VIEW.w;
+    stage.scrollLeft = (r.x - pad - VIEW.x) * k + 10 - Math.max(0, (sw - (r.w + pad*2) * k) / 2);
+    stage.scrollTop  = (r.y - pad - VIEW.y) * k + 10 - Math.max(0, (sh - (r.h + pad*2) * k) / 2);
+    renderChips();
+  }
+  function renderChips(){
+    const box = $('#chips');
+    box.innerHTML = [`<button class="chip ${!focusRoom?'on':''}" data-r="">Tutta</button>`]
+      .concat(ROOMS.map(r => `<button class="chip ${focusRoom===r.id?'on':''}" data-r="${r.id}">${esc(roomName(r))}</button>`)).join(' ');
+    box.querySelectorAll('button').forEach(b => b.onclick = () => zoomToRoom(b.dataset.r || null));
+  }
+  $('#zoomIn').onclick = () => setZoom(zoom * 1.3);
+  $('#zoomOut').onclick = () => setZoom(zoom / 1.3);
+  window.addEventListener('resize', () => { requestAnimationFrame(renderHandle); setDockHeight(); });
   $('#undo').onclick = undo;
 
   // ---------- SALVATAGGIO DA CONDIVIDERE (testo copiato e incollato) ----------
@@ -601,7 +703,7 @@
   function loadData(data){
     if (!data || !Array.isArray(data.items) || !data.rooms) throw new Error();
     snapshot(); state = data; selected = null;
-    save(); renderPlan(); renderItems(); renderEditor(); renderRoomNames(); renderTarget();
+    save(); renderAll();
   }
   $('#exportBtn').onclick = async () => {
     const txt = JSON.stringify(state);
@@ -624,12 +726,12 @@
     }
     resetArmed = false; b.textContent = 'Ricomincia da capo';
     snapshot(); state = fresh(); selected = null;
-    save(); renderPlan(); renderItems(); renderEditor(); renderRoomNames(); renderTarget();
+    save(); renderAll();
     msg('Ricominciato. Se ti sei sbagliata: «Annulla» in alto.', true);
   };
 
   // ---------- AVVIO ----------
-  renderTarget(); renderPresets(); renderPlan(); renderItems(); renderEditor(); renderRoomNames();
+  renderPresets(); renderAll();
   requestAnimationFrame(renderHandle);
 })();
 </script>
