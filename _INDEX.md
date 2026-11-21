@@ -26,8 +26,8 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 - **Art direction** — esplorazione di IA generativa per immagini e video;
   appena aperto; siguiente: Rachele porta il primo esperimento, Lola
   scrive il prompt → [stato](proyectos/art-direction/estado.md)
-- **Marca** — poster, vestiti, accessori; appena aperto, mappa in 4
-  blocchi; siguiente: Rachele decide il nome (Otrorumbo o nuovo) →
+- **Marca** — poster, vestiti, accessori; nome deciso (otrorumbo.ux + otrorumbo.studio);
+  siguiente: marchio e dominio (Lola), poi il senso →
   [stato](proyectos/marca/estado.md)
 - **Propuesta de ejemplo** (ejemplo: bórralo cuando tengas el tuyo) — una
   propuesta para un cliente inventado; el resumen del encargo está hecho,
