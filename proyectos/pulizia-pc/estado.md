@@ -50,12 +50,15 @@ app in sottofondo (passo 3).
    guida): servono i permessi di amministratore, da terminale Lola non può.
    Start → «Pulizia disco» → «Pulisci file di sistema» → spuntare «Pulizia
    di Windows Update» → OK.
-3. **App che girano in sottofondo** (Lola propone, Rachele approva): pesano
-   sulla RAM più che sul disco. Programmi installati: pochi (il ripristino
-   li ha tolti). Candidate: Teams (2 versioni), Collegamento al telefono
-   (YourPhone, 130 MB di RAM), Copilot, giochi/Xbox, Notizie, Meteo,
-   Clipchamp, Mixed Reality. Da chiedere: OpenClaw Companion (installato
-   21/11), la riconosce?
+3. **App che girano in sottofondo** (misurato 2026-11-23, RAM in uso). Chi
+   pesa davvero:
+   - Claude 2,6 GB (19 processi: più sessioni aperte) + figma-console
+     lanciato 5 volte (~400 MB, una copia per sessione).
+   - Server del Portfolio ancora acceso (~420 MB).
+   - Edge 250 MB acceso anche se Rachele usa Chrome (avvio automatico).
+   - OpenClaw ~130 MB (installato 21/11): Rachele lo riconosce?
+   - App Microsoft preinstallate (Teams, Xbox, Notizie, Meteo, Solitario,
+     Clipchamp…): ora non girano, toglierle cambia poco. Facoltativo.
 4. **Resti vecchi** (piccoli, misurati 2026-11-23): `$AV_ASW` e
    `MobiSaverCache` vuoti, Dr.Fone 0,1 GB, FluidRay 1,7 GB, iTubeGo 0,8 GB,
    archivi «Foto di iCloud» 13 GB (da capire se doppi).
