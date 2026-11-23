@@ -22,6 +22,13 @@ visiva.
 
 ## Dove riprendere (2026-11-17)
 
+**Aperto (2026-11-23):** punti 4 (tag) e 34 (entrata a 5 messaggi) fatti
+in locale, commit 826d923 del Portfolio, NON pubblicati (sopra a a415ccd,
+anche lui non pubblicato). Dettagli nella lista. Prossimo: Rachele guarda
+in locale (`npm run dev` nella cartella del Portfolio, http://localhost:3000)
+il ritmo dell'entrata e i due tag nei due ordini, poi ok per il push dei
+tre commit. Nuovo punto 35: comando vocale, da valutare.
+
 **Aperto (2026-11-20):** punto 32 fatto e chiuso da Rachele (1,5 / 3,5 /
 3,5 s, online in f1fa4df; se vorrà, lo ritocca più avanti). Punti 2 e 3
 fatti in locale (a415ccd del Portfolio), aspettano l'ok di Rachele per il

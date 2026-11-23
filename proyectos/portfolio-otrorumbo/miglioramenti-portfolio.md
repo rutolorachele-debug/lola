@@ -64,6 +64,21 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 **Rachele (2026-11-20):** da vedere con calma, a casa.
 
+**In corso (2026-11-23):** corretto in locale (commit 826d923 del Portfolio), da approvare.
+
+---
+
+## 34. Messaggi di entrata: il 2 diviso, pausa 3-4 troppo lunga (2026-11-23)
+
+**Cosa succede.** Il messaggio 2 (respiro + refugio) va diviso in due. Tra il 3 e il 4 c'è un attimo di troppo.
+**In corso (2026-11-23):** corretto in locale (commit 826d923 del Portfolio), da approvare.
+
+---
+
+## 35. Comando vocale (2026-11-23)
+
+**Idea (Rachele):** aggiungere il comando vocale. Prima: valutare quanto è fattibile. Da precisare: su cosa (parlare alla chat invece di scrivere, o altro).
+
 ---
 
 ## 5. Pulsante "fammi un riassunto" accanto ai progetti
@@ -189,7 +204,9 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 - [ ] Chat chiusa: togliere il gradino 4, chiusura al 3 (deciso), prompt e PRD dopo il punto 32, secondo il punto 2.
 - [ ] "Nueva conversación": disattivare il pulsante finché la conversazione non inizia (deciso), codice dopo il punto 32, secondo il punto 3.
-- [ ] Tag (a casa, con calma): verificare più volte l'offerta dell'argomento già usato, nei due ordini, e scegliere la correzione del punto 4.
+- [ ] Tag: corretto in locale (punto 4); Rachele prova i due ordini e dà l'ok per pubblicare.
+- [ ] Entrata a 5 messaggi (punto 34): Rachele guarda il ritmo in locale e dà l'ok.
+- [ ] Comando vocale: valutare la fattibilità, secondo il punto 35.
 - [ ] Pulsante "fammi un riassunto" (in pausa): decidere dove appare il riassunto, secondo il punto 5.
 - [ ] Microinterazioni: rivedere, secondo il punto 8.
 - [ ] La chat apre un progetto su richiesta (a casa, con calma): marcatore nascosto, regola nel system prompt e risposta mentre apre, secondo il punto 13.
