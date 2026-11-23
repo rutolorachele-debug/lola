@@ -22,6 +22,12 @@ visiva.
 
 ## Dove riprendere (2026-11-17)
 
+**Aperto (2026-11-23, sidebar):** ritocchi in commit 1344469 del Portfolio,
+NON pubblicato (serve un «pubblica»): "Proyectos" fisso (scorre solo la
+lista, `.sidebar-list`), 12 tra le card, chip a 4, card `--vetro-campo`
+come i messaggi, hover bianco pieno. Padding card 8/8/12 lasciato apposta
+(Rachele ok). Limite noto: in pressed la card resta come in hover.
+
 **Aperto (2026-11-23):** punti 4 (tag) e 34 (entrata a 5 messaggi) fatti
 (commit 826d923 del Portfolio), pubblicati il 2026-11-23 insieme ad a415ccd
 e 9d21e72 (ok di Rachele). Dettagli nella lista. Prossimo: Rachele guarda
