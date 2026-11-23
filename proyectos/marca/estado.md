@@ -22,7 +22,7 @@ con un lavoro a tempo pieno: ore vere, non un side hustle trascurato.
 ## Dove riprendere (2026-11-21)
 
 Nome deciso (otrorumbo.ux + otrorumbo.studio). Si lavora in privato fino
-al lancio. Prossimo passo: controllare marchio e dominio, poi il senso della
+al lancio. In corso: il PRD dell'MVP, a domande, a partire dal senso della
 marca (Rachele + Lola).
 
 ## I 4 blocchi
@@ -57,11 +57,12 @@ marca (Rachele + Lola).
 
 ## Coda
 
-1. Controllare che "Otrorumbo" si possa registrare come marchio e che il
-   dominio otrorumbo.studio sia libero (Lola cerca, Rachele decide se
-   comprarlo).
-2. Scrivere il senso della marca in una pagina (perché, per chi, cosa la
-   rende diversa, il personaggio in due righe).
+1. PRD dell'MVP in `proyectos/marca/prd.md`, a partire dal senso della
+   marca (perché, per chi, cosa la rende diversa, il personaggio). Si
+   costruisce a domande, una per volta. In corso.
+2. Marchio e dominio: non urgenti (Rachele 2026-11-23). Fino alla vendita
+   basta un indirizzo provvisorio; se otrorumbo.studio è occupato si trova
+   un'alternativa. Da qui Lola non può controllarlo (il servizio è bloccato).
 3. Scegliere il primo "drop" (3-5 prodotti) e il modo di produrli.
 4. Business minimo per vendere: autónomo sì o no, una chiacchierata con un
    gestor.

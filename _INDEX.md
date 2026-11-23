@@ -27,7 +27,7 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
   appena aperto; siguiente: Rachele porta il primo esperimento, Lola
   scrive il prompt → [stato](proyectos/art-direction/estado.md)
 - **Marca** — poster, vestiti, accessori; nome deciso (otrorumbo.ux + otrorumbo.studio);
-  siguiente: marchio e dominio (Lola), poi il senso →
+  in corso: PRD dell'MVP a domande (Rachele + Lola) →
   [stato](proyectos/marca/estado.md)
 - **Propuesta de ejemplo** (ejemplo: bórralo cuando tengas el tuyo) — una
   propuesta para un cliente inventado; el resumen del encargo está hecho,
