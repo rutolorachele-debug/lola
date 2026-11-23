@@ -5,7 +5,7 @@ metadata:
   type: feedback
 ---
 
-Quando un punto tocca il system prompt del Portfolio (`prompt/system_prompt.md`), Lola mostra la bozza e, avuto l'ok, la inserisce lei nel prompt. Il contenuto lo decide Rachele; copiarlo a mano non serve.
+Quando un punto tocca il system prompt del Portfolio (dal 2026-11-23 diviso in file numerati in `prompt/`, uno per gruppo di sezioni; si apre solo quello della sezione), Lola mostra la bozza e, avuto l'ok, la inserisce lei nel prompt. Il contenuto lo decide Rachele; copiarlo a mano non serve.
 
 **Why:** il 2026-11-20 Lola ha lasciato la bozza del punto 17 in un file a parte "perché il prompt lo scrive Rachele". Rachele: "perché non lo puoi mettere tu?" e poi "mettilo nel prompt e basta". In più non vuole troppi documenti.
 

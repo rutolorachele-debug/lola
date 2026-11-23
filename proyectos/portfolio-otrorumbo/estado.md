@@ -28,6 +28,17 @@ lista, `.sidebar-list`), 12 tra le card, chip a 4, card `--vetro-campo`
 come i messaggi, hover bianco pieno. Padding card 8/8/12 lasciato apposta
 (Rachele ok). Limite noto: in pressed la card resta come in hover.
 
+**Prompt diviso (2026-11-23, commit f1541a2 del Portfolio, in locale):**
+`prompt/system_prompt.md` (84 KB) ora è 10 file numerati in `prompt/`
+(01-chi-sei … 10-prenotazione-e-risposte-lunghe), stesse sezioni §1-18.
+Il server (`readSystemPrompt`, `route.ts`) li cuce nell'ordine del numero:
+testo identico byte per byte (verificato), build ok, tutti i file nel
+pacchetto Vercel. Perché (Rachele): col file unico gli assistenti non
+riuscivano a leggerlo tutto. Per la chat non cambia niente. Aggiornati
+CLAUDE.md, brief e PRD del Portfolio. Prossimo sul prompt: punto 14
+(risposte lunghe, §18), poi 21 (accorciare; candidato di Lola: texto
+portfolio, ~10 KB). Push insieme agli altri, con l'ok di Rachele.
+
 **Aperto (2026-11-23):** punti 4 (tag) e 34 (entrata a 5 messaggi) fatti
 (commit 826d923 del Portfolio), pubblicati il 2026-11-23 insieme ad a415ccd
 e 9d21e72 (ok di Rachele). Dettagli nella lista. Prossimo: Rachele guarda

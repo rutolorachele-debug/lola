@@ -131,6 +131,7 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 - Nei documenti non è scritto un limite di lunghezza. Il brief (§6) dice solo che il costo dipende dalla lunghezza del prompt moltiplicata per i messaggi, e che il prompt caching serve a questo.
 - Ottimizzare non deve togliere le regole nuove del §9 (punto 17, fatto).
 - Necessario, ma in un altro momento (Rachele, 2026-11-20).
+- **Primo passo fatto (2026-11-23, commit f1541a2, in locale):** prompt diviso in 10 file numerati in `prompt/`, testo identico. Non lo accorcia: serve a modificarlo a pezzi. Candidato al taglio (criterio di Lola): il texto portfolio dei progetti, ~10 KB, che la chat non usa mai ed è già in `lib/articles.ts`.
 
 ---
 
