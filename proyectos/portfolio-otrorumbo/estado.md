@@ -23,18 +23,17 @@ visiva.
 ## Dove riprendere (2026-11-17)
 
 **Aperto (2026-11-23):** punti 4 (tag) e 34 (entrata a 5 messaggi) fatti
-in locale, commit 826d923 del Portfolio, NON pubblicati (sopra a a415ccd,
-anche lui non pubblicato). Dettagli nella lista. Prossimo: Rachele guarda
-in locale (`npm run dev` nella cartella del Portfolio, http://localhost:3000)
-il ritmo dell'entrata e i due tag nei due ordini, poi ok per il push dei
-tre commit. Nuovo punto 35: comando vocale, da valutare.
+(commit 826d923 del Portfolio), pubblicati il 2026-11-23 insieme ad a415ccd
+e 9d21e72 (ok di Rachele). Dettagli nella lista. Prossimo: Rachele guarda
+online il ritmo dell'entrata e i due tag nei due ordini. Nuovo punto 35: comando vocale, da valutare.
 
 **Aperto (2026-11-20):** punto 32 fatto e chiuso da Rachele (1,5 / 3,5 /
 3,5 s, online in f1fa4df; se vorrà, lo ritocca più avanti). Punti 2 e 3
 fatti in locale (a415ccd), più barra chiusa al 50% con "Ya no puedes
 enviar mensajes" (9d21e72, sopra 826d923): Rachele li ha provati in locale
-il 2026-11-23 e le vanno bene. Il push porta online tutti e tre i commit,
-anche 826d923 dell'altra chat. Vercel ha saltato il push di 266a7bc (causa non vista:
+il 2026-11-23 e le vanno bene. Pubblicati tutti e tre (push c01c5e1..9d21e72,
+2026-11-23, ok di Rachele anche per 826d923 dell'altra chat). Da provare
+online: il solo tag attiva "Nueva conversación". Vercel ha saltato il push di 266a7bc (causa non vista:
 serve il login di Rachele al pannello); il push dopo (6bbb870) è andato
 online in 43 s. Se un push non arriva, prima cosa: pannello Deployments.
 
