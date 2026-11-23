@@ -22,6 +22,23 @@ visiva.
 
 ## Dove riprendere (2026-11-17)
 
+**Mobile, decisioni da eseguire col codice (2026-11-23, chat senza
+codice):** questa chat raccoglie le modifiche; la sessione col codice le
+esegue e Rachele le prova in localhost. Audit mobile per parti.
+1. **Apertura uguale al desktop (deciso, Rachele):** niente card durante
+   l'apertura. I messaggi, dal primo a quello dei progetti, stanno al
+   centro come sul desktop. Al messaggio dei progetti i messaggi scorrono
+   in basso, compare la card e compaiono i progetti ("appare
+   l'interfaccia"). Card per ultima. Da verificare nel codice: ordine dei
+   5 messaggi e a quale arriva quello dei progetti; se ne seguono altri,
+   dove vanno (proposta di Lola: solo su mobile il messaggio dei progetti
+   diventa l'ultimo). Perché: stessa esperienza su desktop e mobile;
+   probabilmente toglie anche gli scatti (la card che cambia altezza).
+2. **Header (logo e menu) per ultimo (da valutare, Rachele):** entra dopo
+   i progetti, insieme ai tag, così i progetti hanno più spazio mentre
+   compaiono. Condizione di Lola: lo spazio dell'header resta riservato
+   dall'inizio, così all'arrivo i progetti non si spostano.
+
 **Fatto (2026-11-23, sidebar):** ritocchi in commit 1344469 del Portfolio,
 pubblicati (push 9d21e72..1344469, online verificato): "Proyectos" fisso (scorre solo la
 lista, `.sidebar-list`), 12 tra le card, chip a 4, card `--vetro-campo`
