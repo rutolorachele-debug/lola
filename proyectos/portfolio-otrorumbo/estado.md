@@ -37,7 +37,9 @@ pacchetto Vercel. Perché (Rachele): col file unico gli assistenti non
 riuscivano a leggerlo tutto. Per la chat non cambia niente. Aggiornati
 CLAUDE.md, brief e PRD del Portfolio. Prossimo sul prompt: punto 14
 (risposte lunghe, §18), poi 21 (accorciare; candidato di Lola: texto
-portfolio, ~10 KB). Push insieme agli altri, con l'ok di Rachele.
+portfolio, ~10 KB). Push fatto con l'ok di Rachele (2026-11-23).
+Da verificare online: un messaggio vero nella chat (se i file mancassero,
+la chat darebbe errore invece di rispondere).
 
 **Aperto (2026-11-23):** punti 4 (tag) e 34 (entrata a 5 messaggi) fatti
 (commit 826d923 del Portfolio), pubblicati il 2026-11-23 insieme ad a415ccd
