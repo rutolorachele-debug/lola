@@ -16,7 +16,7 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 **Deciso (Rachele, 2026-11-20):** si toglie il gradino 4. La chiusura avviene al gradino 3 ("Lo dejamos aquí. Si en algún momento quieres hablar de mi trabajo, puedes empezar una conversación nueva."), che finisce con `[[cierre]]` e blocca l'invio. Perché: il gradino 3 è già un messaggio di chiusura e indica cosa fare; il 4 invitava a scrivere quando non si poteva più. Da fare dopo il punto 32: system prompt §9 e PRD §3.3 (gradini da 4 a 3).
 
-**Fatto in locale (2026-11-20, commit a415ccd del Portfolio, non ancora online):** prompt §9 e PRD §3.3 a tre gradini; `[[cierre]]` al gradino 3. Non provato con una conversazione vera.
+**Fatto in locale (2026-11-20, commit a415ccd del Portfolio, non ancora online):** prompt §9 e PRD §3.3 a tre gradini; `[[cierre]]` al gradino 3. Provato da Rachele in locale (2026-11-23): va bene. Aggiunta dopo la prova (9d21e72): a chat chiusa, per scala ostile o limite di 30, la barra va al 50% e dice "Ya no puedes enviar mensajes" (prima si bloccava senza cambiare aspetto).
 
 ---
 

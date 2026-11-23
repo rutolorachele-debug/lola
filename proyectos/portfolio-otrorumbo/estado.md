@@ -31,8 +31,10 @@ tre commit. Nuovo punto 35: comando vocale, da valutare.
 
 **Aperto (2026-11-20):** punto 32 fatto e chiuso da Rachele (1,5 / 3,5 /
 3,5 s, online in f1fa4df; se vorrà, lo ritocca più avanti). Punti 2 e 3
-fatti in locale (a415ccd del Portfolio), aspettano l'ok di Rachele per il
-push; poi lei prova online il tag e la scala ostile. Vercel ha saltato il push di 266a7bc (causa non vista:
+fatti in locale (a415ccd), più barra chiusa al 50% con "Ya no puedes
+enviar mensajes" (9d21e72, sopra 826d923): Rachele li ha provati in locale
+il 2026-11-23 e le vanno bene. Il push porta online tutti e tre i commit,
+anche 826d923 dell'altra chat. Vercel ha saltato il push di 266a7bc (causa non vista:
 serve il login di Rachele al pannello); il push dopo (6bbb870) è andato
 online in 43 s. Se un push non arriva, prima cosa: pannello Deployments.
 
