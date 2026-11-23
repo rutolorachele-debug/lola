@@ -34,10 +34,27 @@ esegue e Rachele le prova in localhost. Audit mobile per parti.
    dove vanno (proposta di Lola: solo su mobile il messaggio dei progetti
    diventa l'ultimo). Perché: stessa esperienza su desktop e mobile;
    probabilmente toglie anche gli scatti (la card che cambia altezza).
-2. **Header (logo e menu) per ultimo (da valutare, Rachele):** entra dopo
-   i progetti, insieme ai tag, così i progetti hanno più spazio mentre
-   compaiono. Condizione di Lola: lo spazio dell'header resta riservato
-   dall'inizio, così all'arrivo i progetti non si spostano.
+2. **Header (logo e menu) per ultimo (da provare, Rachele):** i progetti
+   compaiono più in alto, nello spazio dell'header; finiti i messaggi,
+   mentre escono i tag, scende l'header (e i progetti scendono al loro
+   posto). Spazio NON riservato: era la proposta di Lola, scartata perché
+   toglierebbe il senso (recuperare spazio). Va visto se vale la pena.
+   Oggi i tempi sono strani: il logo entra con i progetti, il menu dopo.
+3. **Tag delle domande in fill:** sono allungati a tutta larghezza. Devono
+   avere misure e padding del chip del design system e stare uno accanto
+   all'altro.
+4. **Card chiusa:** deve restare solo la barra con il drag handle; oggi si
+   vede anche un pezzo degli ultimi messaggi. Oggi, chiusa, non si riesce
+   a riaprire.
+5. **Card all'invio:** quando si manda un messaggio la card si apre fino
+   all'altezza massima decisa (Rachele ricorda circa 3/4: verificare il
+   valore nel codice o nei documenti).
+6. **Sfondo:** quasi non si vede, sembra molto ingrandito. Da riguardare
+   dopo il punto 1 (con l'apertura nuova il tramonto si vedrà di più).
+7. **Progetto aperto:** l'header (logo e menu) si accavalla alla barra
+   del progetto (freccia indietro e pills), che deve stare sotto l'header.
+   L'articolo esce dallo schermo a destra, non adattato al mobile (forse
+   stessa causa del difetto desktop sotto ~1300 px, punto 31).
 
 **Fatto (2026-11-23, sidebar):** ritocchi in commit 1344469 del Portfolio,
 pubblicati (push 9d21e72..1344469, online verificato): "Proyectos" fisso (scorre solo la
