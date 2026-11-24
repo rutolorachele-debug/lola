@@ -46,7 +46,9 @@ esegue e Rachele le prova in localhost. Audit mobile per parti.
    all'altro. Misurati da Lola (2026-11-24, Funnel Sans Medium 14, gap 8,
    spazio utile 358 su iPhone 390): con lati 16 servono 388 px, con 12
    372, con 10 364, con 8 356 (ci stanno per 2 px, e su iPhone da 375 no).
-   Ridurre il padding non basta. Decide Rachele.
+   Ridurre il padding non basta. **Deciso (Rachele, 2026-11-24):** padding
+   del design system (8/16), uno per riga, ognuno largo quanto il suo
+   testo. Correzione: togliere le righe 667-668 di `globals.css`.
 4. **Card chiusa:** deve restare solo la barra con il drag handle; oggi si
    vede anche un pezzo degli ultimi messaggi. Oggi, chiusa, non si riesce
    a riaprire.
