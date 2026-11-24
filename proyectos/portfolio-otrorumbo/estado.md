@@ -74,8 +74,12 @@ commit f1541a2, letto da Lola in sola lettura):**
   (152 su 844, minimo 140, `MOTION.mobile`). Si riapre già toccando il
   campo di testo e inviando; la maniglia solo chiude, trascinare in su non
   c'è. Ma Rachele (2026-11-24): sul telefono non si apre mai, né col campo
-  né con la maniglia. Leggendo il codice la causa non si vede: va
-  riprodotto.
+  né con la maniglia. Provato da Lola (2026-11-24, sito in locale, Chrome
+  a misura iPhone 13, chiusa sia col tocco sulla maniglia sia trascinando):
+  il tocco sul campo la riapre (83%), il tocco sulla maniglia mai. Su
+  iPhone vero il campo non la apre: causa propria di Safari iOS, non
+  riproducibile qui. Ipotesi non verificata: la tastiera che si apre
+  sposta la pagina.
 - Card aperta: 698 su 844 = 83% dello schermo (non 3/4), da Figma via
   brief §5.
 - Sfondo: video orizzontale 16:9 con `object-fit: cover` su schermo
