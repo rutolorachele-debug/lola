@@ -25,15 +25,14 @@ visiva.
 **Mobile, decisioni da eseguire col codice (2026-11-23, chat senza
 codice):** questa chat raccoglie le modifiche; la sessione col codice le
 esegue e Rachele le prova in localhost. Audit mobile per parti.
-1. **Apertura uguale al desktop (deciso, Rachele):** niente card durante
-   l'apertura. I messaggi, dal primo a quello dei progetti, stanno al
-   centro come sul desktop. Al messaggio dei progetti i messaggi scorrono
-   in basso, compare la card e compaiono i progetti ("appare
-   l'interfaccia"). Card per ultima. Da verificare nel codice: ordine dei
-   5 messaggi e a quale arriva quello dei progetti; se ne seguono altri,
-   dove vanno (proposta di Lola: solo su mobile il messaggio dei progetti
-   diventa l'ultimo). Perché: stessa esperienza su desktop e mobile;
-   probabilmente toglie anche gli scatti (la card che cambia altezza).
+1. **Apertura uguale al desktop (deciso, Rachele, 2026-11-24):** niente
+   card dietro durante i primi messaggi. Messaggi 1-3 solo sullo sfondo,
+   centrati (bolle allineate a sinistra), all'altezza dove stanno a fine
+   animazione con la card aperta. Al messaggio 4 (progetti) la card entra
+   dal basso tutta in una volta (slide-in, non cresce a poco a poco),
+   insieme a progetti e header, come sul desktop. Ordine dei messaggi
+   invariato. Perché: stessa esperienza su desktop e mobile; probabilmente
+   toglie anche gli scatti (la card che cambia altezza).
 2. **Header (logo e menu) per ultimo (da provare, Rachele):** i progetti
    compaiono più in alto, nello spazio dell'header; finiti i messaggi,
    mentre escono i tag, scende l'header (e i progetti scendono al loro
@@ -61,20 +60,20 @@ commit f1541a2, letto da Lola in sola lettura):**
 - Apertura (`page.tsx`): messaggi 1 saluto, 2 respiro, 3 refugio, 4
   proyectos (entrano sidebar e logo), 5 invito (entrano barra, tag e menu).
   Stessi tempi su desktop e mobile: il logo coi progetti e il menu dopo
-  non è un errore del mobile, è la sequenza di entrambi. Dopo il messaggio
-  dei progetti c'è il 5, che sul mobile può arrivare dentro la card con
-  barra e tag (strada B, ora la più naturale).
+  non è un errore del mobile, è la sequenza di entrambi.
 - Tag: su mobile `.chips` è in colonna (`flex-direction: column`, riga
   667) e i chip si allungano; lati 14 (riga 668). Togliere le due righe.
 - Card chiusa: i messaggi non vengono nascosti, la card si accorcia e basta
   (152 su 844, minimo 140, `MOTION.mobile`). Si riapre già toccando il
   campo di testo e inviando; la maniglia solo chiude, trascinare in su non
-  c'è.
+  c'è. Ma Rachele (2026-11-24): sul telefono non si apre mai, né col campo
+  né con la maniglia. Leggendo il codice la causa non si vede: va
+  riprodotto.
 - Card aperta: 698 su 844 = 83% dello schermo (non 3/4), da Figma via
   brief §5.
 - Sfondo: video orizzontale 16:9 con `object-fit: cover` su schermo
   verticale: se ne vede circa un quarto della larghezza, ecco l'effetto
-  ingrandito.
+  ingrandito. Rachele (2026-11-24): resta così, punto 6 chiuso.
 - Progetto aperto: barra (freccia + pills) a top 52 left 16, logo a top 56
   left 16 sopra di lei (z 20): il logo non si nasconde. Articolo:
   `width: 100%` più `left: 16` → esce di 16 px a destra (con width

@@ -25,5 +25,6 @@ Una ficha = un hecho; el diario de un frente, en `historial/`. Este índice se c
 - [PowerShell tra virgolette singole](powershell-virgolette-singole.md) — da Bash `powershell -Command '...'`, mai doppie: Bash mangia i `$`
 - [Temp: escludere claude](temp-escludere-claude.md) — pulendo `AppData\Local\Temp` lasciare la cartella `claude` (output dei comandi di Lola)
 - [Lola su GitHub](lola-su-github.md) — copia privata in rutolorachele-debug/lola; ogni commit fa push da solo (hook in `.git/hooks`, da ricreare su un pc nuovo)
+- [Idea di Rachele prima](idea-di-rachele-prima.md) — un'idea sua si ripete con le sue parole e si conferma; varianti mie solo dopo, separate
 - [OpenClaw: leggere i log di setup](openclaw-log-setup.md) — stato vero in `Roaming\OpenClawTray\Logs` + porta 18789, non solo il log della tray
 
