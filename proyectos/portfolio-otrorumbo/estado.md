@@ -79,7 +79,10 @@ commit f1541a2, letto da Lola in sola lettura):**
   il tocco sul campo la riapre (83%), il tocco sulla maniglia mai. Su
   iPhone vero il campo non la apre: causa propria di Safari iOS, non
   riproducibile qui. Ipotesi non verificata: la tastiera che si apre
-  sposta la pagina.
+  sposta la pagina. **Deciso (Rachele, 2026-11-24, proposta di Lola):**
+  card chiusa, tocco o trascinamento in su sulla maniglia la apre; card
+  aperta, tocco o trascinamento in giù la chiude (come ora). Il campo
+  su iPhone si riprova sul telefono dopo la correzione.
 - Card aperta: 698 su 844 = 83% dello schermo (non 3/4), da Figma via
   brief §5.
 - Sfondo: video orizzontale 16:9 con `object-fit: cover` su schermo
