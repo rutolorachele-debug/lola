@@ -33,7 +33,9 @@ esegue e Rachele le prova in localhost. Audit mobile per parti.
    insieme a progetti e header, come sul desktop. Ordine dei messaggi
    invariato. Perché: stessa esperienza su desktop e mobile; probabilmente
    toglie anche gli scatti (la card che cambia altezza).
-2. **Header (logo e menu) per ultimo (da provare, Rachele):** i progetti
+2. **Header: resta com'è (Rachele, 2026-11-24)**, logo al messaggio 4 e
+   menu al 5, come sul desktop. L'idea sotto è scartata.
+   ~~Header (logo e menu) per ultimo (da provare, Rachele):~~ i progetti
    compaiono più in alto, nello spazio dell'header; finiti i messaggi,
    mentre escono i tag, scende l'header (e i progetti scendono al loro
    posto). Spazio NON riservato: era la proposta di Lola, scartata perché
@@ -41,7 +43,10 @@ esegue e Rachele le prova in localhost. Audit mobile per parti.
    Oggi i tempi sono strani: il logo entra con i progetti, il menu dopo.
 3. **Tag delle domande in fill:** sono allungati a tutta larghezza. Devono
    avere misure e padding del chip del design system e stare uno accanto
-   all'altro.
+   all'altro. Misurati da Lola (2026-11-24, Funnel Sans Medium 14, gap 8,
+   spazio utile 358 su iPhone 390): con lati 16 servono 388 px, con 12
+   372, con 10 364, con 8 356 (ci stanno per 2 px, e su iPhone da 375 no).
+   Ridurre il padding non basta. Decide Rachele.
 4. **Card chiusa:** deve restare solo la barra con il drag handle; oggi si
    vede anche un pezzo degli ultimi messaggi. Oggi, chiusa, non si riesce
    a riaprire.
@@ -77,7 +82,8 @@ commit f1541a2, letto da Lola in sola lettura):**
 - Progetto aperto: barra (freccia + pills) a top 52 left 16, logo a top 56
   left 16 sopra di lei (z 20): il logo non si nasconde. Articolo:
   `width: 100%` più `left: 16` → esce di 16 px a destra (con width
-  impostata, `right` viene ignorato). Causa diversa dal punto 31.
+  impostata, `right` viene ignorato). Causa diversa dal punto 31, ma
+  stessa famiglia (misure responsive): Rachele li tiene insieme.
 
 **Fatto (2026-11-23, sidebar):** ritocchi in commit 1344469 del Portfolio,
 pubblicati (push 9d21e72..1344469, online verificato): "Proyectos" fisso (scorre solo la
