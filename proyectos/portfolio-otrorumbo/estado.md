@@ -83,8 +83,9 @@ commit f1541a2, letto da Lola in sola lettura):**
   card chiusa, tocco o trascinamento in su sulla maniglia la apre; card
   aperta, tocco o trascinamento in giù la chiude (come ora). Il campo
   su iPhone si riprova sul telefono dopo la correzione.
-- Card aperta: 698 su 844 = 83% dello schermo (non 3/4), da Figma via
-  brief §5.
+- Card aperta: **570 su 844 (circa 2/3), sempre** (apertura, maniglia,
+  invio). Deciso da Rachele 2026-11-25: sostituisce i 698 di Figma (brief
+  §5), perché lascia vedere l'inizio del primo progetto.
 - Sfondo: video orizzontale 16:9 con `object-fit: cover` su schermo
   verticale: se ne vede circa un quarto della larghezza, ecco l'effetto
   ingrandito. Rachele (2026-11-24): resta così, punto 6 chiuso.
