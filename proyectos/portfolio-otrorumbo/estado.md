@@ -94,6 +94,22 @@ commit f1541a2, letto da Lola in sola lettura):**
   impostata, `right` viene ignorato). Causa diversa dal punto 31, ma
   stessa famiglia (misure responsive): Rachele li tiene insieme.
 
+**Audit mobile eseguito (2026-11-25, commit 7a9bffc del Portfolio, in
+locale, NON pubblicato):** punti 1, 3 e 4 fatti; il campo apre la card
+anche al focus (per iPhone). Provato da Lola in Chrome a misura 390×844:
+messaggi 1-3 fermi alla loro altezza finale, senza card dietro; card
+entra al 4 (698 px); tag uno per riga, larghi quanto il testo; card
+chiusa = solo barra e maniglia (152 px); tocco sulla maniglia apre e
+chiude; trascinare in su apre, in giù chiude; focus sul campo apre.
+Scatti: la card ora anima solo la sua altezza (prima riscriveva una
+variabile a ogni frame, sospetto degli scatti).
+**Non verificato:** l'animazione vera (il pannello browser di Lola è
+nascosto e GSAP resta fermo), scatti su iPhone, campo su iPhone, tocco
+su un tag a card aperta, conversazione lunga. Punto 7 resta col 31.
+Aperto e non deciso: il tocco che salta l'apertura.
+**Siguiente:** Rachele prova su iPhone (stessa wifi,
+http://192.168.1.193:3000 col server acceso) e dà l'ok al push.
+
 **Fatto (2026-11-23, sidebar):** ritocchi in commit 1344469 del Portfolio,
 pubblicati (push 9d21e72..1344469, online verificato): "Proyectos" fisso (scorre solo la
 lista, `.sidebar-list`), 12 tra le card, chip a 4, card `--vetro-campo`
