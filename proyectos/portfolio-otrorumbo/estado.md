@@ -96,7 +96,7 @@ commit f1541a2, letto da Lola in sola lettura):**
   stessa famiglia (misure responsive). Rachele li teneva insieme; il
   2026-11-25 ha chiesto di correggere il 7 da solo.
 
-**Audit mobile (2026-11-25, Portfolio fino al commit 2217b61): sul ramo
+**Audit mobile (2026-11-25, Portfolio fino al commit 9d132fb): sul ramo
 di prova `prova-audit-mobile` (anteprima Vercel), NON sul sito
 ufficiale né su master di GitHub.** Punti 1, 3, 4 e 7 fatti.
 - Apertura mobile, **approvata da Rachele su iPhone ("è perfetto")**:
@@ -110,12 +110,17 @@ ufficiale né su master di GitHub.** Punti 1, 3, 4 e 7 fatti.
 - Punto 7 (Rachele 2026-11-25, staccato dal 31): barra del progetto a
   top 100 (8 px sotto l'header), articolo da 152, dentro lo schermo.
   Misurato da Lola a 390 e 375; da vedere su iPhone.
+- Header pieno (Rachele 2026-11-25, commit 9d132fb): quando si scorre
+  (lista progetti o progetto aperto) compare in dissolvenza una fascia
+  larga tutto lo schermo, da 0 a 100 px, colore `--morbido` (quello
+  della card); i progetti non si vedono sotto logo e menu. Desktop
+  uguale. Dissolvenza 0,3 s: criterio di Lola.
 - Schermi bassi (~675): alla fine «Hola» resta sopra il bordo, si vede
   scorrendo. Accettato.
 **Non verificato:** card chiusa su iPhone (la maniglia tocca ancora la
 barra?), tocco su un tag a card aperta, conversazione lunga.
 Aperto e non deciso: il tocco che salta l'apertura.
-**Siguiente:** Rachele guarda il punto 7 sull'anteprima e dice
+**Siguiente:** Rachele guarda punto 7 e header sull'anteprima e dice
 "pubblica": allora master e sito ufficiale.
 
 **Fatto (2026-11-23, sidebar):** ritocchi in commit 1344469 del Portfolio,
