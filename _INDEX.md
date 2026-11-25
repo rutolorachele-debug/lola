@@ -15,8 +15,8 @@ aquí. Cada `estado.md` tiene su línea aquí, y cada línea apunta a un
 - **Portfolio Otrorumbo** — online; passo 4 (migliorie) in corso,
   25-28 e 30 fatti (chat compatta, caricamento, entrata, bolle IA); nuovi 31-33 (centratura, tempi, spazi sidebar); 29 prima in Figma;
   23.2 aspetta Rachele; punto 32 fatto; punti 2, 3, 4 (tag) e 34 (entrata a 5 messaggi) in locale,
-  aspettano l'ok di Rachele per il push; audit mobile 1-4 fatto in locale
-  (7a9bffc), Rachele prova su iPhone; 35 comando vocale da valutare;
+  aspettano l'ok di Rachele per il push; audit mobile 1, 3, 4, 7 sul ramo
+  di prova (2217b61, apertura approvata), non pubblicato: aspetta "pubblica"; 35 comando vocale da valutare;
   prompt diviso in 10 file (online, provato), prossimo sul prompt il 14 →
   [stato](proyectos/portfolio-otrorumbo/estado.md)
 - **Pulizia pc** — disco da 51 a 179 GB liberi; RAM più avanti;

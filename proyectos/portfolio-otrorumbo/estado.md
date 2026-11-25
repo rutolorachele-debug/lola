@@ -93,23 +93,30 @@ commit f1541a2, letto da Lola in sola lettura):**
   left 16 sopra di lei (z 20): il logo non si nasconde. Articolo:
   `width: 100%` più `left: 16` → esce di 16 px a destra (con width
   impostata, `right` viene ignorato). Causa diversa dal punto 31, ma
-  stessa famiglia (misure responsive): Rachele li tiene insieme.
+  stessa famiglia (misure responsive). Rachele li teneva insieme; il
+  2026-11-25 ha chiesto di correggere il 7 da solo.
 
-**Audit mobile eseguito (2026-11-25, commit 7a9bffc del Portfolio, in
-locale, NON pubblicato):** punti 1, 3 e 4 fatti; il campo apre la card
-anche al focus (per iPhone). Provato da Lola in Chrome a misura 390×844:
-messaggi 1-3 fermi alla loro altezza finale, senza card dietro; card
-entra al 4 (698 px); tag uno per riga, larghi quanto il testo; card
-chiusa = solo barra e maniglia (152 px); tocco sulla maniglia apre e
-chiude; trascinare in su apre, in giù chiude; focus sul campo apre.
-Scatti: la card ora anima solo la sua altezza (prima riscriveva una
-variabile a ogni frame, sospetto degli scatti).
-**Non verificato:** l'animazione vera (il pannello browser di Lola è
-nascosto e GSAP resta fermo), scatti su iPhone, campo su iPhone, tocco
-su un tag a card aperta, conversazione lunga. Punto 7 resta col 31.
+**Audit mobile (2026-11-25, Portfolio fino al commit 2217b61): sul ramo
+di prova `prova-audit-mobile` (anteprima Vercel), NON sul sito
+ufficiale né su master di GitHub.** Punti 1, 3, 4 e 7 fatti.
+- Apertura mobile, **approvata da Rachele su iPhone ("è perfetto")**:
+  card sempre 570/844; messaggi 1-4 sullo sfondo, in basso (nello spazio
+  dei tag); «Aquí tienes mis proyectos», poi sale il fondo della card,
+  poi progetti e logo; «Elige un tema» con barra e menu; lo spazio dei
+  tag si apre poco a poco e spinge su i messaggi; tag per ultimi.
+  Linetta della maniglia a 8 px dal bordo, messaggi a 36 px.
+- Tag uno per riga, larghi quanto il testo; card chiusa = barra e
+  maniglia; maniglia: tocco o trascinamento apre e chiude; il campo apre.
+- Punto 7 (Rachele 2026-11-25, staccato dal 31): barra del progetto a
+  top 100 (8 px sotto l'header), articolo da 152, dentro lo schermo.
+  Misurato da Lola a 390 e 375; da vedere su iPhone.
+- Schermi bassi (~675): alla fine «Hola» resta sopra il bordo, si vede
+  scorrendo. Accettato.
+**Non verificato:** card chiusa su iPhone (la maniglia tocca ancora la
+barra?), tocco su un tag a card aperta, conversazione lunga.
 Aperto e non deciso: il tocco che salta l'apertura.
-**Siguiente:** Rachele prova su iPhone (stessa wifi,
-http://192.168.1.193:3000 col server acceso) e dà l'ok al push.
+**Siguiente:** Rachele guarda il punto 7 sull'anteprima e dice
+"pubblica": allora master e sito ufficiale.
 
 **Fatto (2026-11-23, sidebar):** ritocchi in commit 1344469 del Portfolio,
 pubblicati (push 9d21e72..1344469, online verificato): "Proyectos" fisso (scorre solo la
