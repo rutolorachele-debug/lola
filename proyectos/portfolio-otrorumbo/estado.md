@@ -47,6 +47,14 @@ Aperto e non deciso: il tocco che salta l'apertura.
 14. **Trascinare in giù:** oggi scorre tutto, barra di testo inclusa, e
     poi riappare. La barra non si muove mai; i messaggi spariscono dietro
     di lei, come quando si chiude toccando la maniglia.
+15. **Apertura, altezza della card:** oggi la card entra più alta dei
+    messaggi e lascia uno spazio vuoto sopra; poi, con l'ultimo messaggio
+    e i tag, i messaggi scorrono in su e spariscono per far posto a tag e
+    barra. Rachele vuole: card che entra all'altezza esatta dei messaggi
+    già arrivati (entra al messaggio 4, «Aquí tienes mis proyectos»); con
+    l'ultimo messaggio e i tag la card si alza insieme ai messaggi.
+    Nota per quando si fa: oggi la card aperta è 570 su 844, sempre
+    (decisione del 2026-11-25); questo punto la cambia durante l'apertura.
 **Siguiente:** Lola e Rachele partono dall'8, uno per volta.
 
 **Fatto (2026-11-23, sidebar):** ritocchi in commit 1344469 del Portfolio,
