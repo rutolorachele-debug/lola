@@ -22,107 +22,32 @@ visiva.
 
 ## Dove riprendere (2026-11-17)
 
-**Mobile, decisioni da eseguire col codice (2026-11-23, chat senza
-codice):** questa chat raccoglie le modifiche; la sessione col codice le
-esegue e Rachele le prova in localhost. Audit mobile per parti.
-1. **Apertura uguale al desktop (deciso, Rachele, 2026-11-24):** niente
-   card dietro durante i primi messaggi. Messaggi 1-3 solo sullo sfondo,
-   centrati (bolle allineate a sinistra), all'altezza dove stanno a fine
-   animazione con la card aperta. Al messaggio 4 (progetti) la card entra
-   dal basso tutta in una volta (slide-in, non cresce a poco a poco),
-   insieme a progetti e header, come sul desktop. Ordine dei messaggi
-   invariato. Perché: stessa esperienza su desktop e mobile; probabilmente
-   toglie anche gli scatti (la card che cambia altezza).
-2. **Header: resta com'è (Rachele, 2026-11-24)**, logo al messaggio 4 e
-   menu al 5, come sul desktop. L'idea sotto è scartata.
-   ~~Header (logo e menu) per ultimo (da provare, Rachele):~~ i progetti
-   compaiono più in alto, nello spazio dell'header; finiti i messaggi,
-   mentre escono i tag, scende l'header (e i progetti scendono al loro
-   posto). Spazio NON riservato: era la proposta di Lola, scartata perché
-   toglierebbe il senso (recuperare spazio). Va visto se vale la pena.
-   Oggi i tempi sono strani: il logo entra con i progetti, il menu dopo.
-3. **Tag delle domande in fill:** sono allungati a tutta larghezza. Devono
-   avere misure e padding del chip del design system e stare uno accanto
-   all'altro. Misurati da Lola (2026-11-24, Funnel Sans Medium 14, gap 8,
-   spazio utile 358 su iPhone 390): con lati 16 servono 388 px, con 12
-   372, con 10 364, con 8 356 (ci stanno per 2 px, e su iPhone da 375 no).
-   Ridurre il padding non basta. **Deciso (Rachele, 2026-11-24):** padding
-   del design system (8/16), uno per riga, ognuno largo quanto il suo
-   testo. Correzione: togliere le righe 667-668 di `globals.css`.
-4. **Card chiusa:** deve restare solo la barra con il drag handle; oggi si
-   vede anche un pezzo degli ultimi messaggi. Oggi, chiusa, non si riesce
-   a riaprire.
-5. **Card all'invio:** quando si manda un messaggio la card si apre fino
-   all'altezza massima decisa (Rachele ricorda circa 3/4: verificare il
-   valore nel codice o nei documenti).
-6. **Sfondo:** quasi non si vede, sembra molto ingrandito. Da riguardare
-   dopo il punto 1 (con l'apertura nuova il tramonto si vedrà di più).
-7. **Progetto aperto:** l'header (logo e menu) si accavalla alla barra
-   del progetto (freccia indietro e pills), che deve stare sotto l'header.
-   L'articolo esce dallo schermo a destra, non adattato al mobile (forse
-   stessa causa del difetto desktop sotto ~1300 px, punto 31).
-
-**Verificato nel codice (2026-11-24, repo `otro-rumbo` su GitHub, ultimo
-commit f1541a2, letto da Lola in sola lettura):**
-- Apertura (`page.tsx`): messaggi 1 saluto, 2 respiro, 3 refugio, 4
-  proyectos (entrano sidebar e logo), 5 invito (entrano barra, tag e menu).
-  Stessi tempi su desktop e mobile: il logo coi progetti e il menu dopo
-  non è un errore del mobile, è la sequenza di entrambi.
-- Tag: su mobile `.chips` è in colonna (`flex-direction: column`, riga
-  667) e i chip si allungano; lati 14 (riga 668). Togliere le due righe.
-- Card chiusa: i messaggi non vengono nascosti, la card si accorcia e basta
-  (152 su 844, minimo 140, `MOTION.mobile`). Si riapre già toccando il
-  campo di testo e inviando; la maniglia solo chiude, trascinare in su non
-  c'è. Ma Rachele (2026-11-24): sul telefono non si apre mai, né col campo
-  né con la maniglia. Provato da Lola (2026-11-24, sito in locale, Chrome
-  a misura iPhone 13, chiusa sia col tocco sulla maniglia sia trascinando):
-  il tocco sul campo la riapre (83%), il tocco sulla maniglia mai. Su
-  iPhone vero il campo non la apre: causa propria di Safari iOS, non
-  riproducibile qui. Ipotesi non verificata: la tastiera che si apre
-  sposta la pagina. **Deciso (Rachele, 2026-11-24, proposta di Lola):**
-  card chiusa, tocco o trascinamento in su sulla maniglia la apre; card
-  aperta, tocco o trascinamento in giù la chiude (come ora). Il campo
-  su iPhone si riprova sul telefono dopo la correzione.
-- Card aperta: **570 su 844 (circa 2/3), sempre** (apertura, maniglia,
-  invio). Deciso da Rachele 2026-11-25: sostituisce i 698 di Figma (brief
-  §5), perché lascia vedere l'inizio del primo progetto.
-- Sfondo: video orizzontale 16:9 con `object-fit: cover` su schermo
-  verticale: se ne vede circa un quarto della larghezza, ecco l'effetto
-  ingrandito. Rachele (2026-11-24): resta così, punto 6 chiuso.
-- Progetto aperto: barra (freccia + pills) a top 52 left 16, logo a top 56
-  left 16 sopra di lei (z 20): il logo non si nasconde. Articolo:
-  `width: 100%` più `left: 16` → esce di 16 px a destra (con width
-  impostata, `right` viene ignorato). Causa diversa dal punto 31, ma
-  stessa famiglia (misure responsive). Rachele li teneva insieme; il
-  2026-11-25 ha chiesto di correggere il 7 da solo.
-
-**Audit mobile (2026-11-25, Portfolio fino al commit c5d3f80): sul ramo
-di prova `prova-audit-mobile` (anteprima Vercel), NON sul sito
-ufficiale né su master di GitHub.** Punti 1, 3, 4 e 7 fatti.
-- Apertura mobile, **approvata da Rachele su iPhone ("è perfetto")**:
-  card sempre 570/844; messaggi 1-4 sullo sfondo, in basso (nello spazio
-  dei tag); «Aquí tienes mis proyectos», poi sale il fondo della card,
-  poi progetti e logo; «Elige un tema» con barra e menu; lo spazio dei
-  tag si apre poco a poco e spinge su i messaggi; tag per ultimi.
-  Linetta della maniglia a 8 px dal bordo, messaggi a 36 px.
-- Tag uno per riga, larghi quanto il testo; card chiusa = barra e
-  maniglia; maniglia: tocco o trascinamento apre e chiude; il campo apre.
-- Punto 7 (Rachele 2026-11-25, staccato dal 31): barra del progetto a
-  top 100 (8 px sotto l'header), articolo da 152, dentro lo schermo.
-  Misurato da Lola a 390 e 375; da vedere su iPhone.
-- Sfumatura in alto (Rachele 2026-11-25, commit c5d3f80): la fascia
-  piena (9d132fb) è stata tolta, nel progetto aperto creava un doppio
-  header. Ora sopra resta il tramonto: la lista sparisce a 100 px (8
-  sotto il menu), l'articolo sotto le pills (152). Da fermi bordo netto;
-  scorrendo diventa una sfumatura di 16 px in 0,3 s, come la chat.
-  Misurato da Lola; animazione da vedere su iPhone. Desktop uguale.
-- Schermi bassi (~675): alla fine «Hola» resta sopra il bordo, si vede
-  scorrendo. Accettato.
-**Non verificato:** card chiusa su iPhone (la maniglia tocca ancora la
-barra?), tocco su un tag a card aperta, conversazione lunga.
+**Mobile: online (Portfolio commit c5d3f80, pubblicato 2026-11-26).**
+Fatto: apertura come il desktop (approvata su iPhone); card aperta 570
+su 844, sempre; tag uno per riga, larghi quanto il testo; card chiusa =
+barra e maniglia, che con tocco o trascinamento apre e chiude; barra del
+progetto 8 px sotto l'header, articolo dentro lo schermo; scorrendo, il
+bordo alto sfuma (16 px) e sopra resta il tramonto. Restano com'erano:
+header (logo coi progetti, menu col messaggio 5), sfondo. Schermi bassi
+(~675): «Hola» alla fine sta sopra il bordo, si vede scorrendo (accettato).
+Non verificato: tocco su un tag a card aperta, conversazione lunga.
 Aperto e non deciso: il tocco che salta l'apertura.
-**Siguiente:** Rachele guarda punto 7 e sfumatura sull'anteprima e dice
-"pubblica": allora master e sito ufficiale.
+
+**Mobile, da fare (Rachele, 2026-11-26), in ordine:**
+8. **Chiusura della card:** quello che sta sotto sparisce e lascia uno
+   spazio vuoto da cui si vede il tramonto; i messaggi spariscono di colpo.
+9. **Pulsante del prototipo:** in alto a destra nel progetto, non
+   flottante come ora.
+10. **«Sobre el proyecto»:** la parte finale non ha formattazione. Vedere
+    se succede anche su desktop e correggere anche lì.
+11. **Scrollbar:** toglierla dai progetti su mobile.
+12. **Logo:** molto piccolo; probabilmente anche su desktop.
+13. **Tag alla riapertura:** aprendo la card con i tag ancora attivi,
+    devono comparire insieme ai messaggi, senza rompere il componente.
+14. **Trascinare in giù:** oggi scorre tutto, barra di testo inclusa, e
+    poi riappare. La barra non si muove mai; i messaggi spariscono dietro
+    di lei, come quando si chiude toccando la maniglia.
+**Siguiente:** Lola e Rachele partono dall'8, uno per volta.
 
 **Fatto (2026-11-23, sidebar):** ritocchi in commit 1344469 del Portfolio,
 pubblicati (push 9d21e72..1344469, online verificato): "Proyectos" fisso (scorre solo la
