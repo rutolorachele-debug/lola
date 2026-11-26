@@ -4,77 +4,6 @@ Note raccolte durante il testing del portfolio. Non sono da fare adesso: si valu
 
 ---
 
-## 2. Chat chiusa dopo conversazione ostile: messaggio incoerente
-
-**Cosa succede.** Quando si arriva al gradino 4 della scala ostile (PRD §3.3, system prompt §9), il pulsante di invio si disattiva, come previsto. Però l'ultimo messaggio di Rachele dice "Si tienes una pregunta sobre mi trabajo, aquí estoy", cioè invita a scrivere ancora, mentre il visitatore non può più farlo. L'unica strada è iniziare una nuova conversazione.
-
-**Perché succede.** I due documenti dicono cose diverse:
-- Il PRD §3.3 stabilisce che alla chiusura il pulsante si disattiva "with no extra message", cioè senza messaggi aggiuntivi.
-- Il system prompt §9 impone il testo del gradino 4 alla lettera.
-
-Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empieza una nueva conversación o reserva una llamada"). Il caso ostile è l'unico senza una spiegazione chiara.
-
-**Deciso (Rachele, 2026-11-20):** si toglie il gradino 4. La chiusura avviene al gradino 3 ("Lo dejamos aquí. Si en algún momento quieres hablar de mi trabajo, puedes empezar una conversación nueva."), che finisce con `[[cierre]]` e blocca l'invio. Perché: il gradino 3 è già un messaggio di chiusura e indica cosa fare; il 4 invitava a scrivere quando non si poteva più. Da fare dopo il punto 32: system prompt §9 e PRD §3.3 (gradini da 4 a 3).
-
-**Fatto in locale (2026-11-20, commit a415ccd del Portfolio, non ancora online):** prompt §9 e PRD §3.3 a tre gradini; `[[cierre]]` al gradino 3. Provato da Rachele in locale (2026-11-23): va bene. Aggiunta dopo la prova (9d21e72): a chat chiusa, per scala ostile o limite di 30, la barra va al 50% e dice "Ya no puedes enviar mensajes" (prima si bloccava senza cambiare aspetto).
-
----
-
-## 3. Pulsante "Nueva conversación" sempre attivo
-
-**Cosa succede.** Il pulsante "Nueva conversación" nel menu è sempre attivo, anche prima di aver scritto un messaggio. Non è chiaro se la conversazione si riavvia senza chiedere conferma o se il pulsante non fa nulla. Non si capisce se il comportamento è corretto.
-
-**Cosa dicono i documenti.**
-- Il PRD §3.5 dice che, se la conversazione non è ancora iniziata, il riavvio avviene subito, senza dialogo. Altrimenti si apre il dialogo "¿Empezar una nueva conversación?".
-- Il PRD §4.1 dice che la conversazione è iniziata quando il visitatore ha scritto un messaggio o usato un tag.
-- Il PRD non dice che il pulsante debba essere disattivato quando la conversazione non è iniziata. Rachele lo vuole disattivo: va aggiunto al PRD §3.5.
-
-**Da verificare nel test:**
-1. Senza aver scritto né usato un tag, cliccare "Nueva conversación": deve tornare ai quattro messaggi senza dialogo.
-2. Dopo un messaggio: deve comparire il dialogo di conferma.
-3. Dopo aver usato solo un tag: deve comparire il dialogo, perché il tag avvia la conversazione.
-
-**Deciso (Rachele, 2026-11-20):** il pulsante è disattivato finché il visitatore non ha scritto un messaggio o usato un tag. Da riportare nel PRD §3.5; il riavvio senza dialogo non serve più. Codice da fare dopo il punto 32 (tocca gli stessi file).
-
-**Fatto in locale (2026-11-20, commit a415ccd del Portfolio, non ancora online):** pulsante disattivo (opacità 0,5 come la card WIP) e PRD §3.5 aggiornato. Provato in locale: disattivo all'inizio, attivo dopo un messaggio, dialogo al clic, di nuovo disattivo dopo la conferma. Il caso del solo tag non si può provare nel browser di Lola (le animazioni lì non finiscono): da provare online.
-
-**Nota.** I messaggi che compaiono senza animazione sono previsti: l'animazione arriva nella fase 5 della build.
-
----
-
-## 4. Tag: l'offerta dell'argomento già usato
-
-**Cosa succede.** Il visitatore usa prima il tag "¿En qué estás trabajando ahora?", poi il tag "Cuéntame cómo piensas". Dopo la risposta al secondo tag, Rachele propone di nuovo "Si quieres, te cuento en qué estoy trabajando ahora", cioè l'argomento del primo tag, già usato.
-
-**Cosa dicono i documenti.**
-- PRD §4.2, scambio 3: se il visitatore sceglie il secondo tag, la risposta è quella preparata e la conversazione prosegue senza aggiungere nulla.
-- system prompt §12: dopo il secondo argomento "nothing is added". L'offerta dell'altro argomento va fatta solo dopo il primo tag.
-
-**Perché può succedere.** Il frontend sa quali tag sono stati usati, ma il modello lo deduce solo dal testo della conversazione. Può quindi proporre un argomento già usato. Il comportamento dipende dal modello e può non ripetersi sempre.
-
-**Da verificare nei test:**
-1. Tag "¿En qué estás trabajando ahora?", poi "Cuéntame cómo piensas": la risposta al secondo non deve contenere nessuna offerta.
-2. Stesso test in ordine inverso: la risposta al secondo tag non deve contenere nessuna offerta.
-3. Ripetere più volte ciascun caso, perché l'errore può comparire solo a volte.
-4. Verificare che un solo tag usato porti l'offerta dell'altro tag.
-
-**Possibili correzioni (da decidere):**
-- Il frontend passa al modello quali tag sono già stati usati, così la risposta non propone l'argomento già usato.
-- Chiarire nel system prompt §12 che l'offerta vale solo se l'altro tag è ancora disponibile. Questa modifica è di Rachele.
-
-**Rachele (2026-11-20):** da vedere con calma, a casa.
-
-**In corso (2026-11-23):** corretto in locale (commit 826d923 del Portfolio), da approvare.
-
----
-
-## 34. Messaggi di entrata: il 2 diviso, pausa 3-4 troppo lunga (2026-11-23)
-
-**Cosa succede.** Il messaggio 2 (respiro + refugio) va diviso in due. Tra il 3 e il 4 c'è un attimo di troppo.
-**In corso (2026-11-23):** corretto in locale (commit 826d923 del Portfolio), da approvare.
-
----
-
 ## 35. Comando vocale (2026-11-23)
 
 **Idea (Rachele):** aggiungere il comando vocale. Prima: valutare quanto è fattibile. Da precisare: su cosa (parlare alla chat invece di scrivere, o altro).
@@ -131,7 +60,7 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 - Nei documenti non è scritto un limite di lunghezza. Il brief (§6) dice solo che il costo dipende dalla lunghezza del prompt moltiplicata per i messaggi, e che il prompt caching serve a questo.
 - Ottimizzare non deve togliere le regole nuove del §9 (punto 17, fatto).
 - Necessario, ma in un altro momento (Rachele, 2026-11-20).
-- **Primo passo fatto (2026-11-23, commit f1541a2, in locale):** prompt diviso in 10 file numerati in `prompt/`, testo identico. Non lo accorcia: serve a modificarlo a pezzi. Candidato al taglio (criterio di Lola): il texto portfolio dei progetti, ~10 KB, che la chat non usa mai ed è già in `lib/articles.ts`.
+- **Primo passo fatto (2026-11-23, commit f1541a2, online):** prompt diviso in 10 file numerati in `prompt/`, testo identico. Non lo accorcia: serve a modificarlo a pezzi. Candidato al taglio (criterio di Lola): il texto portfolio dei progetti, ~10 KB, che la chat non usa mai ed è già in `lib/articles.ts`.
 
 ---
 
@@ -203,10 +132,6 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 
 ## Da decidere
 
-- [ ] Chat chiusa: togliere il gradino 4, chiusura al 3 (deciso), prompt e PRD dopo il punto 32, secondo il punto 2.
-- [ ] "Nueva conversación": disattivare il pulsante finché la conversazione non inizia (deciso), codice dopo il punto 32, secondo il punto 3.
-- [ ] Tag: corretto in locale (punto 4); Rachele prova i due ordini e dà l'ok per pubblicare.
-- [ ] Entrata a 5 messaggi (punto 34): Rachele guarda il ritmo in locale e dà l'ok.
 - [ ] Comando vocale: valutare la fattibilità, secondo il punto 35.
 - [ ] Pulsante "fammi un riassunto" (in pausa): decidere dove appare il riassunto, secondo il punto 5.
 - [ ] Microinterazioni: rivedere, secondo il punto 8.
@@ -221,6 +146,70 @@ Controllo di Lola del 2026-11-18, solo sul codice (Rachele: conta il codice, non
 ## Punti fatti
 
 Testo originale del punto, poi **Fatto:** come si è risolto.
+
+---
+
+### 2. Chat chiusa dopo conversazione ostile: messaggio incoerente
+
+**Cosa succede.** Quando si arriva al gradino 4 della scala ostile (PRD §3.3, system prompt §9), il pulsante di invio si disattiva, come previsto. Però l'ultimo messaggio di Rachele dice "Si tienes una pregunta sobre mi trabajo, aquí estoy", cioè invita a scrivere ancora, mentre il visitatore non può più farlo. L'unica strada è iniziare una nuova conversazione.
+
+**Perché succede.** I due documenti dicono cose diverse:
+- Il PRD §3.3 stabilisce che alla chiusura il pulsante si disattiva "with no extra message", cioè senza messaggi aggiuntivi.
+- Il system prompt §9 impone il testo del gradino 4 alla lettera.
+
+Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empieza una nueva conversación o reserva una llamada"). Il caso ostile è l'unico senza una spiegazione chiara.
+
+**Deciso (Rachele, 2026-11-20):** si toglie il gradino 4. La chiusura avviene al gradino 3 ("Lo dejamos aquí. Si en algún momento quieres hablar de mi trabajo, puedes empezar una conversación nueva."), che finisce con `[[cierre]]` e blocca l'invio. Perché: il gradino 3 è già un messaggio di chiusura e indica cosa fare; il 4 invitava a scrivere quando non si poteva più. Da fare dopo il punto 32: system prompt §9 e PRD §3.3 (gradini da 4 a 3).
+
+**Fatto (2026-11-23, commit a415ccd e 9d21e72 del Portfolio):** prompt §9 e PRD §3.3 a tre gradini; `[[cierre]]` al gradino 3. A chat chiusa, per scala ostile o limite di 30, la barra va al 50% e dice "Ya no puedes enviar mensajes". Approvato da Rachele, online.
+
+---
+
+### 3. Pulsante "Nueva conversación" sempre attivo
+
+**Cosa succede.** Il pulsante "Nueva conversación" nel menu è sempre attivo, anche prima di aver scritto un messaggio. Non è chiaro se la conversazione si riavvia senza chiedere conferma o se il pulsante non fa nulla. Non si capisce se il comportamento è corretto.
+
+**Cosa dicono i documenti.**
+- Il PRD §3.5 dice che, se la conversazione non è ancora iniziata, il riavvio avviene subito, senza dialogo. Altrimenti si apre il dialogo "¿Empezar una nueva conversación?".
+- Il PRD §4.1 dice che la conversazione è iniziata quando il visitatore ha scritto un messaggio o usato un tag.
+- Il PRD non dice che il pulsante debba essere disattivato quando la conversazione non è iniziata. Rachele lo vuole disattivo: va aggiunto al PRD §3.5.
+
+**Da verificare nel test:**
+1. Senza aver scritto né usato un tag, cliccare "Nueva conversación": deve tornare ai quattro messaggi senza dialogo.
+2. Dopo un messaggio: deve comparire il dialogo di conferma.
+3. Dopo aver usato solo un tag: deve comparire il dialogo, perché il tag avvia la conversazione.
+
+**Deciso (Rachele, 2026-11-20):** il pulsante è disattivato finché il visitatore non ha scritto un messaggio o usato un tag. Da riportare nel PRD §3.5; il riavvio senza dialogo non serve più. Codice da fare dopo il punto 32 (tocca gli stessi file).
+
+**Fatto (2026-11-23, commit a415ccd del Portfolio):** pulsante disattivo (opacità 0,5 come la card WIP) finché il visitatore non scrive o usa un tag; PRD §3.5 aggiornato. Disattivo all'inizio, attivo dopo un messaggio, dialogo al clic, di nuovo disattivo dopo la conferma. Approvato da Rachele, online. Non verificato da Lola: il caso del solo tag.
+
+---
+
+### 4. Tag: l'offerta dell'argomento già usato
+
+**Cosa succede.** Il visitatore usa prima il tag "¿En qué estás trabajando ahora?", poi il tag "Cuéntame cómo piensas". Dopo la risposta al secondo tag, Rachele propone di nuovo "Si quieres, te cuento en qué estoy trabajando ahora", cioè l'argomento del primo tag, già usato.
+
+**Cosa dicono i documenti.**
+- PRD §4.2, scambio 3: se il visitatore sceglie il secondo tag, la risposta è quella preparata e la conversazione prosegue senza aggiungere nulla.
+- system prompt §12: dopo il secondo argomento "nothing is added". L'offerta dell'altro argomento va fatta solo dopo il primo tag.
+
+**Perché può succedere.** Il frontend sa quali tag sono stati usati, ma il modello lo deduce solo dal testo della conversazione. Può quindi proporre un argomento già usato. Il comportamento dipende dal modello e può non ripetersi sempre.
+
+**Da verificare nei test:**
+1. Tag "¿En qué estás trabajando ahora?", poi "Cuéntame cómo piensas": la risposta al secondo non deve contenere nessuna offerta.
+2. Stesso test in ordine inverso: la risposta al secondo tag non deve contenere nessuna offerta.
+3. Ripetere più volte ciascun caso, perché l'errore può comparire solo a volte.
+4. Verificare che un solo tag usato porti l'offerta dell'altro tag.
+
+**Fatto (2026-11-23, commit 826d923 del Portfolio):** il codice dice alla IA se il tag è il primo o il secondo; dopo il secondo nessun invito. Toccati `route.ts`, `Chat.tsx`, system prompt e PRD. Approvato da Rachele, online.
+
+---
+
+### 34. Messaggi di entrata: il 2 diviso, pausa 3-4 troppo lunga (2026-11-23)
+
+**Cosa succede.** Il messaggio 2 (respiro + refugio) va diviso in due. Tra il 3 e il 4 c'è un attimo di troppo.
+
+**Fatto (2026-11-23, commit 826d923 del Portfolio):** messaggio 2 diviso in due (respiro / refugio), pausa prima dei progetti a 3 s (`lib/motion.ts`). Approvato da Rachele, online.
 
 ---
 

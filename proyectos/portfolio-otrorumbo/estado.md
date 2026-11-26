@@ -55,7 +55,7 @@ lista, `.sidebar-list`), 12 tra le card, chip a 4, card `--vetro-campo`
 come i messaggi, hover bianco pieno. Padding card 8/8/12 lasciato apposta
 (Rachele ok). Limite noto: in pressed la card resta come in hover.
 
-**Prompt diviso (2026-11-23, commit f1541a2 del Portfolio, in locale):**
+**Prompt diviso (2026-11-23, commit f1541a2 del Portfolio, online):**
 `prompt/system_prompt.md` (84 KB) ora è 10 file numerati in `prompt/`
 (01-chi-sei … 10-prenotazione-e-risposte-lunghe), stesse sezioni §1-18.
 Il server (`readSystemPrompt`, `route.ts`) li cuce nell'ordine del numero:
@@ -67,20 +67,13 @@ CLAUDE.md, brief e PRD del Portfolio. Prossimo sul prompt: punto 14
 portfolio, ~10 KB). Push fatto con l'ok di Rachele (2026-11-23).
 Provato online da Rachele con un messaggio vero: la chat risponde. Chiuso.
 
-**Aperto (2026-11-23):** punti 4 (tag) e 34 (entrata a 5 messaggi) fatti
-(commit 826d923 del Portfolio), pubblicati il 2026-11-23 insieme ad a415ccd
-e 9d21e72 (ok di Rachele). Dettagli nella lista. Prossimo: Rachele guarda
-online il ritmo dell'entrata e i due tag nei due ordini. Nuovo punto 35: comando vocale, da valutare.
+**Fatto (2026-11-23):** punti 2, 3, 4 e 34 online, nei Punti fatti della
+lista. Punto 35 (comando vocale) da valutare.
 
-**Aperto (2026-11-20):** punto 32 fatto e chiuso da Rachele (1,5 / 3,5 /
-3,5 s, online in f1fa4df; se vorrà, lo ritocca più avanti). Punti 2 e 3
-fatti in locale (a415ccd), più barra chiusa al 50% con "Ya no puedes
-enviar mensajes" (9d21e72, sopra 826d923): Rachele li ha provati in locale
-il 2026-11-23 e le vanno bene. Pubblicati tutti e tre (push c01c5e1..9d21e72,
-2026-11-23, ok di Rachele anche per 826d923 dell'altra chat). Da provare
-online: il solo tag attiva "Nueva conversación". Vercel ha saltato il push di 266a7bc (causa non vista:
-serve il login di Rachele al pannello); il push dopo (6bbb870) è andato
-online in 43 s. Se un push non arriva, prima cosa: pannello Deployments.
+**Fatto (2026-11-20):** punto 32 chiuso da Rachele (online in f1fa4df;
+se vorrà, lo ritocca più avanti). Vercel una volta ha saltato un push
+(266a7bc, causa non vista: serve il login di Rachele al pannello). Se un
+push non arriva, prima cosa: pannello Deployments.
 
 I passi 1-3 sono fatti. Passo 4 in corso, si parte dal **punto 22
 (tipografie)**. Decisioni di Rachele (2026-11-17): il logo lo fa lei e lo
