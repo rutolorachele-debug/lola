@@ -23,6 +23,11 @@ formattazione rotta. Causa: avevo preso «le decisioni si registrano nella
 sessione» come «registra ogni passo», e la cronologia dello `estado.md` mi
 ha fatto da modello.
 
+**Al push sul sito ufficiale**, nello stesso giro: ogni punto pubblicato
+passa a «Punti fatti» nella lista dei miglioramenti e sparisce da «Da
+decidere». Il 2026-11-26 i punti 2, 3, 4 e 34 risultavano «in locale» da
+tre giorni, ma erano già online.
+
 **How to apply:** prima di toccare una lista chiediti «questo punto è
 chiuso?». Se no, non scrivere. La storia sta solo in Git e nella sezione
 "Decisioni" di `estado.md` / `canon/decisiones.md` (con "Scartato" se serve).
