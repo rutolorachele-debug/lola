@@ -181,7 +181,7 @@ Il limite delle 30 domande invece ha già un messaggio esplicito nel PRD ("Empie
 
 **Deciso (Rachele, 2026-11-20):** il pulsante è disattivato finché il visitatore non ha scritto un messaggio o usato un tag. Da riportare nel PRD §3.5; il riavvio senza dialogo non serve più. Codice da fare dopo il punto 32 (tocca gli stessi file).
 
-**Fatto (2026-11-23, commit a415ccd del Portfolio):** pulsante disattivo (opacità 0,5 come la card WIP) finché il visitatore non scrive o usa un tag; PRD §3.5 aggiornato. Disattivo all'inizio, attivo dopo un messaggio, dialogo al clic, di nuovo disattivo dopo la conferma. Approvato da Rachele, online. Non verificato da Lola: il caso del solo tag.
+**Fatto (2026-11-23, commit a415ccd del Portfolio):** pulsante disattivo (opacità 0,5 come la card WIP) finché il visitatore non scrive o usa un tag; PRD §3.5 aggiornato. Disattivo all'inizio, attivo dopo un messaggio, dialogo al clic, di nuovo disattivo dopo la conferma. Anche col solo tag si attiva (provato da Rachele). Approvato da Rachele, online.
 
 ---
 
